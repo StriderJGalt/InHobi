@@ -1,3 +1,5 @@
-# DASS33
+# DJANGO REST
+> currently deployed [here](http://inhobi.herokuapp.com/)
 
-Team 33
+## Author(s)
+Chaitanya Agarwal
