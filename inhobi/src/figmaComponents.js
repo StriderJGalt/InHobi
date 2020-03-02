@@ -3,7 +3,7 @@ import { CLogIn } from './components/CLogIn';
 
 export class MasterLogIn extends PureComponent {
   render() {
-    return <div className="master" style={{backgroundColor: "rgba(246, 243, 250, 1)"}}>
+    return <div className="master" style={{backgroundColor: "rgba(246, 243, 250, 1)"}} >
       <CLogIn {...this.props} nodeId="23:55" />
     </div>
   }
@@ -21,7 +21,7 @@ class CLogIn23D55 extends PureComponent {
         <div style={{"zIndex":6}} className="outerDiv">
           <div
             id="23:56"
-            style={{"marginLeft":26,"width":323.8307800292969,"minWidth":323.8307800292969,"height":null,"marginTop":104,"marginBottom":398.3025665283203,"minHeight":164.6974334716797,"color":"rgba(97, 41, 203, 1)","fontSize":106.83076477050781,"fontWeight":400,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"-1.602461471557617px"}}
+            style={{"marginLeft":"auto","marginRight":"auto","width":"50%","minWidth":323.8307800292969,"height":null,"marginTop":104,"marginBottom":398.3025665283203,"minHeight":164.6974334716797,"color":"rgba(97, 41, 203, 1)","fontSize":106.83076477050781,"fontWeight":400,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"-1.602461471557617px"}}
             className="innerDiv"
           >
             <div>
@@ -35,7 +35,7 @@ class CLogIn23D55 extends PureComponent {
         <div style={{"zIndex":5}} className="outerDiv">
           <div
             id="23:143"
-            style={{"marginLeft":38,"width":298.23590087890625,"minWidth":298.23590087890625,"height":null,"marginTop":-439.58973693847656,"marginBottom":392.8512763977051,"minHeight":46.738460540771484,"color":"rgba(0, 0, 0, 1)","fontSize":26.707691192626953,"fontWeight":400,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.13353845596313477px"}}
+            style={{"marginLeft":"auto","marginRight":"auto","width":"50%","minWidth":298.23590087890625,"height":null,"marginTop":-439.58973693847656,"marginBottom":392.8512763977051,"minHeight":46.738460540771484,"color":"rgba(0, 0, 0, 1)","fontSize":26.707691192626953,"fontWeight":400,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.13353845596313477px"}}
             className="innerDiv"
           >
             <div>
@@ -49,7 +49,7 @@ class CLogIn23D55 extends PureComponent {
         <div style={{"zIndex":3}} className="outerDiv">
           <div
             id="23:129"
-            style={{"marginLeft":29,"width":357.21539306640625,"minWidth":357.21539306640625,"height":null,"marginTop":-312,"marginBottom":240.77948760986328,"minHeight":71.22051239013672,"backgroundColor":"rgba(0, 0, 0, 0)"}}
+            style={{"marginLeft":"auto","marginRight":"auto","width":"357.21539306640625","minWidth":357.21539306640625,"height":null,"marginTop":-312,"marginBottom":240.77948760986328,"minHeight":71.22051239013672,"position": "relative","left": 24,"backgroundColor":"rgba(0, 0, 0, 0)"}}
             className="innerDiv"
           >
             <div>
@@ -66,11 +66,16 @@ class CLogIn23D55 extends PureComponent {
               <div style={{"zIndex":1}} className="outerDiv centerer">
                 <div
                   id="I23:129;23:85"
-                  style={{"marginLeft":51.18974304199219,"marginRight":0.0000152587890625,"flexGrow":1,"marginTop":0,"marginBottom":0,"color":"rgba(52, 41, 63, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
+                  style={{"marginLeft":51.18974304199219,"marginRight":0.0000152587890625,"flexGrow":1,"marginTop":0,"marginBottom":0,"width":"50%","color":"rgba(52, 41, 63, 1)","fontSize":20,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
                   className="innerDiv"
                 >
                   <div>
-                    <span style={{}} key="end">Username</span>
+                    <form>
+                      {/* <label for="fname">Username:</label> */}
+                      <br />
+                      <input type="text" id="username" placeholder="Username" name="username" />
+                      <br />
+                    </form>
                   </div>
                 </div>
               </div>
@@ -92,7 +97,7 @@ class CLogIn23D55 extends PureComponent {
         <div style={{"zIndex":4}} className="outerDiv">
           <div
             id="23:213"
-            style={{"marginLeft":29,"width":357.21539306640625,"minWidth":357.21539306640625,"height":null,"marginTop":-249.18460083007812,"marginBottom":177.9640884399414,"minHeight":71.22051239013672,"backgroundColor":"rgba(0, 0, 0, 0)"}}
+            style={{"marginLeft":"auto","marginRight":"auto","minWidth":357.21539306640625,"height":null,"marginTop":-249.18460083007812,"marginBottom":177.9640884399414,"minHeight":71.22051239013672,"position": "relative","left": 24,"backgroundColor":"rgba(0, 0, 0, 0)"}}
             className="innerDiv"
           >
             <div>
@@ -109,13 +114,17 @@ class CLogIn23D55 extends PureComponent {
               <div style={{"zIndex":1}} className="outerDiv centerer">
                 <div
                   id="23:215"
-                  style={{"width":"85.66977815223514%","marginLeft":"14.33021757617148%","height":"100%","top":"-0.0000214247111547223%","color":"rgba(52, 41, 63, 1)","fontSize":20.03076934814453,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.150230770111084px"}}
+                  style={{"width":"85.66977815223514%","marginLeft":"14.33021757617148%","height":"100%","top":"-0.0000214247111547223%","color":"rgba(52, 41, 63, 1)","fontSize":20,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.150230770111084px"}}
                   className="innerDiv"
                 >
                   <div>
                     {this.props.Password && this.props.Password.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
                     {!this.props.Password && (<div>
-                      <span style={{}} key="end">Password</span>
+                      <form>
+                        {/* <label for="lname">Password:</label> */}
+                        <br />
+                        <input type="password" placeholder="Password" id="password" name="password" />
+                      </form>
                     </div>)}
                   </div>
                 </div>
@@ -138,7 +147,7 @@ class CLogIn23D55 extends PureComponent {
         <div style={{}} className="outerDiv">
           <div
             id="23:141"
-            style={{"marginLeft":119,"width":137.98974609375,"minWidth":137.98974609375,"height":null,"marginTop":-173.5128173828125,"marginBottom":128.99999618530273,"minHeight":44.512821197509766,"backgroundColor":"rgba(97, 41, 203, 1)","borderRadius":"22.256410598754883px 22.256410598754883px 22.256410598754883px 22.256410598754883px"}}
+            style={{"marginLeft":"auto","marginRight":"auto","minWidth":137.98974609375,"height":null,"marginTop":-173.5128173828125,"marginBottom":128.99999618530273,"minHeight":44.512821197509766,"backgroundColor":"rgba(97, 41, 203, 1)","borderRadius":"22.256410598754883px 22.256410598754883px 22.256410598754883px 22.256410598754883px"}}
             className="innerDiv"
           >
             <div>
@@ -148,11 +157,13 @@ class CLogIn23D55 extends PureComponent {
         <div style={{"zIndex":1}} className="outerDiv">
           <div
             id="23:142"
-            style={{"marginLeft":137.9179458618164,"width":99.04102325439453,"minWidth":99.04102325439453,"height":null,"marginTop":-166.8358917236328,"marginBottom":134.5640983581543,"minHeight":32.271793365478516,"color":"rgba(255, 255, 255, 1)","fontSize":20.03076934814453,"fontWeight":500,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.150230770111084px"}}
+            style={{"marginLeft":"auto","marginRight":"auto","minWidth":99.04102325439453,"height":null,"marginTop":-166.8358917236328,"marginBottom":134.5640983581543,"minHeight":32.271793365478516,"color":"rgba(255, 255, 255, 1)","fontSize":20.03076934814453,"fontWeight":500,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.150230770111084px"}}
             className="innerDiv"
           >
             <div>
-              <span style={{}} key="end">SUBMIT</span>
+              <button style={{"background-color": "transparent","border-color": "transparent","color":"white","fontSize":20,"fontWeight":500,"fontFamily":"Roboto"}} key="end">
+                Submit
+              </button>
             </div>
           </div>
         </div>
@@ -160,4 +171,3 @@ class CLogIn23D55 extends PureComponent {
     );
   }
 }
-
