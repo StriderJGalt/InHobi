@@ -21,7 +21,7 @@ class ClessonViewer6D1 extends PureComponent {
         <div style={{}} className="outerDiv">
           <div
             id="6:2"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":0,"marginBottom":456,"minHeight":211,"backgroundColor":"rgba(196, 196, 196, 1)"}}
+            style={{"marginLeft":0,"width":"100%","minWidth":320,"height":null,"marginTop":0,"marginBottom":456,"minHeight":211,"backgroundColor":"rgba(196, 196, 196, 1)"}}
             className="innerDiv"
           >
             <div>
@@ -31,14 +31,14 @@ class ClessonViewer6D1 extends PureComponent {
         <div style={{"zIndex":1}} className="outerDiv">
           <div
             id="27:179"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-456,"marginBottom":416,"minHeight":40,"backgroundColor":"rgba(97, 41, 203, 1)","overflow":"hidden"}}
+            style={{"marginLeft":0,"width":"100%","minWidth":320,"height":null,"marginTop":-456,"marginBottom":416,"minHeight":40,"backgroundColor":"rgba(97, 41, 203, 1)","overflow":"hidden"}}
             className="innerDiv"
           >
             <div>
               <div style={{"zIndex":1}} className="outerDiv">
                 <div
                   id="27:174"
-                  style={{"marginLeft":336,"width":24,"minWidth":24,"height":null,"marginTop":8,"marginBottom":8,"minHeight":24,"backgroundColor":"rgba(0, 0, 0, 0)","overflow":"hidden"}}
+                  style={{"marginRight":"10px","marginLeft":"auto","width":24,"minWidth":24,"height":null,"marginTop":8,"marginBottom":8,"minHeight":24,"backgroundColor":"rgba(0, 0, 0, 0)","overflow":"hidden"}}
                   className="innerDiv"
                 >
                   <div>
@@ -60,7 +60,7 @@ class ClessonViewer6D1 extends PureComponent {
               <div style={{}} className="outerDiv centerer">
                 <div
                   id="27:180"
-                  style={{"width":"20.533333333333335%","marginLeft":"4.266666666666667%","height":"42.5%","top":"30%","color":"rgba(255, 255, 255, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
+                  style={{"width":"30%","marginLeft":"4.266666666666667%","height":"42.5%","top":"30%","color":"rgba(255, 255, 255, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
                   className="innerDiv"
                 >
                   <div>
@@ -77,7 +77,7 @@ class ClessonViewer6D1 extends PureComponent {
         <div style={{"zIndex":12}} className="outerDiv">
           <div
             id="12:4"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-402,"marginBottom":350,"minHeight":52,"backgroundColor":"rgba(97, 41, 203, 1)"}}
+            style={{"marginLeft":0,"width":"100%","minWidth":320,"height":null,"marginTop":-402,"marginBottom":350,"minHeight":52,"border-radius": "20px 20px 0px 0px","box-shadow": "0px -4px 4px grey","backgroundColor":"rgba(97, 41, 203, 1)"}}
             className="innerDiv"
           >
             <div>
@@ -98,7 +98,7 @@ class ClessonViewer6D1 extends PureComponent {
                   className="innerDiv"
                 >
                   <div>
-                    <span style={{}} key="end">Course Plan</span>
+                    <span style={{"border-bottom": "2px solid white","paddingBottom": "2px"}} key="end">Course Plan</span>
                   </div>
                 </div>
               </div>
@@ -138,586 +138,11 @@ class ClessonViewer6D1 extends PureComponent {
             </div>
           </div>
         </div>
-        <div style={{"zIndex":2}} className="outerDiv">
-          <div
-            id="11:5"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-352,"marginBottom":317,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I11:5;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I11:5;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I11:5;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I11:5;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":3}} className="outerDiv">
-          <div
-            id="12:5"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-317,"marginBottom":282,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I12:5;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I12:5;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I12:5;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I12:5;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":4}} className="outerDiv">
-          <div
-            id="12:10"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-282,"marginBottom":247,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I12:10;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I12:10;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I12:10;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I12:10;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":5}} className="outerDiv">
-          <div
-            id="12:15"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-247,"marginBottom":212,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I12:15;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I12:15;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I12:15;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I12:15;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":6}} className="outerDiv">
-          <div
-            id="12:20"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-212,"marginBottom":177,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I12:20;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I12:20;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I12:20;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I12:20;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":7}} className="outerDiv">
-          <div
-            id="12:25"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-177,"marginBottom":142,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I12:25;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I12:25;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I12:25;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I12:25;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":8}} className="outerDiv">
-          <div
-            id="12:30"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-142,"marginBottom":107,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I12:30;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I12:30;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I12:30;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I12:30;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":9}} className="outerDiv">
-          <div
-            id="12:35"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-107,"marginBottom":72,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I12:35;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I12:35;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I12:35;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I12:35;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":10}} className="outerDiv">
-          <div
-            id="12:40"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-72,"marginBottom":37,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
-            className="innerDiv"
-          >
-            <div>
-              <div style={{}} className="outerDiv centerer">
-                <div
-                  id="I12:40;9:4"
-                  style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
-                  className="innerDiv"
-                >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
-</svg>
-`}} />
-                </div>
-              </div>
-              <div style={{"zIndex":1}} className="outerDiv centerer">
-                <div
-                  id="I12:40;9:5"
-                  style={{"marginLeft":42,"marginRight":256,"flexGrow":1,"marginTop":8,"marginBottom":10,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":2}} className="outerDiv centerer">
-                <div
-                  id="I12:40;9:6"
-                  style={{"marginLeft":144,"marginRight":120,"flexGrow":1,"marginTop":7,"marginBottom":7,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.LessonName && this.props.LessonName.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.LessonName && (<div>
-                      <span style={{}} key="end">Golden Hours</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-              <div style={{"zIndex":3}} className="outerDiv centerer">
-                <div
-                  id="I12:40;9:8"
-                  style={{"marginLeft":302,"marginRight":8,"flexGrow":1,"marginTop":8,"marginBottom":6,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
-                  className="innerDiv"
-                >
-                  <div>
-                    {this.props.Duration && this.props.Duration.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
-                    {!this.props.Duration && (<div>
-                      <span style={{}} key="end">15 mins</span>
-                    </div>)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div style={{"zIndex":11}} className="outerDiv">
           <div
             id="12:45"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":-37,"marginBottom":2,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
+            style={{"marginLeft":"auto","marginRight":"auto","width":375,"minWidth":320,"height":null,"marginTop":-37,"marginBottom":2,"minHeight":35,"backgroundColor":"rgba(255, 255, 255, 1)","overflow":"hidden"}}
             className="innerDiv"
           >
             <div>
@@ -727,7 +152,7 @@ class ClessonViewer6D1 extends PureComponent {
                   style={{"marginLeft":7,"marginRight":346,"flexGrow":1,"marginTop":8,"marginBottom":9}}
                   className="innerDiv"
                 >
-                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="none" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="vector" dangerouslySetInnerHTML={{__html: `<svg preserveAspectRatio="MidXMidY" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20 0H2C0.89 0 0 0.89 0 2V14C0 15.1 0.89 16 2 16H7V18H15V16H20C21.1 16 21.99 15.1 21.99 14L22 2C22 0.89 21.1 0 20 0ZM20 14H2V2H20V14ZM15 8L8 12V4L15 8Z" fill="black"/>
 </svg>
 `}} />
