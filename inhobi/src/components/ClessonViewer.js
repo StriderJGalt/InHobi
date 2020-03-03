@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { getComponentFromId } from '../figmaComponents';
+import { getComponentFromId } from '../lessonViewer_figmaComponents';
 
 export class ClessonViewer extends PureComponent {
   state = {};
