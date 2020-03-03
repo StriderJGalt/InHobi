@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { MasterlessonViewer, MasterLogIn } from './figmaComponents';
+import { MasterLogIn } from './figmaComponents';
+import { MastertaskPage } from './taskPage_figmaComponents';
+
+
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<MasterLogIn />, document.body);
+ReactDOM.render(<MastertaskPage />, document.body);
 registerServiceWorker();
