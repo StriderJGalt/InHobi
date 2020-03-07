@@ -14,7 +14,7 @@ class ResponsivePlayer extends Component {
       <div className='player-wrapper'>
         <ReactPlayer
           className='react-player'
-          url='./test.mp4'
+          url='https://www.youtube.com/watch?v=ixRKeQMa7Nc'
           width='100%'
           height='100%'
           controls={true}
@@ -52,7 +52,7 @@ class Lesson extends PureComponent {
       <div style={{ "zIndex": 0 }} className="outerDiv">
         <div
           id="12:45"
-          style={{ "marginLeft": "auto", "marginRight": "auto", "width": 375, "minWidth": 320, "height": null, "marginTop": -2, "marginBottom": -40, "minHeight": 0, "backgroundColor": "rgba(255, 255, 255, 1)", "overflow": "hidden" }}
+          style={{ "marginLeft": "auto", "marginRight": "auto", "width": 375, "minWidth": 320, "height": null, "marginTop": -340, "marginBottom": 290, "minHeight": 0, "backgroundColor": "rgba(255, 255, 255, 1)", "overflow": "hidden" }}
           className="innerDiv"
         >
           <div>
@@ -252,12 +252,7 @@ class ClessonViewer6D1 extends PureComponent {
             duration="00:15">
           </Lesson>;
         </div>
-        <div>
-          <Lesson lesson_num="Lesson 1"
-            lesson_name="Golden Hours"
-            duration="00:15">
-          </Lesson>;
-        </div>
+        <div></div>
       </div >
     );
   }

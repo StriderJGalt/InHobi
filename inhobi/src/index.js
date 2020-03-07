@@ -8,5 +8,5 @@ import { MasterlessonViewer } from './lessonViewer_figmaComponents';
 
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<MasterlessonViewer />, document.body);
+ReactDOM.render(<MasterLogIn />, document.body);
 registerServiceWorker();
