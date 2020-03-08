@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { getComponentFromId } from '../figmaComponents';
+import { getComponentFromId } from '../taskFeedbackPage_figmaComponents';
 
 export class CtaskFeedbackPage extends PureComponent {
   state = {};
