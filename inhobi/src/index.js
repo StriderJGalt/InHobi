@@ -12,9 +12,6 @@ import { MasterlessonViewer } from './lessonViewer_figmaComponents';
 
 import registerServiceWorker from './registerServiceWorker';
 
-<<<<<<< HEAD
-ReactDOM.render(<MastertaskFeedbackPage />, document.body);
-=======
 ReactDOM.render(<MasterLogIn />, document.body);
 >>>>>>> 239e5bc9fbef21cedb99217942e402e01e0c5993
 registerServiceWorker();
