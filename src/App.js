@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { MasterLogIn } from './figmaComponents';
+import { MasterLogIn } from './Login_figmaComponents';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import { ProtectedRouteAdmin } from "./route/protectedRouteAdmin";
 import { ProtectedRouteUser } from "./route/protectedRouteUser";
