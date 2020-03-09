@@ -14,6 +14,7 @@ export function getComponentFromId(id) {
   return null;
 }
 
+
 class CLogIn23D55 extends PureComponent {
   render() {
     return (
@@ -27,7 +28,7 @@ class CLogIn23D55 extends PureComponent {
             <div>
               {this.props.Inhobi && this.props.Inhobi.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
               {!this.props.Inhobi && (<div>
-                <span style={{}} key="end">Inhobi</span>
+                <span style={{}} key="end">InHobi</span>
               </div>)}
             </div>
           </div>
