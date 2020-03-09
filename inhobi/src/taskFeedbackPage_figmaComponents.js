@@ -88,7 +88,7 @@ class CtaskFeedbackPage49D1 extends PureComponent {
         <div style={{"zIndex":1}} className="outerDiv">
           <div
             id="49:5"
-            style={{"marginLeft":0,"width":375,"minWidth":375,"height":null,"marginTop":0,"marginBottom":612,"minHeight":55,"backgroundColor":"rgba(0, 0, 0, 0)"}}
+            style={{"marginRight":"auto","marginLeft":"auto","width":375,"minWidth":375,"height":null,"marginTop":0,"marginBottom":612,"minHeight":55,"backgroundColor":"rgba(0, 0, 0, 0)"}}
             className="innerDiv"
           >
             <CtopBar {...this.props} nodeId="49:5" />
@@ -97,7 +97,7 @@ class CtaskFeedbackPage49D1 extends PureComponent {
         <div style={{}} className="outerDiv">
           <div
             id="49:2"
-            style={{"marginLeft":78,"width":219,"minWidth":219,"height":null,"marginTop":-578,"marginBottom":0,"minHeight":48,"color":"rgba(58, 21, 127, 1)","fontSize":34,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.085px"}}
+            style={{"marginRight":"auto","marginLeft":"auto","width":219,"minWidth":219,"height":null,"marginTop":-578,"marginBottom":0,"minHeight":48,"color":"rgba(58, 21, 127, 1)","fontSize":34,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.085px"}}
             className="innerDiv"
           >
             <div>
@@ -111,17 +111,13 @@ class CtaskFeedbackPage49D1 extends PureComponent {
         <div style={{"zIndex":3}} className="outerDiv">
           <div
             id="49:17"
-            style={{"marginLeft":112,"width":150,"minWidth":150,"height":null,"marginTop":-386,"marginBottom":346,"minHeight":40,"backgroundColor":"rgba(248, 176, 62, 1)","borderRadius":"10px 10px 10px 10px"}}
+            style={{"marginRight":"auto","marginLeft":"auto","width":150,"minWidth":150,"height":null,"marginTop":-386,"marginBottom":346,"minHeight":40,"backgroundColor":"rgba(248, 176, 62, 1)","borderRadius":"10px 10px 10px 10px"}}
             className="innerDiv"
           >
             <div>
-            </div>
-          </div>
-        </div>
-        <div style={{"zIndex":4}} className="outerDiv">
-          <div
+            <div
             id="49:19"
-            style={{"marginLeft":123,"width":129,"minWidth":129,"height":null,"marginTop":-377,"marginBottom":360,"minHeight":17,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
+            style={{"marginRight":"auto","marginLeft":"auto","width":129,"minWidth":129,"height":null,"marginTop":10,"marginBottom":5,"minHeight":17,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
             className="innerDiv"
           >
             <div>
@@ -129,11 +125,25 @@ class CtaskFeedbackPage49D1 extends PureComponent {
               <br key="br13" />
             </div>
           </div>
+            </div>
+          </div>
         </div>
+        {/* <div style={{"zIndex":4}} className="outerDiv"> */}
+          {/* <div
+            id="49:19"
+            style={{"marginRight":"auto","marginLeft":"auto","width":129,"minWidth":129,"height":null,"marginTop":-377,"marginBottom":360,"minHeight":17,"color":"rgba(0, 0, 0, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"CENTER","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
+            className="innerDiv"
+          >
+            <div>
+              <span style={{}} key="13">Download File</span>
+              <br key="br13" />
+            </div>
+          </div> */}
+        {/* </div> */}
         <div style={{"zIndex":5}} className="outerDiv">
           <div
             id="49:20"
-            style={{"marginLeft":130,"width":115,"minWidth":115,"height":null,"marginTop":-335,"marginBottom":309,"minHeight":26,"color":"rgba(58, 21, 127, 1)","fontSize":24,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.12px"}}
+            style={{"marginRight":"auto","marginLeft":"auto","width":115,"minWidth":115,"height":null,"marginTop":-335,"marginBottom":309,"minHeight":26,"color":"rgba(58, 21, 127, 1)","fontSize":24,"fontWeight":400,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.12px"}}
             className="innerDiv"
           >
             <div>
@@ -144,17 +154,16 @@ class CtaskFeedbackPage49D1 extends PureComponent {
         <div style={{"zIndex":6}} className="outerDiv">
           <div
             id="49:22"
-            style={{"marginLeft":15,"width":344,"minWidth":344,"height":null,"marginTop":-302,"marginBottom":72,"minHeight":230,"backgroundColor":"rgba(255, 255, 255, 1)","borderRadius":"20px 20px 20px 20px"}}
+            style={{"marginRight":"auto","marginLeft":"auto","width":344,"minWidth":344,"height":null,"marginTop":-302,"marginBottom":72,"minHeight":230,"backgroundColor":"rgba(255, 255, 255, 1)","borderRadius":"20px 20px 20px 20px"}}
             className="innerDiv"
           >
-            <div>
-            </div>
+            <textarea rows={15} cols={24} style={{"border-style":"none","marginRight":"auto","marginLeft":8,"width":328}} type="text" />
           </div>
         </div>
         <div style={{"zIndex":7}} className="outerDiv">
           <div
             id="50:155"
-            style={{"marginLeft":38,"width":299,"minWidth":299,"height":null,"marginTop":-57,"marginBottom":17,"minHeight":40,"backgroundColor":"rgba(0, 0, 0, 0)","overflow":"hidden"}}
+            style={{"marginRight":"auto","marginLeft":"auto","width":299,"minWidth":299,"height":null,"marginTop":-57,"marginBottom":17,"minHeight":40,"backgroundColor":"rgba(0, 0, 0, 0)","overflow":"hidden"}}
             className="innerDiv"
           >
             <div>
@@ -175,6 +184,15 @@ class CtaskFeedbackPage49D1 extends PureComponent {
                   className="innerDiv"
                 >
                   <div>
+                  <div
+                  id="49:28"
+                  style={{"marginLeft":20,"width":120,"minWidth":104,"height":null,"marginTop":7,"marginBottom":11,"minHeight":19,"color":"rgba(255, 255, 255, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
+                  className="innerDiv"
+                >
+                  <div>
+                    <span style={{}} key="end">Lock Lesson</span>
+                  </div>
+                </div>
                   </div>
                 </div>
               </div>
@@ -190,7 +208,7 @@ class CtaskFeedbackPage49D1 extends PureComponent {
                 </div>
               </div>
               <div style={{"zIndex":4}} className="outerDiv">
-                <div
+                {/* <div
                   id="49:28"
                   style={{"marginLeft":177,"width":104,"minWidth":104,"height":null,"marginTop":-30,"marginBottom":11,"minHeight":19,"color":"rgba(255, 255, 255, 1)","fontSize":18,"fontWeight":500,"fontFamily":"Roboto","textAlign":"LEFT","fontStyle":"normal","lineHeight":"125%","letterSpacing":"0.135px"}}
                   className="innerDiv"
@@ -198,7 +216,7 @@ class CtaskFeedbackPage49D1 extends PureComponent {
                   <div>
                     <span style={{}} key="end">Lock Lesson</span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
