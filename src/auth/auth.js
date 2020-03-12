@@ -7,7 +7,7 @@ class Auth {
     constructor() {
         this.authenticated = false;
         this.user = false;
-        this.userid = '',
+        this.userid = '';
         this.admin = false;
         this.token = '';
         this.firstname = '';
