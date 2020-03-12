@@ -29,12 +29,20 @@ class Auth {
         client.post("http://68.183.95.58/moodle/login/token.php", args, function(data,response) {
             if (response["errorcode"]!='invalidlogin'){
                 this.authenticated = true;
-                this.user = true;
                 this.token = response["token"];
                 this.siteinfo = get_site_info(this.token);
                 this.firstname = this.siteinfo["firstname"];
                 this.lastname = this.siteinfo["lastname"];
                 this.userid = this.siteinfo["userid"];
+
+                if (this.siteinfo["userissiteadmin"]=='true'){
+                    this.admin = true;
+                    this.user = false;
+                }
+                else {
+                    this.user = true;
+                    this.admin = false;
+                }
             }
         });
     }
