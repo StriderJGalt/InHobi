@@ -40,6 +40,8 @@ class Auth {
     }
 
     logout(callback){
+        this.authenticated = false;
+        this.token = '';
         callback();
     }
 
@@ -57,6 +59,13 @@ class Auth {
 
     getToken(){
         return this.token;
+    }
+
+    getName(){
+        return {
+            "fname": this.firstname,
+            "lname": this.lname
+        }
     }
 }
 
