@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { CLogIn } from './components/CLogIn';
+import Auth from './auth/auth';
 
 export class MasterLogIn extends PureComponent {
   render() {
@@ -26,6 +27,10 @@ class CLogIn23D55 extends PureComponent {
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
+
+  onSubmit(){
+    console.log("submits!");
+  }
 
   render() {
     return (
@@ -168,7 +173,7 @@ class CLogIn23D55 extends PureComponent {
             </div>
           </div>
         </div>
-        <div style={{ "zIndex": 1 }} className="outerDiv">
+        <div style={{ "zIndex": 1 }} className="outerDiv"  onClick={console.log('hello')}>
           <div
             id="23:142"
             style={{ "marginLeft": "auto", "marginRight": "auto", "minWidth": 99.04102325439453, "height": null, "marginTop": -166.8358917236328, "marginBottom": 134.5640983581543, "minHeight": 32.271793365478516, "color": "rgba(255, 255, 255, 1)", "fontSize": 20.03076934814453, "fontWeight": 500, "fontFamily": "Roboto", "textAlign": "CENTER", "fontStyle": "normal", "lineHeight": "125%", "letterSpacing": "0.150230770111084px" }}
@@ -176,7 +181,7 @@ class CLogIn23D55 extends PureComponent {
           >
             <div>
               <button style={{ "background-color": "transparent", "border-color": "transparent", "color": "white", "fontSize": 20, "fontWeight": 500, "fontFamily": "Roboto" }} key="end">
-                Submit
+                Sign In
               </button>
             </div>
           </div>

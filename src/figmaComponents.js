@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { CLogIn } from './components/CLogIn';
+import Auth from './auth/auth';
 
 export class MasterLogIn extends PureComponent {
   render() {
@@ -16,6 +17,24 @@ export function getComponentFromId(id) {
 
 
 class CLogIn23D55 extends PureComponent {
+    constructor() {
+        super();
+        this.state = {
+            username: "",
+            password: "",
+        };
+
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    handleChange = ({ target }) => {
+        this.setState({ [target.name]: target.value });
+    };
+
+    onSubmit(e){
+        e.preventDefault();
+        Auth.login(this.state.username, this.state.password);
+    }
   render() {
     return (
       <div>
@@ -74,7 +93,7 @@ class CLogIn23D55 extends PureComponent {
                     <form>
                       {/* <label for="fname">Username:</label> */}
                       <br />
-                      <input type="text" id="username" placeholder="Username" name="username" />
+                      <input type="text" id="username" placeholder="Username" name="username" value={this.state.username} onChange={this.handleChange} />
                       <br />
                     </form>
                   </div>
@@ -124,7 +143,7 @@ class CLogIn23D55 extends PureComponent {
                       <form>
                         {/* <label for="lname">Password:</label> */}
                         <br />
-                        <input type="password" placeholder="Password" id="password" name="password" />
+                        <input type="password" placeholder="Password" id="password" name="password" value={this.state.password} onChange={this.handleChange}/>
                       </form>
                     </div>)}
                   </div>
@@ -162,7 +181,7 @@ class CLogIn23D55 extends PureComponent {
             className="innerDiv"
           >
             <div>
-              <button style={{"background-color": "transparent","border-color": "transparent","color":"white","fontSize":20,"fontWeight":500,"fontFamily":"Roboto"}} key="end">
+              <button type="submit" onClick={this.onSubmit} style={{"background-color": "transparent","border-color": "transparent","color":"white","fontSize":20,"fontWeight":500,"fontFamily":"Roboto"}} key="end">
                 Submit
               </button>
             </div>
