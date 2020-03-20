@@ -105,12 +105,31 @@ body {
     margin: 0px;
     margin-top: 4px;
 }
+
 .course-group-button {
     grid-column: 4 / span 1;
     background-color: #7300C7;
     border-radius: 8px;
     margin: 0px 8px 8px 0px;
-    font-size: 0.5rem;
-    text-align: center;
+    font-size: 0.6rem;
+    font-weight: 400;
     padding-top: 4px;
 }
+
+a.notif {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: url('./group-24px.svg');
+    background-size: contain;
+    text-decoration: none;
+  }
+  .num {
+    position: absolute;
+    left: 27px;
+    top: -3px;
+    color: #fff;
+  }
