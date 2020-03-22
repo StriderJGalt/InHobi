@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path="/" component={MasterCMDashboard} />
+        <Route exact path="/" component={MasterLogIn} />
         <ProtectedRouteUser exact path="/lesson" component={MasterlessonViewer} />
         <ProtectedRouteAdmin exact path="/admin" component={MasterCMDashboard} />
         <ProtectedRouteUser exact path="/task" component={MastertaskPage} />

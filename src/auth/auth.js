@@ -1,6 +1,4 @@
 import React from "react";
-import get_site_info from "../api/site";
-
 let Client = require('node-rest-client').Client;
 let client =    new Client();
 class Auth {
