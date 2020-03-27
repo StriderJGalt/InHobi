@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { getComponentFromId } from '../figmaComponents';
+import { getComponentFromId } from '../taskPage_figmaComponents';
 
-export class Ctopbar extends PureComponent {
+export class CtopBar extends PureComponent {
   state = {};
 
   render() {
