@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 let Client = require('node-rest-client').Client;
 let client =    new Client();
 class Auth {
@@ -13,34 +15,30 @@ class Auth {
         this.siteinfo = {};
     }
 
-    login(username, password){
+    login(username, password, props){
+        
         const args = {
-            data: {
-                username: username,
-                password: password,
-                service: "moodle_mobile_app"
-            },
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-        client.post("http://68.183.95.58/moodle/login/token.php", args, function(data,response) {
-            if (response["errorcode"]!='invalidlogin'){
-                this.authenticated = true;
-                this.token = response["token"];
-                this.siteinfo = get_site_info(this.token);
-                this.firstname = this.siteinfo["firstname"];
-                this.lastname = this.siteinfo["lastname"];
-                this.userid = this.siteinfo["userid"];
-
-                if (this.siteinfo["userissiteadmin"]=='true'){
-                    this.admin = true;
-                    this.user = false;
-                }
-                else {
-                    this.user = true;
-                    this.admin = false;
-                }
+            username: username,
+            password: password
+        };
+        var bis = this;
+        axios.post('http://localhost:8080/login', args).then(function(response){
+            if(response.errorcode!='invalidlogin'){
+                bis.authenticated = true;
+                bis.token = response.data.token;
+                bis.user = true;
+                bis.admin = false;
+                axios.post('http://localhost:8080/site/site_info',{wstoken:bis.token}).then(function(site_info_response){
+                    bis.firstname = site_info_response.data.firstname;
+                    bis.lastname = site_info_response.data.lastname;
+                    bis.userid = site_info_response.data.userid;
+                    bis.siteinfo = site_info_response.data;
+                    if(site_info_response.userissiteadmin==true){
+                        bis.admin = true;
+                        bis.user = false;
+                    }
+                });
+                
             }
         });
     }

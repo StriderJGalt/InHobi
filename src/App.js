@@ -9,6 +9,8 @@ import { MastertaskPage } from "./taskPage_figmaComponents";
 import { ProtectedRouteAdmin } from "./route/protectedRouteAdmin";
 import { ProtectedRouteUser } from "./route/protectedRouteUser";
 import { MastertaskFeedbackPage } from './taskFeedbackPage_figmaComponents';
+import { createBrowserHistory } from 'history';
+export const history = createBrowserHistory;
 
 function App() {
   return (
@@ -17,7 +19,6 @@ function App() {
         <Route exact path="/" component={MasterLogIn} />
         <ProtectedRouteUser exact path="/lesson" component={MasterlessonViewer} />
         <ProtectedRouteAdmin exact path="/admin" component={MasterCMDashboard} />
-        <ProtectedRouteUser exact path="/task" component={MastertaskPage} />
       </BrowserRouter>
     </div>
   );

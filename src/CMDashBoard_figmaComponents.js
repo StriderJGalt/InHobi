@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import { CCMDashboard } from './components/CCMDashboard';
+import axios from 'axios';
+import Auth from './auth/auth';
 
 export class MasterCMDashboard extends PureComponent {
   render() {
@@ -20,7 +22,7 @@ class SubmissionCard extends PureComponent {
       this.Username = props.Username;
     }
     else {
-      this.Username = "adarsh";
+      this.Username = "rahul";
     }
     
     if (props.TaskNumber) {
@@ -34,8 +36,9 @@ class SubmissionCard extends PureComponent {
       this.Time = props.Time;
     }
     else {
-      this.Time = "4h 26m";
+      this.Time = "";
     }
+
 }
   render() {
     return ( 
@@ -66,7 +69,7 @@ class SubmissionCard extends PureComponent {
                         <div>
                           {this.props.Task3 && this.props.Task3.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
                           {!this.props.Task3 && (<div>
-                            <span style={{}} key="end">Task {this.TaskNumber}</span>
+                            <span style={{}} key="end">Task 1</span>
                           </div>)}
                         </div>
                       </div>
@@ -170,7 +173,6 @@ class CCMDashboard22D14 extends PureComponent {
           </div>
         </div>
         <SubmissionCard />
-        <SubmissionCard Username="yo" />
       </div>
     );
   }

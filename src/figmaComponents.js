@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { CLogIn } from './components/CLogIn';
 import Auth from './auth/auth';
+import { browserHistory } from 'react-router';
 
 export class MasterLogIn extends PureComponent {
   render() {
@@ -34,6 +35,7 @@ class CLogIn23D55 extends PureComponent {
     onSubmit(e){
         e.preventDefault();
         Auth.login(this.state.username, this.state.password);
+        return  
     }
   render() {
     return (

@@ -14,7 +14,7 @@ class ResponsivePlayer extends Component {
       <div className='player-wrapper'>
         <ReactPlayer
           className='react-player'
-          url='https://www.youtube.com/watch?v=ixRKeQMa7Nc'
+          url='https://youtu.be/PPLop4L2eGk'
           width='100%'
           height='100%'
           controls={true}
@@ -43,8 +43,8 @@ class Lesson extends PureComponent {
     super(props);
     this.state = {
       lesson_num: "Lesson 1",
-      lesson_name: "Golden Hours",
-      duration: "00:15",
+      lesson_name: "Introduction to Machine Learning",
+      duration: "07:14",
     };
   }
   render() {
@@ -250,7 +250,7 @@ class ClessonViewer6D1 extends PureComponent {
           <Lesson lesson_num="Lesson 1"
             lesson_name="Golden Hours"
             duration="00:15">
-          </Lesson>;
+          </Lesson>
         </div>
         <div></div>
       </div >
