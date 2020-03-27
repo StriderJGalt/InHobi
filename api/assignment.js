@@ -48,4 +48,19 @@ router.get('/submission_status', function(req, res, next){
         res.send(response.data);
     }).catch((err) => console.log(err));
 });
+
+router.get('/submit_assignment', (req, res, next) => {
+    api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
+    api_base=api_base.concat(`assignid=${req.body.assign_id}`);
+    api_base=api_base.concat(`&plugindata=${req.body.plugindata[onlinetext_editor][text]}`);
+    api_base=api_base.concat(`&moodlewssettingfilter=true`);
+    api_base=api_base.concat(`&moodlewssettingfileurl=true`);
+    api_base=api_base.concat(`&wsfunction=mod_assign_save_submission`);
+    api_base=api_base.concat(`&wstoken=${req.body.wstoken}`);
+
+    axios.post(api_base, args).then(function(response){
+        res.send(response.data);
+    }).catch((err) => console.log(err));
+});
+
 module.exports = router;
