@@ -123,7 +123,7 @@ a.notif {
     display: block;
     height: 30px;
     width: 30px;
-    background: url('./group-24px.svg');
+    background: url('../images/group-24px.svg');
     background-size: contain;
     text-decoration: none;
   }
