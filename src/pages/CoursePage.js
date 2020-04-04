@@ -1,9 +1,9 @@
 import React,{ Component } from 'react'
-import './CoursePage.css'
-import course_icon from './camera_web.jpg'
-import group_icon from './group-24px.svg'
+import '../css/CoursePage.css'
+import course_icon from '../images/camera_web.jpg'
+import group_icon from '../images/group-24px.svg'
 
-export default class CoursePage extends Component {
+export class CoursePage extends Component {
     render() {
         return (
             <div className="page_container">

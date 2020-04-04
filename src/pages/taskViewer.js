@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { ClessonViewer } from './components/ClessonViewer';
+import { ClessonViewer } from '../components/ClessonViewer';
 import { Component } from 'react'
 import ReactPlayer from 'react-player'
 

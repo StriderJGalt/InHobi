@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { CLogIn } from './components/CLogIn';
-import Auth from './auth/auth';
+import { CLogIn } from '../components/CLogIn';
+import Auth from '../auth/auth';
 
 export class MasterLogIn extends PureComponent {
   render() {

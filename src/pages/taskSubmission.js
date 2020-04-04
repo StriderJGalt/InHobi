@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { CtopBar } from './components/CtopBar';
-import { CtaskPage } from './components/CtaskPage';
+import { CtopBar } from '../components/CtopBar';
+import { CtaskPage } from '../components/CtaskPage';
 
 export class MastertaskPage extends PureComponent {
   render() {

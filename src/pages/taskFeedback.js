@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { CtopBar } from './components/CtopBar';
-import { CtaskFeedbackPage } from './components/CtaskFeedbackPage';
+import { CtopBar } from '../components/CtopBar';
+import { CtaskFeedbackPage } from '../components/CtaskFeedbackPage';
 
 export class MastertaskFeedbackPage extends PureComponent {
   render() {

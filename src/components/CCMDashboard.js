@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { getComponentFromId } from '../CMDashBoard_figmaComponents';
+import { getComponentFromId } from '../pages/CMDashboard';
 
 export class CCMDashboard extends PureComponent {
   state = {};

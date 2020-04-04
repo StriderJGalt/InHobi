@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import '../css/index.css';
+import App from '../App';
 import CoursePage from './CoursePage';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from '../worker/serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<CoursePage />, document.getElementById('root'));      //testing

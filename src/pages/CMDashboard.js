@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { CCMDashboard } from './components/CCMDashboard';
+import { CCMDashboard } from '../components/CCMDashboard';
 import axios from 'axios';
-import Auth from './auth/auth';
+import Auth from '../auth/auth';
 
 export class MasterCMDashboard extends PureComponent {
   render() {
