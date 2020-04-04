@@ -25,7 +25,7 @@ class ResponsivePlayer extends Component {
 }
 
 
-export class MasterlessonViewer extends PureComponent {
+export default class MasterlessonViewer extends PureComponent {
   render() {
     return <div className="master" style={{ backgroundColor: "rgba(255, 255, 255, 1)" }}>
       <ClessonViewer {...this.props} nodeId="6:1" />
@@ -120,6 +120,23 @@ class Lesson extends PureComponent {
 
 
 class ClessonViewer6D1 extends PureComponent {
+
+  constructor(props) {
+    super(props);
+
+    this.coursePlanClick = this.coursePlanClick.bind(this);
+    this.lessonsClick = this.lessonsClick.bind(this);
+  }
+
+  coursePlanClick() {
+    console.log("check123")
+    alert("what")
+  }
+
+  lessonsClick() {
+    alert("LESSON");
+  }
+
   render() {
     return (
       <div>
@@ -173,7 +190,7 @@ class ClessonViewer6D1 extends PureComponent {
                   <div>
                     {this.props.Lesson && this.props.Lesson.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
                     {!this.props.Lesson && (<div>
-                      <span style={{}} key="end">Lesson 1</span>
+                      <span style={{}} key="end" >Lesson 1</span>
                     </div>)}
                   </div>
                 </div>
@@ -204,9 +221,6 @@ class ClessonViewer6D1 extends PureComponent {
                   style={{ "marginLeft": 11, "marginRight": 11, "flexGrow": 1, "marginTop": 0, "marginBottom": 5, "color": "rgba(255, 255, 255, 1)", "fontSize": 24, "fontWeight": 400, "fontFamily": "Roboto", "textAlign": "CENTER", "fontStyle": "normal", "lineHeight": "125%", "letterSpacing": "0.12px" }}
                   className="innerDiv"
                 >
-                  <div>
-                    <span style={{ "border-bottom": "2px solid white", "paddingBottom": "2px" }} key="end">Course Plan</span>
-                  </div>
                 </div>
               </div>
               <div style={{ "zIndex": 1 }} className="outerDiv centerer">
@@ -239,7 +253,22 @@ class ClessonViewer6D1 extends PureComponent {
                   className="innerDiv"
                 >
                   <div>
-                    <span style={{}} key="end">Group</span>
+                    <button 
+                    style={{ "marginLeft": 11, "marginRight": 11, "flexGrow": 1, "marginTop": 0, "marginBottom": 5, "fontSize": 24, "fontWeight": 400, "fontFamily": "Roboto", "textAlign": "CENTER", "fontStyle": "normal", "lineHeight": "125%", "letterSpacing": "0.12px"}}
+                    key="end" 
+                    onClick={this.coursePlanClick}
+                    >
+                      Course Plan
+                    </button>
+
+                    <button 
+                    style={{ "marginLeft": 11, "marginRight": 11, "flexGrow": 1, "marginTop": 0, "marginBottom": 5, "fontSize": 24, "fontWeight": 400, "fontFamily": "Roboto", "textAlign": "CENTER", "fontStyle": "normal", "lineHeight": "125%", "letterSpacing": "0.12px"}}
+                    key="end" 
+                    onClick={this.lessonsClick}
+                    >
+                      Lessons
+                    </button>
+                    
                   </div>
                 </div>
               </div>
