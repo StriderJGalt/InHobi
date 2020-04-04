@@ -152,7 +152,7 @@ class CCMDashboard22D14 extends PureComponent {
                         <div>
                           {this.props.Assignments && this.props.Assignments.split("\n").map((line, idx) => <div key={idx}>{line}</div>)}
                           {!this.props.Assignments && (<div>
-                            <span style={{}} key="end">Assigments</span>
+                            <span style={{}} key="end">Assignments</span>
                           </div>)}
                         </div>
                       </div>
