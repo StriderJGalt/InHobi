@@ -5,6 +5,18 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../css/login.css'
 
 export class MasterLogIn extends PureComponent {
+
+  constructor (props) {
+    super(props)
+
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  onSubmit() {
+    // Submit Logic
+    alert("login!")
+  }
+
   render() {
     return (
       <div>
@@ -13,7 +25,7 @@ export class MasterLogIn extends PureComponent {
         <h3 style={{color: '#9180FF'}}> Caption To Be Inserted </h3>
       </div>
 
-      <form class="login_form">
+      <form class="login_form" onSubmit={this.onSubmit}>
           <h3>Sign In</h3>
 
           <div className="form-group">
@@ -26,12 +38,16 @@ export class MasterLogIn extends PureComponent {
               <input type="password" className="form-control" placeholder="Enter password" />
           </div>
 
-          <div className="form-group">
+          
+          {/* 
+            REMEMBER ME CHECKBOX
+
+            <div className="form-group">
               <div className="custom-control custom-checkbox">
                   <input type="checkbox" className="custom-control-input" id="customCheck1" />
                   <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
               </div>
-          </div>
+          </div> */}
 
           <button type="submit" className="btn btn-primary btn-block">Submit</button>
           <p className="forgot-password text-right">
