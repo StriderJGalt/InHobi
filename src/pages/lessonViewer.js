@@ -25,7 +25,7 @@ class ResponsivePlayer extends Component {
 }
 
 
-export default class MasterlessonViewer extends PureComponent {
+export class MasterlessonViewer extends PureComponent {
   render() {
     return <div className="master" style={{ backgroundColor: "rgba(255, 255, 255, 1)" }}>
       <ClessonViewer {...this.props} nodeId="6:1" />

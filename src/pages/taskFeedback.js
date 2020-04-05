@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { CtopBar } from '../components/CtopBar';
 import { CtaskFeedbackPage } from '../components/CtaskFeedbackPage';
 
-export class MastertaskFeedbackPage extends PureComponent {
+export default class MastertaskFeedbackPage extends PureComponent {
   render() {
     return <div className="master" style={{ backgroundColor: "rgba(246, 243, 250, 1)" }}>
       <CtaskFeedbackPage {...this.props} nodeId="49:1" />
@@ -87,7 +87,7 @@ class CtopBar49D5 extends PureComponent {
               className="innerDiv"
             >
 
-              <button style={{ "background-color": "transparent", "border-color": "transparent", "color": "white", "fontSize": 20, "fontWeight": 500, "fontFamily": "Roboto" }} key="end">
+            <button style={{ "background-color": "transparent", "border-color": "transparent", "color": "white", "fontSize": 20, "fontWeight": 500, "fontFamily": "Roboto" }} key="end">
                 SUBMIT
             </button>
             </div>
