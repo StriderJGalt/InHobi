@@ -94,13 +94,13 @@ class Task extends Component {
     render() {
         return (
             <div className='container' >
-                    <h3 className='course-name' >
+                    <h3 className='course_name' >
                         {this.props.course_name}
                     </h3>
-                    <h2 className='task-name'>
+                    <h2 className='task_name'>
                         {this.props.task_name}
                     </h2>
-                    <h5 className='task-content'>
+                    <h5 className='task_content'>
                         {this.props.task_content}
                     </h5>
             </div>
