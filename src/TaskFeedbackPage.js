@@ -22,7 +22,7 @@ export class FeedbackCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            task_name = this.props.task_name
+            task_name: this.props.task_name
         }
     }
     render() {
