@@ -1,7 +1,7 @@
-import React,{ Component } from 'react'
+import React, { Component } from 'react'
 import '../css/CoursePage.css'
-import course_icon from '../images/camera_web.jpg'
-import group_icon from '../images/group-24px.svg'
+import course_icon from '../css/camera_web.jpg'
+import group_icon from '../css/group-24px.svg'
 
 export class CoursePage extends Component {
     render() {
@@ -34,23 +34,23 @@ class Course extends Component {
     render() {
         return (
             <div className='course' >
-                    <div className='course-icon' >
-                        <img src={this.props.img} />
+                <div className='course-icon' >
+                    <img src={this.props.img} />
+                </div>
+                <div className='course-details'>
+                    <p className='course-name'>{this.props.course_name}</p>
+                    <p className='course-instructor'>{this.props.instructor}</p>
+                </div>
+                <div className='course-progress'>
+                    <div className='course-progress-bar'>
+                        <span className='course-progress-bar-done' style={{ 'width': this.state.progress + '%' }}></span>
                     </div>
-                    <div className='course-details'>
-                        <p className='course-name'>{this.props.course_name}</p>
-                        <p className='course-instructor'>{this.props.instructor}</p>
-                    </div>
-                    <div className='course-progress'>
-                        <div className='course-progress-bar'>
-                            <span className='course-progress-bar-done' style={{'width': this.state.progress + '%'}}></span>
-                        </div>
-                        <p>{this.state.progress}% completed</p>
-                    </div>
-                    <div className='course-group-button'>
-                        {/* <img src={group_icon} /> */}
-                        <a href="#" class="notif"><span class="num">{this.state.notifications}</span></a>
-                    </div>
+                    <p>{this.state.progress}% completed</p>
+                </div>
+                <div className='course-group-button'>
+                    {/* <img src={group_icon} /> */}
+                    <a href="#" class="notif"><span class="num">{this.state.notifications}</span></a>
+                </div>
             </div>
         )
     }
