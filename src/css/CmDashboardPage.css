@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
+
+body {
+    background-color: #F7F1FA;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+.container {
+    z-index: 1;
+    margin-top: 88px;
+    padding-top: 8px;
+}
+
+.task_card {
+    background-color: white;
+    border-radius: 15px;
+    margin: 8px;
+    margin-top: 0px;
+    padding: 8px;
+    height: 50px;
+    display: flex;
+}
+
+.task_card > .left {
+    width: 50%;
+}
+
+.task_card > .left > h3 {
+    font-size: 24px;
+    color: #6129CB;
+    margin: 0px;
+}
+
+.task_card > .left > p {
+    font-size: 14px;
+    color: grey;
+    margin: 0px;
+}
+
+.task_card > .right {
+    width: 50%;
+    text-align: center;
+}
+
+.task_card > .right > h4 {
+    margin: 9px auto;
+    font-size: 28px;
+}

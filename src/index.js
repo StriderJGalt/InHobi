@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
 //import App from './App';
-import TaskFeedbackPage from './TaskFeedbackPage';
-import { TaskPage } from './taskpage';
+import TaskFeedbackPage from './pages/TaskFeedbackPage';
+import { TaskPage } from './pages/taskpage';
 import CoursePage from './pages/CoursePage';
-import { TaskSub } from './taskSubmission';
+import CmDashboardPage from './pages/CmDashboardPage';
+import { TaskSub } from './pages/taskSubmission';
 import * as serviceWorker from './worker/serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<TaskPage />, document.getElementById('root'));
+ReactDOM.render(<CmDashboardPage />, document.getElementById('root'));
 
 // ReactDOM.render(<CoursePage />, document.getElementById('root'));      //testing
 

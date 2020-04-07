@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './css/TaskFeedbackPage.css'
-import { TitleBar, TabBar, BottomNavBar } from './Bars.js'
+import '../css/TaskFeedbackPage.css'
+import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
 
 export default class TaskFeedbackPage extends Component {
     render() {
