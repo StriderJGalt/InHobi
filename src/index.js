@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
-import App from './App';
+//import App from './App';
 import { TaskPage } from './taskpage';
 import CoursePage from './pages/CoursePage';
+import { TaskSub } from './taskSubmission';
 import * as serviceWorker from './worker/serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-//ReactDOM.render(<TaskPage />, document.getElementById('root'));
+//ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<TaskSub />, document.getElementById('root'));
 
 // ReactDOM.render(<CoursePage />, document.getElementById('root'));      //testing
 

@@ -1,35 +1,20 @@
 import React,{ Component } from 'react'
-import './css/taskpage.css'
-import upload_icon from './css/upload_icon.png'
+import './css/taskSubmission.css'
+//import upload_icon from './css/upload_icon.png'
+import { TitleBar, TabBar, BottomNavBar } from './Bars.js'
 
-export class TaskPage extends Component {
+export class TaskSub extends Component {
     render() {
         return (
             <div className="page_container">
                 <div className="top_bars">
                     <TitleBar title="Practice" />
-                    <nav class="tab_bar">
-                        <a class="nav-item" href="#">Task</a>
-                        <a class="nav-item selected" href="#">Submission</a>
-                    </nav>
+                    <TabBar tabs={{"Task":false,"Submissions":true}}/>
                 </div>    
-                <BottomNavBar />
-                <div class="container">
-                    <h2>Submission Instructions</h2>
-                    <p><Sub ins="Select each photo and save with low quality setting so that file size is less
+                <Sub ins="Select each photo and save with low quality setting so that file size is less.
                     Compress the five photos toether into a zip file before uploading. 
                     Total file size must be less than 25MB" />
-                    </p>
-                    <div class="com_up">
-                        <div class="comments">
-                            <textarea name="comments" placeholder="Comments"></textarea>
-                        </div>
-                        <div class="upload">
-                            {upload_icon}
-                            Upload
-                        </div>
-                    </div>
-                </div>
+                <BottomNavBar />
             </div>
         )
     }
@@ -38,16 +23,17 @@ export class TaskPage extends Component {
 class Sub extends Component {
     render() {
         return (
-            <div className='content' >
-                    <h3 className='course_name' >
-                        {this.props.ins}
-                    </h3>
-                    <h2 className='task_name'>
-                        {this.props.task_name}
-                    </h2>
-                    <h5 className='task_content'>
-                        {this.props.task_content}
-                    </h5>
+            <div class='container' >
+                <h2>Submission Instructions</h2>
+                <p>{this.props.ins}</p>
+                <div class="com_up">
+                    <div class="comments">
+                        <textarea name="comments" placeholder="Comments"></textarea>
+                    </div>
+                    <div class="upload">
+                        Upload
+                    </div>
+                </div>
             </div>
         )
     }
