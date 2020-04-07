@@ -1,14 +1,57 @@
-import React, { PureComponent } from 'react';
-import { Component } from 'react'
-import ReactAwesomePlayer from 'react-awesome-player'
-import '../css/lessonViewer.css'
+import React, { Component } from 'react';
+import ReactAwesomePlayer from 'react-awesome-player';
+import '../css/lessonViewer.css';
+import { Table, TableRow, TableCell } from '@material-ui/core';
 
-export default class lessonViewerPage extends Component {
+export default class MasterlessonViewer extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.click = this.click.bind(this)
+  }
+
+  click() {
+    alert("test")
+  }
+
+  render () {
+    
+
+    return (
+    <div class="">
+      <ReactPlayer />
+
+      <div class="playerTitle">
+          <b>Now Playing:</b> Lesson # - Lesson Description
+      </div>
+
+      <div class="inner">
+        <div class="lessonButtonDiv">
+          <div class="lessonButton">
+            <button> Lesson Plan </button>
+          </div>
+            
+          <div class="lessonButton">
+            <button> Group </button>
+          </div>
+        </div>
+
+        <Table class="lessonTable">
+          <LessonRow lessonNumber="Lesson 1" lessonName="Test Lesson" time="10 Mins" click={this.click}/>
+          <LessonRow lessonNumber="Lesson 2" lessonName="Test Lesson Long Description" time="10000 Mins" click={this.click}/>
+        </Table>
+      </div>
+    </div>)
+  }
+}
+
+class ReactPlayer extends Component {
 
   constructor(props) {
     super(props)
   }
-  
+
   state = {
     options: {
       poster: "http://pic2.52pk.com/files/130514/1283314_143556_2145.jpg",
@@ -59,8 +102,8 @@ export default class lessonViewerPage extends Component {
 
   render () {
     const { options } = this.state
+
     return (
-    <div class="">
       <div class="player">
         <ReactAwesomePlayer
           options={options}
@@ -75,41 +118,24 @@ export default class lessonViewerPage extends Component {
           error={this.error}
         />
       </div>
-
-      <div class="playerTitle">
-          <b>Now Playing:</b> Lesson # - Lesson Description
-      </div>
-
-      <div class="lessonButtonDiv">
-        <div class="lessonButton">
-          <button> Lesson Plan </button>
-        </div>
-          
-        <div class="lessonButton">
-          <button> Group </button>
-        </div>
-      </div>
-
-      <div class="lessonTable">
-        <lessonRow lessonNumber="Lesson 1" lessonName="Test Lesson" time="10 Mins"> Hi </lessonRow>
-      </div>
-    </div>)
+    )
   }
 }
 
-class lessonRow extends Component {
+class LessonRow extends Component {
   constructor(props) {
     super(props)
   }
 
   render() {
     return (
-      <div class="lessonRow">
-        <button> Img </button>
-        <button> {this.props.lessonNumber} </button>
-        <button> {this.props.lessonName} </button>
-        <span> {this.props.time} </span>
-      </div>
+      <TableRow class="lessonRow">
+        <TableCell class="lessonCell"> <button onClick={this.props.click}> Img </button> </TableCell>
+        <TableCell class="lessonCell"> <button onClick={this.props.click}> {this.props.lessonNumber} </button> </TableCell>
+        <TableCell class="lessonCell"> <button onClick={this.props.click}> {this.props.lessonName} </button> </TableCell>
+        <TableCell class="lessonCell"> <span onClick={this.props.click}> {this.props.time} </span> </TableCell>
+      </TableRow>
     )
   }
 }
+
