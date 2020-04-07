@@ -9,7 +9,7 @@ import { TaskSub } from './taskSubmission';
 import * as serviceWorker from './worker/serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<TaskFeedbackPage />, document.getElementById('root'));
+ReactDOM.render(<TaskPage />, document.getElementById('root'));
 
 // ReactDOM.render(<CoursePage />, document.getElementById('root'));      //testing
 
