@@ -2,46 +2,66 @@ import React, { Component } from 'react';
 import ReactAwesomePlayer from 'react-awesome-player';
 import '../css/lessonViewer.css';
 import { Table, TableRow, TableCell } from '@material-ui/core';
+import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
 
 export default class MasterlessonViewer extends Component {
 
   constructor(props) {
     super(props)
 
-    this.click = this.click.bind(this)
+    this.state = {
+      lessonPlan: true,
+      group: false
+    }
+
+    this.clickLessonPlan = this.clickLessonPlan.bind(this)
+    this.clickGroup = this.clickGroup.bind(this)
   }
 
-  click() {
-    alert("test")
+  clickLessonPlan() {
+    alert("Lesson Plan")
+    this.state.lessonPlan = false
+    this.state.group = true
+    this.render()
+  }
+
+  clickGroup() {
+    alert("Group")
+    this.state.group = true
+    this.state.lessonPlan = false
+    console.log(this.state.group)
+    this.render()
   }
 
   render () {
-    
 
     return (
-    <div class="">
+    <div class="body">
+      <TitleBar title="Lesson" />
       <ReactPlayer />
 
       <div class="playerTitle">
           <b>Now Playing:</b> Lesson # - Lesson Description
       </div>
 
-      <div class="inner">
-        <div class="lessonButtonDiv">
-          <div class="lessonButton">
-            <button> Lesson Plan </button>
-          </div>
-            
-          <div class="lessonButton">
-            <button> Group </button>
-          </div>
+      <TabBar tabs={{"Lesson Plan": this.state.lessonPlan, "Group": this.state.group}} click={[this.clickLessonPlan, this.clickGroup]} class="tabbar" />
+        
+     
+      {/* <div class="lessonButtonDiv">
+        <div class="lessonButton">
+          <button> Lesson Plan </button>
         </div>
+          
+        <div class="lessonButton">
+          <button> Group </button>
+        </div>
+      </div> */}
 
-        <Table class="lessonTable">
-          <LessonRow lessonNumber="Lesson 1" lessonName="Test Lesson" time="10 Mins" click={this.click}/>
-          <LessonRow lessonNumber="Lesson 2" lessonName="Test Lesson Long Description" time="10000 Mins" click={this.click}/>
-        </Table>
-      </div>
+      <Table class="lessonTable">
+        <LessonRow lessonNumber="Lesson 1" lessonName="Test Lesson" time="10 Mins" click={this.click}/>
+        <LessonRow lessonNumber="Lesson 2" lessonName="Test Lesson Long Description" time="10000 Mins" click={this.click}/>
+      </Table>
+      
     </div>)
   }
 }

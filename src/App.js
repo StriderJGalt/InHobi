@@ -6,7 +6,7 @@ import './css/App.css';
 import { MasterLogIn } from './pages/Login';
 
 import { CoursePage } from './pages/CoursePage';
-//import MasterlessonViewer from "./pages/lessonViewer";
+import MasterlessonViewer from "./pages/lessonViewer";
 import { TaskPage } from "./pages/taskpage";
 import { TaskSub } from "./pages/taskSubmission";
 
@@ -29,7 +29,8 @@ function App() {
         {/* <Route exact path="/" component={CoursePage} /> */}
         <Route exact path="/" component={MasterLogIn} />
         <Route exact path="/courses" component={CoursePage} />
-        {/* <ProtectedRouteUser exact path="/lessonViewer" component={MasterlessonViewer} /> */}
+        <Route exact path="/lessonViewer" component={MasterlessonViewer} />
+
         <Route exact path="/taskPage" component={TaskPage} />
         <Route exact path="/taskSubmission" component={TaskSub} />
 
