@@ -21,8 +21,8 @@ export class MasterLogIn extends PureComponent {
     return (
       <div class="body">
       <div class="titleLabel">
-        <h1 style={{color: '#4E0399'}}> InHobi</h1>
-        <h3 style={{color: '#9180FF'}}> Caption To Be Inserted </h3>
+        <h1> InHobi</h1>
+        <h3> A Social Good App </h3>
       </div>
 
       <form class="login_form" onSubmit={this.onSubmit}>

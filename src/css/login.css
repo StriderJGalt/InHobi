@@ -4,7 +4,11 @@
 }
 
 .titleLabel {
-    margin-top: 5%;
+    margin-top: 10%;
+}
+
+.titleLabel h1 {
+    color: #4E0399
 }
 
 .login_form {
