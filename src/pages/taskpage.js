@@ -4,12 +4,28 @@ import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
 
 
 export class TaskPage extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.clickTask = this.clickTask.bind(this)
+        this.clickSubmissions = this.clickSubmissions.bind(this)
+    }
+
+    clickTask() {
+        alert("task")
+    }
+
+    clickSubmissions() {
+        alert("submission")
+    }
+    
     render() {
         return (
             <div className="page_container">
                 <div className="top_bars">
                     <TitleBar title="Practice" />
-                    <TabBar tabs={{"Task":true,"Submissions":false}}/>
+                    <TabBar tabs={{"Task":true,"Submissions":false}} click={[this.clickTask, this.clickSubmissions]} />
                 </div>    
                 <div className='container courses'>
                     <Task course_name='Introduction to Photography' task_name='Sunset Shoot' task_content="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at

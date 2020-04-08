@@ -16,15 +16,24 @@ export class TitleBar extends Component {
 }
 
 export class TabBar extends Component {
+
+    constructor(props) {
+        super(props)
+    }
+
     render() {
         var tabs = [];
+        var i = 0;
         for (const key in this.props.tabs) {
+
             if (this.props.tabs[key]) {
-                tabs.push(<div className="selected">{key}</div>)
+                tabs.push(<div className="selected" onClick={this.props.click[i]}>{key}</div>)
             }
             else {
-                tabs.push(<div>{key}</div>)
+                tabs.push(<div onClick={this.props.click[i]}>{key}</div>)
             }
+
+            i++;
         };
 
         return (
