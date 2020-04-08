@@ -19,14 +19,14 @@ export class MasterLogIn extends PureComponent {
 
   render() {
     return (
-      <div>
+      <div class="body">
       <div class="titleLabel">
         <h1 style={{color: '#4E0399'}}> InHobi</h1>
         <h3 style={{color: '#9180FF'}}> Caption To Be Inserted </h3>
       </div>
 
       <form class="login_form" onSubmit={this.onSubmit}>
-          <h3>Sign In</h3>
+          {/* <h3>Sign In</h3> */}
 
           <div className="form-group">
               <label>Email address</label>

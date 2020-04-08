@@ -3,7 +3,7 @@ import logo from './images/logo.svg';
 import './css/App.css';
 
 // import { MasterLogIn } from './pages/Login';
-//import { MasterLogIn } from './pages/Login';
+import { MasterLogIn } from './pages/Login';
 
 import { CoursePage } from './pages/CoursePage';
 //import MasterlessonViewer from "./pages/lessonViewer";
@@ -26,8 +26,8 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path="/" component={CoursePage} />
-        {/* <Route exact path="/" component={MasterLogIn} /> */}
+        {/* <Route exact path="/" component={CoursePage} /> */}
+        <Route exact path="/" component={MasterLogIn} />
         <Route exact path="/courses" component={CoursePage} />
         {/* <ProtectedRouteUser exact path="/lessonViewer" component={MasterlessonViewer} /> */}
         <Route exact path="/taskPage" component={TaskPage} />
