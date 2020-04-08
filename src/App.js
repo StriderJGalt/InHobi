@@ -2,13 +2,13 @@ import React from 'react';
 import logo from './images/logo.svg';
 import './css/App.css';
 
-import { MasterLogIn } from './pages/Login';
+// import { MasterLogIn } from './pages/Login';
 
 import { CoursePage } from './pages/CoursePage';
 import { MasterlessonViewer } from "./pages/taskViewer";
 import { TaskSub } from "./pages/taskSubmission";
 
-import { MasterCMDashboard } from "./pages/CMDashboard";
+import { MasterCMDashboard } from "./pages/CmDashboardPage";
 import { MastertaskFeedbackPage } from './pages/taskFeedback';
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path="/" component={MasterLogIn} />
+        <Route exact path="/" component={CoursePage} />
 
         <ProtectedRouteUser exact path="/userDash" component={CoursePage} />
         <ProtectedRouteUser exact path="/taskViewer" component={MasterlessonViewer} />
