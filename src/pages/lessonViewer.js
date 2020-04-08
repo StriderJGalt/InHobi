@@ -16,6 +16,7 @@ export default class MasterlessonViewer extends Component {
 
     this.clickLessonPlan = this.clickLessonPlan.bind(this)
     this.clickGroup = this.clickGroup.bind(this)
+    this.click = this.click.bind(this)
   }
 
   clickLessonPlan() {
@@ -31,6 +32,10 @@ export default class MasterlessonViewer extends Component {
     this.state.lessonPlan = false
     console.log(this.state.group)
     this.render()
+  }
+
+  click() {
+    alert("Lesson Clicked")
   }
 
   render () {
@@ -150,10 +155,10 @@ class LessonRow extends Component {
   render() {
     return (
       <TableRow class="lessonRow">
-        <TableCell class="lessonCell"> <button onClick={this.props.click}> Img </button> </TableCell>
-        <TableCell class="lessonCell"> <button onClick={this.props.click}> {this.props.lessonNumber} </button> </TableCell>
-        <TableCell class="lessonCell"> <button onClick={this.props.click}> {this.props.lessonName} </button> </TableCell>
-        <TableCell class="lessonCell"> <span onClick={this.props.click}> {this.props.time} </span> </TableCell>
+        <TableCell class="lessonCell"> <div onClick={this.props.click}> Img </div> </TableCell>
+        <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.lessonNumber} </div> </TableCell>
+        <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.lessonName} </div> </TableCell>
+        <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.time} </div> </TableCell>
       </TableRow>
     )
   }

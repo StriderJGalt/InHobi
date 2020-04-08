@@ -7,7 +7,9 @@
     text-align: left;
 }
 
-
+.lessonTable {
+    width: 100%;
+}
 
 .tabbar {
     background: #6129CB;
