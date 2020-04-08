@@ -2,14 +2,15 @@ import React from 'react';
 import logo from './images/logo.svg';
 import './css/App.css';
 
-import { MasterLogIn } from './pages/Login';
+//import { MasterLogIn } from './pages/Login';
 
 import { CoursePage } from './pages/CoursePage';
-import { MasterlessonViewer } from "./pages/taskViewer";
+//import MasterlessonViewer from "./pages/lessonViewer";
+import { TaskPage } from "./pages/taskpage";
 import { TaskSub } from "./pages/taskSubmission";
 
-import { MasterCMDashboard } from "./pages/CMDashboard";
-import { MastertaskFeedbackPage } from './pages/taskFeedback';
+import CmDashboardPage from "./pages/CmDashboardPage";
+import TaskFeedbackPage from './pages/TaskFeedbackPage';
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -23,14 +24,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path="/" component={MasterLogIn} />
+        {/* <Route exact path="/" component={MasterLogIn} /> */}
 
-        <ProtectedRouteUser exact path="/userDash" component={CoursePage} />
-        <ProtectedRouteUser exact path="/taskViewer" component={MasterlessonViewer} />
-        <ProtectedRouteUser exact path="/taskSubmit" component={CoursePage} />
+        <ProtectedRouteUser exact path="/courses" component={CoursePage} />
+        {/* <ProtectedRouteUser exact path="/lessonViewer" component={MasterlessonViewer} /> */}
+        <ProtectedRouteUser exact path="/taskPage" component={TaskPage} />
+        <ProtectedRouteUser exact path="/taskSubmission" component={TaskSub} />
 
-        <ProtectedRouteAdmin exact path="/adminDash" component={MasterCMDashboard} />
-        <ProtectedRouteAdmin exact path="/taskFeedback" component={MastertaskFeedbackPage} />
+        <ProtectedRouteAdmin exact path="/cmDash" component={CmDashboardPage} />
+        <ProtectedRouteAdmin exact path="/taskFeedback" component={TaskFeedbackPage} />
       </BrowserRouter>
     </div>
   );
