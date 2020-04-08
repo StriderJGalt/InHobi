@@ -6,7 +6,7 @@ import { MasterLogIn } from './pages/Login';
 
 import { CoursePage } from './pages/CoursePage';
 import { MasterlessonViewer } from "./pages/taskViewer";
-import { MastertaskPage } from "./pages/taskSubmission";
+import { TaskSub } from "./pages/taskSubmission";
 
 import { MasterCMDashboard } from "./pages/CMDashboard";
 import { MastertaskFeedbackPage } from './pages/taskFeedback';
@@ -27,7 +27,7 @@ function App() {
 
         <ProtectedRouteUser exact path="/userDash" component={CoursePage} />
         <ProtectedRouteUser exact path="/taskViewer" component={MasterlessonViewer} />
-        <ProtectedRouteUser exact path="/taskSubmit" component={MastertaskPage} />
+        <ProtectedRouteUser exact path="/taskSubmit" component={CoursePage} />
 
         <ProtectedRouteAdmin exact path="/adminDash" component={MasterCMDashboard} />
         <ProtectedRouteAdmin exact path="/taskFeedback" component={MastertaskFeedbackPage} />
