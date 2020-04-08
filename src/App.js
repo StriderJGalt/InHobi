@@ -11,7 +11,6 @@ import { TaskPage } from "./pages/taskpage";
 import { TaskSub } from "./pages/taskSubmission";
 
 import { MasterCMDashboard } from "./pages/CmDashboardPage";
-import { MastertaskFeedbackPage } from './pages/taskFeedback';
 import CmDashboardPage from "./pages/CmDashboardPage";
 import TaskFeedbackPage from './pages/TaskFeedbackPage';
 
@@ -29,10 +28,10 @@ function App() {
       <BrowserRouter>
         <Route exact path="/" component={CoursePage} />
         {/* <Route exact path="/" component={MasterLogIn} /> */}
-        <ProtectedRouteUser exact path="/courses" component={CoursePage} />
+        <Route exact path="/courses" component={CoursePage} />
         {/* <ProtectedRouteUser exact path="/lessonViewer" component={MasterlessonViewer} /> */}
-        <ProtectedRouteUser exact path="/taskPage" component={TaskPage} />
-        <ProtectedRouteUser exact path="/taskSubmission" component={TaskSub} />
+        <Route exact path="/taskPage" component={TaskPage} />
+        <Route exact path="/taskSubmission" component={TaskSub} />
 
         <ProtectedRouteAdmin exact path="/cmDash" component={CmDashboardPage} />
         <ProtectedRouteAdmin exact path="/taskFeedback" component={TaskFeedbackPage} />
