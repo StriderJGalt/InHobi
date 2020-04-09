@@ -37,7 +37,8 @@ export class MasterLogIn extends PureComponent {
         <h3> A Social Good App </h3>
       </div>
 
-      <form className="login_form" onSubmit={this.onSubmit(this.state.username, this.state.password)}>
+      
+      <form className="login_form" onSubmit={this.onSubmit.bind(this, this.state.username, this.state.password)}>
           {/* <h3>Sign In</h3> */}
 
           <div className="form-group">
@@ -61,7 +62,7 @@ export class MasterLogIn extends PureComponent {
               </div>
           </div> */}
 
-          <button type="submit" className="btn btn-primary btn-block">Submit</button>
+          <button type="submit" className="btn btn-primary btn-block" >Submit</button>
           <p className="forgot-password text-right">
               Forgot Password?
           </p>

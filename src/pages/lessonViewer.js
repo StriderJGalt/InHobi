@@ -42,7 +42,9 @@ export default class MasterlessonViewer extends Component {
 
     return (
     <div class="body">
-      <TitleBar title="Lesson" />
+      <TitleBar title="Lesson" class="titlebar" />
+
+      <div class="inner">
       <ReactPlayer />
 
       <div class="playerTitle">
@@ -66,7 +68,9 @@ export default class MasterlessonViewer extends Component {
         <LessonRow lessonNumber="Lesson 1" lessonName="Test Lesson" time="10 Mins" click={this.click}/>
         <LessonRow lessonNumber="Lesson 2" lessonName="Test Lesson Long Description" time="10000 Mins" click={this.click}/>
       </Table>
-      
+      </div>
+
+      <BottomNavBar />      
     </div>)
   }
 }
