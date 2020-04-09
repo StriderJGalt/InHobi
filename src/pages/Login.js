@@ -25,8 +25,9 @@ export class MasterLogIn extends PureComponent {
     this.setState({ password: event.target.value });
   }
 
-  onSubmit(username, password) {
-    Auth.login(username, password);
+  onSubmit(e) {
+    e.preventDefault()
+    Auth.login(this.state.username, this.state.password);
   }
 
   render() {
@@ -38,7 +39,7 @@ export class MasterLogIn extends PureComponent {
       </div>
 
       
-      <form className="login_form" onSubmit={this.onSubmit.bind(this, this.state.username, this.state.password)}>
+      <form className="login_form" onSubmit={this.onSubmit}>
           {/* <h3>Sign In</h3> */}
 
           <div className="form-group">
