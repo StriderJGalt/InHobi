@@ -20,12 +20,26 @@ export default class CmDashboardPage extends Component {
     //         tasks: task_card_array
     //     }
     // }
+    constructor(props) {
+        super(props)
+
+        this.clickTasks = this.clickTasks.bind(this)
+        this.clickGroup = this.clickGroup.bind(this)
+    }
+
+    clickTasks() {
+        alert("Tasks")
+    }
+
+    clickGroup() {
+        alert("Group")
+    }
     render() {
         return (
             <div>
                 <div className="top_bars" >
                     <TitleBar title="Dashboard" />
-                    <TabBar tabs={{ "Tasks": true, "Group": false }} />
+                    <TabBar tabs={{ "Tasks": true, "Group": false }} click={[this.clickTasks, this.clickGroup]} />/>
                 </div>
                 <div className="container">
                     <TaskCard task_name="Task 3" user_name="jeff" time_submited="21:15:00" />
