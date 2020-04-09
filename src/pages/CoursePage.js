@@ -2,22 +2,46 @@ import React, { Component } from 'react'
 import '../css/CoursePage.css'
 import course_icon from '../css/camera_web.jpg'
 import group_icon from '../css/group-24px.svg'
+import { TitleBar, TabBar, BottomNavBar } from '../Bars'
 
 export class CoursePage extends Component {
+    constructor(props) {
+        super(props)
+
+        this.clickFeed = this.clickFeed.bind(this)
+        this.clickCourses = this.clickCourses.bind(this)
+        this.clickGroups = this.clickGroups.bind(this)
+    }
+
+    clickFeed() {
+        alert("Feed")
+    }
+
+    clickCourses() {
+        alert("Courses")
+    }
+    clickGroups() {
+        alert("Groups")
+    }
     render() {
         return (
             <div className="page_container">
-                <nav className="container navbar">
+                {/* <nav className="container navbar">
                     <a className='nav-item' href="#">Feed</a>
                     <a className='nav-item selected' href="#">Courses</a>
                     <a className='nav-item' href="#">Groups</a>
-                </nav>
+                </nav> */}
+                <div className="top_bars" >
+                    <TitleBar title="User Dashboard- Courses" />
+                    <TabBar tabs={{ "Feed": false, "Courses": true, "Groups": false }} click={[this.clickFeed, this.clickCourses, this.clickGroups]} />
+                </div>
                 <div className='container courses'>
                     <Course img={course_icon} course_name='Introduction to Photography' instructor='John Galt' progress={56} notifications={23} />
                     <Course img={course_icon} course_name='Advanced Photography' instructor='Ansel Adams' progress={10} notifications={3} />
                     <Course img={course_icon} course_name='Sports Photography' instructor='David Luis' progress={0} notifications={5} />
                     <Course img={course_icon} course_name='Astro Photography' instructor='Johannes Kepler' progress={85} notifications={0} />
                 </div>
+                <BottomNavBar />
             </div>
         )
     }
