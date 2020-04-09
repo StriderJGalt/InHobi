@@ -22,7 +22,8 @@ export class TaskPage extends Component {
     
     render() {
         return (
-            <div className="page_container">
+            <div className="taskpage">
+                <div className="page_container">
                 <div className="top_bars">
                     <TitleBar title="Practice" />
                     <TabBar tabs={{"Task":true,"Submissions":false}} click={[this.clickTask, this.clickSubmissions]} />
@@ -48,6 +49,7 @@ export class TaskPage extends Component {
                     Ipsum is therefore always free from corruption"/>
                 </div>
                 <BottomNavBar />
+                </div>
             </div>
         )
     }
