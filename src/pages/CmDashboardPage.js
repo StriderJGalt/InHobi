@@ -39,7 +39,7 @@ export default class CmDashboardPage extends Component {
             <div>
                 <div className="top_bars" >
                     <TitleBar title="Dashboard" />
-                    <TabBar tabs={{ "Tasks": true, "Group": false }} click={[this.clickTasks, this.clickGroup]} />/>
+                    <TabBar tabs={{ "Tasks": true, "Group": false }} click={[this.clickTasks, this.clickGroup]} />
                 </div>
                 <div className="container">
                     <TaskCard task_name="Task 3" user_name="jeff" time_submited="21:15:00" />
