@@ -20,6 +20,7 @@ export class TaskSub extends Component {
     }
     render() {
         return (
+            <div className="tasksubmission">
             <div className="page_container">
                 <div className="top_bars">
                     <TitleBar title="Practice" />
@@ -29,6 +30,7 @@ export class TaskSub extends Component {
                     Compress the five photos toether into a zip file before uploading. 
                     Total file size must be less than 25MB" />
                 <BottomNavBar />
+            </div>
             </div>
         )
     }

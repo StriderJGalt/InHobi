@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-.container {
+.tasksubmission .container {
     z-index: 1; 
     margin-top: 96px;
     height: 100vh;
@@ -11,19 +11,19 @@ body {
     display: flexbox;
     align-items: center;
 }
-h2{
+.tasksubmission h2{
     color: #000000;
     margin: 10 16px;
     font-size: 48px;
     text-align: center;
 }
-p{
+.tasksubmission p{
     color:#000000;
     margin: 10 16px;
     font-size: 18px;
     text-align: center;
 }
-.container > .com_up{
+.tasksubmission .container > .com_up{
     border-radius: 15px;
     border: 2px dashed #451996;
     margin: auto;
@@ -35,7 +35,7 @@ p{
 
 }
 
-.com_up > .comments textarea{
+.tasksubmission .com_up > .comments textarea{
     position: relative;
     border-radius: 10px;
     border: 1px dashed #EBEBEB;
@@ -49,7 +49,7 @@ p{
     justify-content: flex-start;
     overflow: scroll;
 } 
-.com_up > .upload{
+.tasksubmission .com_up > .upload{
     position: relative;
     margin: auto;
     align-items: center;
