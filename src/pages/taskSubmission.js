@@ -4,12 +4,26 @@ import '../css/taskSubmission.css'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
 
 export class TaskSub extends Component {
+    constructor(props) {
+        super(props)
+
+        this.clickTask = this.clickTask.bind(this)
+        this.clickSubmissions = this.clickSubmissions.bind(this)
+    }
+
+    clickTask() {
+        alert("task")
+    }
+
+    clickSubmissions() {
+        alert("submission")
+    }
     render() {
         return (
             <div className="page_container">
                 <div className="top_bars">
                     <TitleBar title="Practice" />
-                    <TabBar tabs={{"Task":false,"Submissions":true}}/>
+                    <TabBar tabs={{"Task":false,"Submissions":true}} click={[this.clickTask, this.clickSubmissions]}/>
                 </div>    
                 <Sub ins="Select each photo and save with low quality setting so that file size is less.
                     Compress the five photos toether into a zip file before uploading. 
