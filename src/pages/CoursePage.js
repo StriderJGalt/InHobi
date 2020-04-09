@@ -25,14 +25,14 @@ export class CoursePage extends Component {
     }
     render() {
         return (
-            <div className="page_container">
+            <div className="CoursePage">
                 {/* <nav className="container navbar">
                     <a className='nav-item' href="#">Feed</a>
                     <a className='nav-item selected' href="#">Courses</a>
                     <a className='nav-item' href="#">Groups</a>
                 </nav> */}
                 <div className="top_bars" >
-                    <TitleBar title="User Dashboard- Courses" />
+                    <TitleBar title="User Dashboard" />
                     <TabBar tabs={{ "Feed": false, "Courses": true, "Groups": false }} click={[this.clickFeed, this.clickCourses, this.clickGroups]} />
                 </div>
                 <div className='container courses'>

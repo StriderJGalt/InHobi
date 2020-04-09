@@ -10,6 +10,7 @@ body {
     z-index: 1;
     margin-top: 88px;
     padding-top: 8px;
+    height: auto;
 }
 
 .CmDashboardPage .task_card {
@@ -18,8 +19,9 @@ body {
     margin: 8px;
     margin-top: 0px;
     padding: 8px;
-    height: 50px;
+    height: 65px;
     display: flex;
+    box-sizing: border-box;
 }
 
 .CmDashboardPage .task_card > .left {
@@ -36,6 +38,8 @@ body {
     font-size: 14px;
     color: grey;
     margin: 0px;
+    text-align: left;
+    box-sizing: content-box;
 }
 
 .CmDashboardPage .task_card > .right {
