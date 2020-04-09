@@ -8,34 +8,46 @@ export class MasterLogIn extends PureComponent {
 
   constructor (props) {
     super(props)
-
+    this.state = {
+      username:'',
+      password:''
+    }
+    
     this.onSubmit = this.onSubmit.bind(this)
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangePass = this.onChangePass.bind(this);
   }
 
-  onSubmit() {
-    // Submit Logic
-    alert("login!")
+  onChangeUsername(event) {
+    this.setState({ username: event.target.value });
+  }
+  onChangePass(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  onSubmit(username, password) {
+    Auth.login(username, password);
   }
 
   render() {
     return (
-      <div class="body">
-      <div class="titleLabel">
+      <div className="body">
+      <div className="titleLabel">
         <h1> InHobi</h1>
         <h3> A Social Good App </h3>
       </div>
 
-      <form class="login_form" onSubmit={this.onSubmit}>
+      <form className="login_form" onSubmit={this.onSubmit(this.state.username, this.state.password)}>
           {/* <h3>Sign In</h3> */}
 
           <div className="form-group">
-              <label>Email address</label>
-              <input type="email" className="form-control" placeholder="Enter email" />
+              <label>Username</label>
+              <input type="text" className="form-control" value={this.state.username} onChange={this.onChangeUsername}/>
           </div>
 
           <div className="form-group">
               <label>Password</label>
-              <input type="password" className="form-control" placeholder="Enter password" />
+              <input type="password" className="form-control" placeholder="Enter password" value={this.state.password} onChange={this.onChangePass} />
           </div>
 
           
@@ -51,7 +63,7 @@ export class MasterLogIn extends PureComponent {
 
           <button type="submit" className="btn btn-primary btn-block">Submit</button>
           <p className="forgot-password text-right">
-              Forgot <a href="#">password?</a>
+              Forgot Password?
           </p>
       </form>
       </div>

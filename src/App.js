@@ -26,8 +26,8 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Route exact path="/" component={CoursePage} /> */}
-        <Route exact path="/" component={MasterLogIn} />
+      
+        <Route exact path="/" component={CoursePage} />
         <Route exact path="/courses" component={CoursePage} />
         <Route exact path="/lessonViewer" component={MasterlessonViewer} />
 

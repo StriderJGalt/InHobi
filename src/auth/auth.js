@@ -15,7 +15,7 @@ class Auth {
         this.siteinfo = {};
     }
 
-    login(username, password, props){
+    login(username, password){
         
         const args = {
             username: username,
