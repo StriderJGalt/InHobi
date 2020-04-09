@@ -10,14 +10,14 @@ body {
 }
 
 .TaskFeedbackPage .task_card {
-    background-color: rgb(232, 216, 241);
+    background-color: rgb(228, 216, 241);
     border-radius: 15px;
     margin: 8px;
     margin-top: 0px;
 }
 
 .TaskFeedbackPage .task_card > .header {
-    background-color: rebeccapurple;
+    background-color: #5428a7;
     height: 48px;
     border-radius: 15px 15px 0px 0px;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .TaskFeedbackPage .task_card > .header > svg {
-    transform: translateY(2px)scale(1.4);
+    transform: translate(3px,-3px)scale(1.4);
 }
 
 .TaskFeedbackPage .task_card > .download_btn {
@@ -53,7 +53,7 @@ body {
 }
 
 .TaskFeedbackPage .task_card > .download_btn > svg {
-    transform: translateY(3px);
+    transform: translate(5px,-3px);
 }
 
 .TaskFeedbackPage .task_card > .comment_box {
