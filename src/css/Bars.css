@@ -75,7 +75,8 @@
 
 .nav_item > h6 {
     position: relative;
-    bottom: 6px;
+    bottom: 3px;
+    font-size: 14px;
     color: white;
     font-weight: 200;
     margin: 0;
@@ -95,5 +96,5 @@
 }
 
 .dashboard_btn > svg { 
-    transform: translateY(18px)scale(1.8);
+    transform: translateY(13px)scale(1.8);
 } 
