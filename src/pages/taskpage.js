@@ -24,7 +24,8 @@ export class TaskPage extends Component {
     
     render() {
         return (
-            <div className="page_container">
+            <div className="taskpage">
+                <div className="page_container">
                 <div className="top_bars">
                     <TitleBar title="Practice" />
                     <TabBar tabs={{"Task":true,"Submissions":false}} click={[this.clickTask, this.clickSubmissions]} />
@@ -33,6 +34,7 @@ export class TaskPage extends Component {
                     <Task course_name='Machine Learning' task_name='Supervised Learning Methods' task_content="Compile a list of Supervised Learning Methods"/>
                 </div>
                 <BottomNavBar />
+                </div>
             </div>
         )
     }

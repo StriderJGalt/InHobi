@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactAwesomePlayer from 'react-awesome-player';
+import ReactPlayer from 'react-player';
 import '../css/lessonViewer.css';
 import { Table, TableRow, TableCell } from '@material-ui/core';
 import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
@@ -45,24 +45,13 @@ export default class MasterlessonViewer extends Component {
       <TitleBar title="Lesson" class="titlebar" />
 
       <div class="inner">
-      <ReactPlayer />
+      <ReactPlayerComp />
 
       <div class="playerTitle">
           {/* <b>Now Playing:</b> Lesson # - Lesson Description */}
       </div>
 
       <TabBar tabs={{"Lesson Plan": this.state.lessonPlan, "Group": this.state.group}} click={[this.clickLessonPlan, this.clickGroup]} class="tabbar" />
-        
-     
-      {/* <div class="lessonButtonDiv">
-        <div class="lessonButton">
-          <button> Lesson Plan </button>
-        </div>
-          
-        <div class="lessonButton">
-          <button> Group </button>
-        </div>
-      </div> */}
 
       <Table class="lessonTable">
         <LessonRow lessonNumber="Lesson 1" lessonName="Introduction to Machine Learning" time="" click={this.click}/>
@@ -75,12 +64,13 @@ export default class MasterlessonViewer extends Component {
   }
 }
 
-class ReactPlayer extends Component {
+class ReactPlayerComp extends Component {
 
   constructor(props) {
     super(props)
   }
 
+<<<<<<< HEAD
   state = {
     options: {
       poster: "https://www.youtube.com/watch?v=PPLop4L2eGk&feature=youtu.be",
@@ -129,24 +119,18 @@ class ReactPlayer extends Component {
     console.log('error')
   }
 
+=======
+>>>>>>> 96dc1a90f85fa7758a9057d789c9cd76cdf70a69
   render () {
-    const { options } = this.state
 
     return (
-      <div class="player">
-        <ReactAwesomePlayer
-          options={options}
-          loadeddata={this.loadeddata}
-          canplay={this.canplay}
-          canplaythrough={this.canplaythrough}
-          play={this.play}
-          pause={this.pause}
-          waiting={this.waiting}
-          playing={this.playing}
-          ended={this.ended}
-          error={this.error}
+      
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=AuW-7YGkb0g"
+          width="100%"
+          class="player"
         />
-      </div>
+      
     )
   }
 }

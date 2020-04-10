@@ -5,7 +5,7 @@ import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
 export default class TaskFeedbackPage extends Component {
     render() {
         return (
-            <div>
+            <div className="TaskFeedbackPage">
                 <div className="top_bars" >
                     <TitleBar title="Feedback" />
                 </div>

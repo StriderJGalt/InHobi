@@ -23,6 +23,7 @@ export class TaskSub extends Component {
     }
     render() {
         return (
+            <div className="tasksubmission">
             <div className="page_container">
                 <div className="top_bars">
                     <TitleBar title="Practice" />
@@ -30,6 +31,7 @@ export class TaskSub extends Component {
                 </div>    
                 <Sub ins="" />
                 <BottomNavBar />
+            </div>
             </div>
         )
     }
@@ -70,7 +72,7 @@ class Sub extends Component {
                     </div>
                     <div class="upload">
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg"  height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg"  height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="white" d="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z"/></svg>
                         </div>
                         <div>
                             

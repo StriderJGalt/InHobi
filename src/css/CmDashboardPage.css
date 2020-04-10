@@ -6,44 +6,48 @@ body {
     font-family: 'Roboto';
 }
 
-.container {
+.CmDashboardPage .container {
     z-index: 1;
     margin-top: 88px;
     padding-top: 8px;
+    height: auto;
 }
 
-.task_card {
+.CmDashboardPage .task_card {
     background-color: white;
     border-radius: 15px;
     margin: 8px;
     margin-top: 0px;
     padding: 8px;
-    height: 50px;
+    height: 65px;
     display: flex;
+    box-sizing: border-box;
 }
 
-.task_card > .left {
+.CmDashboardPage .task_card > .left {
     width: 50%;
 }
 
-.task_card > .left > h3 {
+.CmDashboardPage .task_card > .left > h3 {
     font-size: 24px;
     color: #6129CB;
     margin: 0px;
 }
 
-.task_card > .left > p {
+.CmDashboardPage .task_card > .left > p {
     font-size: 14px;
     color: grey;
     margin: 0px;
+    text-align: left;
+    box-sizing: content-box;
 }
 
-.task_card > .right {
+.CmDashboardPage .task_card > .right {
     width: 50%;
     text-align: center;
 }
 
-.task_card > .right > h4 {
+.CmDashboardPage .task_card > .right > h4 {
     margin: 9px auto;
     font-size: 28px;
 }

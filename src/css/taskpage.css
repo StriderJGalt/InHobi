@@ -1,24 +1,24 @@
 body {
     margin: 0;
 }
-.container {
+.taskpage .container {
     z-index: 1; 
     margin-top: 48px;
     height: 100vh;
     width:100%;
     position: absolute;
 }
-.course_name{
+.taskpage .course_name{
     color: #6129CB;
     margin: 10 16px;
     font-size: 14px;
 }
-.task_name{
+.taskpage .task_name{
     color: #000000;
     margin: 10 16px;
     font-size: 48px;
 }
-.task_content{
+.taskpage .task_content{
     color:#000000;
     margin: 10 16px;
     font-size: 18px;
