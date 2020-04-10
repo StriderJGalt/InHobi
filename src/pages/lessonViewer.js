@@ -55,7 +55,8 @@ export default class MasterlessonViewer extends Component {
 
       <Table class="lessonTable">
         <LessonRow lessonNumber="Lesson 1" lessonName="Introduction to Machine Learning" time="" click={this.click}/>
-        {/* <LessonRow lessonNumber="Lesson 2" lessonName="Linear Regression with One Variable" time="" click={this.click}/> */}
+        <LessonRow lessonNumber="Assignment 1" lessonName="Assignment" time="" click={this.click}/>
+        <LessonRow lessonNumber="Lesson 2" lessonName="Linear Regression with One Variable" time="" click={this.click}/>
       </Table>
       </div>
 
