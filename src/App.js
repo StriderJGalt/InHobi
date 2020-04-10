@@ -26,15 +26,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      
         <Route exact path="/" component={MasterLogIn} />
-        <Route exact path="/courses" component={CoursePage} />
+        <ProtectedRouteUser exact path="/courses" component={CoursePage} />
         <Route exact path="/lessonViewer" component={MasterlessonViewer} />
 
         <Route exact path="/taskPage" component={TaskPage} />
         <Route exact path="/taskSubmission" component={TaskSub} />
 
-        <ProtectedRouteAdmin exact path="/cmDash" component={CmDashboardPage} />
+        <Route exact path="/cmDash" component={CmDashboardPage} />
         <ProtectedRouteAdmin exact path="/taskFeedback" component={TaskFeedbackPage} />
       </BrowserRouter>
     </div>

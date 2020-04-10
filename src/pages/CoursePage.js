@@ -3,6 +3,7 @@ import '../css/CoursePage.css'
 import course_icon from '../css/camera_web.jpg'
 import group_icon from '../css/group-24px.svg'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
+import axios from "axios";
 
 export class CoursePage extends Component {
     constructor(props) {
@@ -18,12 +19,19 @@ export class CoursePage extends Component {
     }
 
     clickCourses() {
-        alert("Courses")
+        this.props.history.push({
+            pathname: '/courses',
+        });
     }
     clickGroups() {
         alert("Groups")
     }
+
+    componentDidMount(){
+        axios.post('http://localhost:8080/course/courses')
+    }
     render() {
+        console.log('render')
         return (
             <div className="page_container">
                 {/* <nav className="container navbar">
@@ -37,9 +45,8 @@ export class CoursePage extends Component {
                 </div>
                 <div className='container courses'>
                     <Course img={course_icon} course_name='Introduction to Photography' instructor='John Galt' progress={56} notifications={23} />
-                    <Course img={course_icon} course_name='Advanced Photography' instructor='Ansel Adams' progress={10} notifications={3} />
-                    <Course img={course_icon} course_name='Sports Photography' instructor='David Luis' progress={0} notifications={5} />
-                    <Course img={course_icon} course_name='Astro Photography' instructor='Johannes Kepler' progress={85} notifications={0} />
+                    <Course img={course_icon} course_name='Machine Learning' instructor='' progress={70} notifications={0} />
+                    
                 </div>
                 <BottomNavBar />
             </div>
@@ -54,10 +61,17 @@ class Course extends Component {
             progress: this.props.progress,
             notifications: this.props.notifications
         }
+        this.onclick = this.onclick.bind(this);
+    }
+
+    onclick(){
+        this.props.history.push({
+            pathname: '/lessonViewer',
+        });
     }
     render() {
         return (
-            <div className='course' >
+            <div className='course' onClick={this.onclick} >
                 <div className='course-icon' >
                     <img src={this.props.img} />
                 </div>

@@ -35,7 +35,7 @@ export default class MasterlessonViewer extends Component {
   }
 
   click() {
-    alert("Lesson Clicked")
+    
   }
 
   render () {
@@ -48,7 +48,7 @@ export default class MasterlessonViewer extends Component {
       <ReactPlayer />
 
       <div class="playerTitle">
-          <b>Now Playing:</b> Lesson # - Lesson Description
+          {/* <b>Now Playing:</b> Lesson # - Lesson Description */}
       </div>
 
       <TabBar tabs={{"Lesson Plan": this.state.lessonPlan, "Group": this.state.group}} click={[this.clickLessonPlan, this.clickGroup]} class="tabbar" />
@@ -65,8 +65,8 @@ export default class MasterlessonViewer extends Component {
       </div> */}
 
       <Table class="lessonTable">
-        <LessonRow lessonNumber="Lesson 1" lessonName="Test Lesson" time="10 Mins" click={this.click}/>
-        <LessonRow lessonNumber="Lesson 2" lessonName="Test Lesson Long Description" time="10000 Mins" click={this.click}/>
+        <LessonRow lessonNumber="Lesson 1" lessonName="Introduction to Machine Learning" time="" click={this.click}/>
+        {/* <LessonRow lessonNumber="Lesson 2" lessonName="Linear Regression with One Variable" time="" click={this.click}/> */}
       </Table>
       </div>
 
@@ -83,10 +83,10 @@ class ReactPlayer extends Component {
 
   state = {
     options: {
-      poster: "http://pic2.52pk.com/files/130514/1283314_143556_2145.jpg",
+      poster: "https://www.youtube.com/watch?v=PPLop4L2eGk&feature=youtu.be",
       sources: [{
         type: "video/mp4",
-        src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+        src: "https://youtu.be/PPLop4L2eGk"
       }],
       subtitles: [{
           language: 'zh',
@@ -159,7 +159,7 @@ class LessonRow extends Component {
   render() {
     return (
       <TableRow class="lessonRow">
-        <TableCell class="lessonCell"> <div onClick={this.props.click}> Img </div> </TableCell>
+        <TableCell class="lessonCell"> <div onClick={this.props.click}> </div> </TableCell>
         <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.lessonNumber} </div> </TableCell>
         <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.lessonName} </div> </TableCell>
         <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.time} </div> </TableCell>

@@ -15,15 +15,17 @@ class Auth {
         this.siteinfo = {};
     }
 
-    login(username, password){
-        
+    login(username, password, props){
+        console.log('hello from auth', username, password)
         const args = {
             username: username,
             password: password
         };
         var bis = this;
         axios.post('http://localhost:8080/login', args).then(function(response){
-            if(response.errorcode!='invalidlogin'){
+            
+            if(response.data.errorcode!='invalidlogin'){
+                console.log('invalid login')
                 bis.authenticated = true;
                 bis.token = response.data.token;
                 bis.user = true;
@@ -33,9 +35,18 @@ class Auth {
                     bis.lastname = site_info_response.data.lastname;
                     bis.userid = site_info_response.data.userid;
                     bis.siteinfo = site_info_response.data;
-                    if(site_info_response.userissiteadmin==true){
+
+                    if(site_info_response.data.userissiteadmin==true){
                         bis.admin = true;
                         bis.user = false;
+                        props.history.push({
+                            pathname: '/cmDash',
+                        });
+                    }
+                    else{
+                        props.history.push({
+                            pathname: '/courses',
+                        });
                     }
                 });
                 

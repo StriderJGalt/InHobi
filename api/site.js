@@ -13,6 +13,7 @@ router.post('/site_info', function(req, res, next){
     const args = {}
 
     axios.post(api_base, args).then(function(response){
+        console.log(response.data)
         res.send(response.data)
     }).catch((err) => console.log(err));
 });
