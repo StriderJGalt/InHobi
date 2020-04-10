@@ -9,15 +9,13 @@
 }
 
 .player {
-    margin-left: 20%;
-    margin-right: 20%;
-    align-content: center;
+
+    width: 100%;
 }
 
 .playerTitle {
     text-align: left;
-    margin-left: 20%;
-    margin-right: 20%;
+
 }
 
 .lessonTable {
