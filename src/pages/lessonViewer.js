@@ -70,57 +70,6 @@ class ReactPlayerComp extends Component {
     super(props)
   }
 
-<<<<<<< HEAD
-  state = {
-    options: {
-      poster: "https://www.youtube.com/watch?v=PPLop4L2eGk&feature=youtu.be",
-      sources: [{
-        type: "video/mp4",
-        src: "https://youtu.be/PPLop4L2eGk"
-      }],
-      subtitles: [{
-          language: 'zh',
-          url: "https://peng666.github.io/react-awesome-player/zh.vtt",
-          label: "中文"
-        },
-        {
-          language: 'en',
-          url: "https://peng666.github.io/react-awesome-player/en.vtt",
-          label: "EN"
-      }],
-      defaultSubtitle: 'en'
-    }
-  }
-  loadeddata() {
-    console.log('loadeddata')
-  }
-  canplay() {
-    console.log('canplay')
-  }
-  canplaythrough() {
-    console.log('canplaythrough')
-  }
-  play() {
-    console.log('play')
-  }
-  pause() {
-    console.log('pause')
-  }
-  waiting() {
-    console.log('waiting')
-  }
-  playing() {
-    console.log('playing')
-  }
-  ended() {
-    console.log('ended')
-  }
-  error() {
-    console.log('error')
-  }
-
-=======
->>>>>>> 96dc1a90f85fa7758a9057d789c9cd76cdf70a69
   render () {
 
     return (

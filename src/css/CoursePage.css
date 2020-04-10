@@ -55,6 +55,7 @@ body {
 .CoursePage .course-details {
     grid-column: 2 / span 3;
     margin-left: 8px;
+    text-align: left;
 }
 
 .CoursePage .course-name {

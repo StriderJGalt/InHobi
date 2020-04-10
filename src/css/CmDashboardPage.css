@@ -19,7 +19,8 @@ body {
     margin: 8px;
     margin-top: 0px;
     padding: 8px;
-    height: 65px;
+    text-align: left;
+    /* height: 65px; */
     display: flex;
     box-sizing: border-box;
 }
@@ -29,7 +30,7 @@ body {
 }
 
 .CmDashboardPage .task_card > .left > h3 {
-    font-size: 24px;
+    font-size: 18px;
     color: #6129CB;
     margin: 0px;
 }

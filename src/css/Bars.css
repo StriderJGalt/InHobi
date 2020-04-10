@@ -12,6 +12,7 @@
     width: 100%;
     background-color: #6129CB;
     color: white;
+    text-align: left;
 }
 
 .title_bar > .title {
@@ -21,7 +22,7 @@
 }
 
 .title_bar > .back_btn {
-    transform: translateY(2px);
+    transform: translateY(-4px);
     margin-left: 8px;
     width: 24px;
     height: 24px;

@@ -42,7 +42,7 @@ export default class CmDashboardPage extends Component {
                     <TabBar tabs={{ "Tasks": true, "Group": false }} click={[this.clickTasks, this.clickGroup]} />
                 </div>
                 <div className="container">
-                    <TaskCard task_name="Supervised Learning Methods" user_name="rahul" time_submited="" />
+                    <TaskCard task_name="Supervised Learning Methods" user_name="rahul" time_submited="15:03:20" />
                 </div>
                 <BottomNavBar />
             </div>
