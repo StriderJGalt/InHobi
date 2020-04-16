@@ -37,9 +37,6 @@ export class Instructor_courses extends Component {
                 <div className="top_bars" >
                     <TitleBar title="Instructor Profile" />
                 </div>
-                <div className="Ins_div">
-
-                </div>
                 <div className='Instructor_profile'>
                     <Ins_profile img={instructor - icon} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='' />
                 </div>
