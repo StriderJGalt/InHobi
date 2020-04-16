@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import '../css/instructor_profile_courses.css'
-import course_icon from '../css/camera_web.jpg'
+import '../css/instructor_profile_about.css'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
 import axios from "axios";
 
@@ -40,11 +39,9 @@ export class Instructor_courses extends Component {
                 <div className='Instructor_profile'>
                     <Ins_profile img={instructor_icon} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='' />
                 </div>
-                <TabBar rounded tabs={{ "About": false, "Courses": true, "Feed": false }} click={[this.clickAbout, this.clickCourses, this.clickFeed]} />
-                <div className='courses_container'>
-                    <Course_profile img={course_icon} course_name='Introduction to Photography' no_of_lessons='21 Lessons' />
-                    <Course_profile img={course_icon} course_name='Machine Learning' no_of_lessons='15 Lessons' />
-
+                <TabBar rounded tabs={{ "About": true, "Courses": false, "Feed": false }} click={[this.clickAbout, this.clickCourses, this.clickFeed]} />
+                <div className='about_container'>
+                    <About intro='Naveen Seth is of age 27. He has completed a degree in Story telling and animation.' accreditations='Winner of National Story Telling award' />
                 </div>
                 <BottomNavBar />
             </div>
@@ -77,7 +74,7 @@ class Ins_profile extends Component {
     }
 }
 
-class Course_profile extends Component {
+class About extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -85,15 +82,14 @@ class Course_profile extends Component {
     };
     render() {
         return (
-            <div className='course'>
-                <div className='course-icon' >
-                    <img src={this.props.img} />
+            <div className='about'>
+                <div className='intro'>
+                    <h2>Introduction</h2>
+                    {this.props.intro}
                 </div>
-                <div className='course-name'>
-                    {this.props.course_name}
-                </div>
-                <div className='no_of_lessons'>
-                    {this.state.no_of_lessons}
+                <div className='awards'>
+                    <h2>Accreditations</h2>
+                    {this.state.accreditations}
                 </div>
             </div>
         )
