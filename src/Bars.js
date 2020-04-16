@@ -37,7 +37,7 @@ export class TabBar extends Component {
         };
 
         return (
-            <div className="tab_bar">
+            <div className={`tab_bar ${this.props.rounded ? "rounded" : ""}`}>
                 {tabs}
             </div>
         )

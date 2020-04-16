@@ -37,6 +37,12 @@
     display: table; 
     table-layout: fixed;    
 }
+.tab_bar.rounded {
+    border-radius: 25px 25px 0px 0px !important;
+    padding-top: 10px;
+    margin-top: 16px;
+    box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, 0.4);
+}
 .tab_bar > div{ 
     display: table-cell;
     font-size: 24px;
