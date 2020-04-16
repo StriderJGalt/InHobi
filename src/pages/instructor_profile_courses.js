@@ -36,11 +36,17 @@ export class Instructor_courses extends Component {
             <div className="Instructor_courses">
                 <div className="top_bars" >
                     <TitleBar title="Instructor Profile" />
-                    <TabBar tabs={{ "About": false, "Courses": true, "Feed": false }} click={[this.clickAbout, this.clickCourses, this.clickFeed]} />
                 </div>
-                <div className='courses container'>
-                    <Course_prof img={course_icon} course_name='Introduction to Photography' no_of_lessons='21 Lessons' />
-                    <Course_prof img={course_icon} course_name='Machine Learning' no_of_lessons='15 Lessons' />
+                <div className="Ins_div">
+
+                </div>
+                <div className='Instructor_profile'>
+                    <Ins_profile img={instructor - icon} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='' />
+                </div>
+                <TabBar tabs={{ "About": false, "Courses": true, "Feed": false }} click={[this.clickAbout, this.clickCourses, this.clickFeed]} />
+                <div className='courses_container'>
+                    <Course_profile img={course_icon} course_name='Introduction to Photography' no_of_lessons='21 Lessons' />
+                    <Course_profile img={course_icon} course_name='Machine Learning' no_of_lessons='15 Lessons' />
 
                 </div>
                 <BottomNavBar />
@@ -48,8 +54,33 @@ export class Instructor_courses extends Component {
         )
     }
 }
+class Ins_profile extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        }
+    };
+    render() {
+        return (
+            <div className='profile'>
+                <div className='instructor-icon' >
+                    <img src={this.props.img} />
+                </div>
+                <div className='instructor-name'>
+                    {this.props.ins_name}
+                </div>
+                <div className='description'>
+                    {this.props.description}
+                </div>
+                <div className="Award">
+                    {this.props.award}
+                </div>
+            </div>
+        )
+    }
+}
 
-class Course_prof extends Component {
+class Course_profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -65,7 +96,7 @@ class Course_prof extends Component {
                     {this.props.course_name}
                 </div>
                 <div className='no_of_lessons'>
-                    {this.state.progress}
+                    {this.state.no_of_lessons}
                 </div>
             </div>
         )
