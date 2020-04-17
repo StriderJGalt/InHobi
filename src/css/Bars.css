@@ -22,7 +22,7 @@
 }
 
 .title_bar > .back_btn {
-    transform: translateY(-4px);
+    transform: translateY(1px);
     margin-left: 8px;
     width: 24px;
     height: 24px;
@@ -81,8 +81,8 @@
 }
 
 .nav_item > h6 {
-    /* position: relative; */
-    /* bottom: 3px; */
+    position: relative;
+    bottom: 3px;
     font-size: 14px;
     color: white;
     font-weight: 200;
@@ -103,5 +103,5 @@
 }
 
 .dashboard_btn > svg { 
-    transform: translateY(17px)scale(1.8);
+    transform: translateY(18px)scale(1.8);
 } 
