@@ -1,0 +1,44 @@
+.MenuPage .container{
+    margin: 16px;
+    margin-top: 60px;
+}
+.MenuPage .MenuItem {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+.MenuPage .MenuItem .icon{
+    width: 60px;
+    height: 60px;
+    
+}
+.MenuPage .MenuItem:not(.Profile) .icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    position: relative;
+    top:10px;
+}
+.MenuPage .Profile img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.MenuPage .Instructors img {
+    filter: invert(18%) sepia(34%) saturate(6781%) hue-rotate(255deg) brightness(72%) contrast(106%);
+}
+.MenuPage .MenuItem .name {
+    width: auto;
+    flex-grow: 1;
+    text-align: left;
+    padding: 0px;
+    margin-left: 8px;
+    border-bottom: 1px solid rgb(228, 215, 238);
+
+}
+.MenuPage .MenuItem h2{
+    font-size: 22px;
+    font-weight: 500;
+    color: #451996;
+}
