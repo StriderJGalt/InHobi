@@ -1,0 +1,29 @@
+.HomePage .ad_carousel {
+    height: 250px;
+    width: 100vw;
+    background-color: purple;
+}
+
+.HomePage .instructors {
+    height: 400px;
+    width: 100%;
+    background-color: white;
+}
+
+.HomePage .instructors .cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+.HomePage .instructors .InstructorCard{
+    height: 230px;
+    width: 170px;
+    margin: 8px 0px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1),0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.HomePage .groups {
+    margin-top: -100px;
+    background-color: white;
+}
