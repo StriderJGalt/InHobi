@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Auth from '../auth/auth';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../css/login.css'
 
 export class MasterLogIn extends PureComponent {

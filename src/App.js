@@ -3,10 +3,10 @@ import logo from './images/logo.svg';
 import './css/App.css';
 
 // import { MasterLogIn } from './pages/Login';
-import { MasterLogIn } from './pages/Login';
 
+import MenuPage from './pages/MenuPage';
 import { CoursePage } from './pages/CoursePage';
-import MasterlessonViewer from "./pages/lessonViewer";
+// import MasterlessonViewer from "./pages/lessonViewer";
 import { TaskPage } from "./pages/taskpage";
 import { TaskSub } from "./pages/taskSubmission";
 
@@ -26,15 +26,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path="/" component={MasterLogIn} />
-        <ProtectedRouteUser exact path="/courses" component={CoursePage} />
-        <Route exact path="/lessonViewer" component={MasterlessonViewer} />
-
+        {/* <Route exact path="/" component={MasterLogIn} /> */}
+        <Route exact path="/courses" component={CoursePage} />
+        {/* <Route exact path="/lessonViewer" component={MasterlessonViewer} /> */}
+        <Route exact path="/MenuPage" component={MenuPage} />
         <Route exact path="/taskPage" component={TaskPage} />
         <Route exact path="/taskSubmission" component={TaskSub} />
 
         <Route exact path="/cmDash" component={CmDashboardPage} />
-        <ProtectedRouteAdmin exact path="/taskFeedback" component={TaskFeedbackPage} />
+        <Route exact path="/taskFeedback" component={TaskFeedbackPage} />
       </BrowserRouter>
     </div>
   );
