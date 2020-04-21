@@ -27,3 +27,7 @@
     margin-top: -100px;
     background-color: white;
 }
+
+.HomePage .groups .group {
+    height: 50px;
+}
