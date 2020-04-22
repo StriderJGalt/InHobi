@@ -1,0 +1,6 @@
+.InstructorsPage .instructors {
+    margin-top: 56px;
+    margin-bottom: 58px;
+    display: flex;
+    flex-wrap: wrap;
+}
