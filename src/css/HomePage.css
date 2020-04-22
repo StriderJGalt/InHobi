@@ -1,33 +1,138 @@
+.HomePage {
+    background-color: white;
+}
 .HomePage .ad_carousel {
-    height: 250px;
+    height: calc(0.75 * 100vw);
     width: 100vw;
     background-color: purple;
+    background: url('../images/ad_placeholder.png') center no-repeat;
+    background-size: cover;
 }
 
 .HomePage .instructors {
-    height: 400px;
+    /* height: 400px; */
     width: 100%;
     background-color: white;
 }
 
 .HomePage .instructors .cards {
     display: flex;
-    justify-content: space-evenly;
+    padding: 8px;
+    justify-content: left;
+    /* align-items: flex-end; */
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 8px;
+    -webkit-overflow-scrolling: touch;
 }
-.HomePage .instructors .InstructorCard{
-    height: 230px;
-    width: 170px;
-    margin: 8px 0px;
+
+
+.HomePage .instructors .cards::-webkit-scrollbar {
+    display: none;
+}
+
+/* .InstructorCard:last-child:after {
+    content: "";
+    position: relative;
+    left: 100px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+} */
+.InstructorCard{
+    /* height: 290px; */
+    width: calc(50vw - 16px);
+    max-width: 225px;
+    margin: 8px;
     border-radius: 15px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1),0px 4px 4px rgba(0, 0, 0, 0.4);
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    scroll-snap-align: start;
+}
+
+.InstructorCard img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 8px 0 0 0;
+    padding: 3px;
+    border: 2px dashed #6129CB;
+}
+
+.InstructorCard .name {
+    margin: 0 8px;
+    /* width: 100%; */
+    font-size: 18px;
+    /* color: #6129cb; */
+}
+
+.InstructorCard .desc {
+    margin: 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* width: 100%; */
+    font-size: 14px;
+    color: #6129cb;
+}
+
+.InstructorCard .courses {
+    width: calc(100% - 16px);
+    /* height: 120px; */
+    margin: 8px 8px;
+    border-radius: 15px;
+    background-color: #6129CB;
+    color: white;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.InstructorCard .courses ul{
+    font-size: 14px;
+    padding: 0px;
+    margin: 8px 0;
+    list-style-type:none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .HomePage .groups {
-    margin-top: -100px;
+    /* margin-top: -100px; */
     background-color: white;
+    padding-bottom: 80px;
 }
 
-.HomePage .groups .group {
+
+.group {
     height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.group img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.group h5 {
+    margin: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    flex-grow: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.group button {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(255, 208, 0);
 }

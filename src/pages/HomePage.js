@@ -1,6 +1,9 @@
 import React, { Component } from 'react' 
 import "../css/HomePage.css"
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
+import instructor_pic from '../images/ins_pic.jpg' 
+import instructor_pic2 from '../images/ppic.jpg' 
+import group_pic from '../images/guitar.jpg' 
 
 export default class HomePage extends Component {
     render() {
@@ -14,13 +17,23 @@ export default class HomePage extends Component {
                 <div className="instructors">
                     <TabBar rounded tabs={{"Instructors":false}} click={["null"]} />
                     <div className="cards">
-                        <InstructorCard img="" name="John Galt" description="Designer | Photographer" courses={["intro to photography","flash Photography","portrait photography"]} /> 
-                        <InstructorCard img="" name="John Galt" description="Designer | Photographer" courses={["intro to photography","flash Photography","portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic} name="John Galt" description="Designer, Photographer, Illustrator" courses={["Intro to Photography","Flash Photography outside studios","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
+                        <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
                     </div>
                 </div>
                 <div className="groups">
                     <TabBar rounded tabs={{"Open Groups":false}} click={["null"]} />
-                    <Group name="Photography Hyd" icon="" />
+                    <Group name="Photography Hyd" icon={group_pic} />
+                    <Group name="Photography Hyd" icon={group_pic} />
+                    <Group name="Photography Hyd" icon={group_pic} />
                 </div>
                 <BottomNavBar />
             </div>
@@ -36,7 +49,9 @@ export class InstructorCard extends Component {
         };
         return (
             <div className="InstructorCard">
-                <img src={this.props.img} className="instructor_pic"/>
+                <img src={this.props.img}/>
+                <p className="name">{this.props.name}</p>
+                <p className="desc">{this.props.description}</p>
                 <div className="courses">
                     Top Courses
                     <ul>
