@@ -5,10 +5,10 @@ body {
 .tasksubmission .container {
     z-index: 1; 
     margin-top: 96px;
-    height: 100vh;
+    /* height: 100vh; */
     width:100%;
-    position: absolute;
-    display: flexbox;
+    /* position: absolute; */
+    /* display: flexbox; */
     align-items: center;
 }
 .tasksubmission h2{
@@ -26,9 +26,9 @@ body {
 .tasksubmission .container > .com_up{
     border-radius: 15px;
     border: 2px dashed #451996;
-    margin: auto;
-    height: 226px;
-    width: 382px;
+    margin: 8px;
+    /* height: 226px; */
+    /* width: 382px; */
     /* position:absolute; */
     justify-self: center;
 
@@ -42,21 +42,22 @@ body {
     background:rgb(255, 255, 255);
     padding: 8px;
     height: 124px;
-    width: 350px;
-    margin: 16px 16px 10px 16px;
+    width: 90%;
+    margin: 8px;
     font-size: 18px;
     color: #727272;
-    display:flex;
-    justify-content: flex-start;
+    /* display:flex; */
+    /* justify-content: flex-start; */
     /* overflow: scroll; */
     resize: none;
 } 
 .tasksubmission .com_up > .upload{
     position: relative;
-    margin: auto;
-    align-items: center;
-    column-count: 1;
-    align-self: center;
+    margin: 8px auto;
+    padding-top: 5px;
+    /* align-items: center; */
+    /* column-count: 1; */
+    /* align-self: center; */
     background:#F8B93E;
     border-radius: 15px;
     color: white;
