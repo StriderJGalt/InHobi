@@ -1,0 +1,29 @@
+.CoursesPage .courses {
+    margin-top: 56px;
+    margin-bottom: 58px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.CourseCard {
+    width: 180px;
+    /* height: 200px; */
+    margin: 16px 0;
+}
+
+.CourseCard img {
+    width: 144px;
+    height: 144px;
+    border-radius: 15px;
+}
+
+.CourseCard h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.CourseCard p {
+    font-size: 14px;
+    margin: 8px;
+}
