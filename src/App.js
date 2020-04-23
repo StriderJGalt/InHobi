@@ -3,6 +3,7 @@ import logo from './images/logo.svg';
 import './css/App.css';
 
 import { MasterLogIn } from './pages/LoginPage';
+import SignupPage  from './pages/SignupPage';
 import HomePage from './pages/HomePage'
 import InstructorsPage from './pages/InstructorsPage'
 import CoursesPage from './pages/CoursesPage'
@@ -29,6 +30,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Route exact path="/" component={MasterLogIn} />
+        <Route exact path="/SignupPage" component={SignupPage} />
         <Route exact path="/courses" component={CoursePage} />
         {/* <Route exact path="/lessonViewer" component={MasterlessonViewer} /> */}
         <Route exact path="/MenuPage" component={MenuPage} />

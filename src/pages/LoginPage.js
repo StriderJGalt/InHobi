@@ -39,16 +39,17 @@ export class MasterLogIn extends PureComponent {
       
         <form className="login_form" onSubmit={this.onSubmit}>
             <label for="username">Username</label>
-            <input type="text" id="username" placeholder="example@example.com" value={this.state.username} onChange={this.onChangeUsername}/>
+            <input type="text" id="username" placeholder="examplename" value={this.state.username} onChange={this.onChangeUsername}/>
 
             <label for="password">Password</label>
-            <input type="password" id="password" placeholder="examp1ePassword" value={this.state.password} onChange={this.onChangePass} />
+            <input type="password" id="password" placeholder="examplePassword" value={this.state.password} onChange={this.onChangePass} />
 
           <button type="submit" className="btn" >SUBMIT</button>
           <div className="text_btns">
             <div>Forgot Password</div>
             <div>Sign Up</div>
           </div>
+          <div className="continue">Continue without login ></div>
       </form>
       </div>
   );
