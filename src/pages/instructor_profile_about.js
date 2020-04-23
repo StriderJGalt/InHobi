@@ -3,7 +3,7 @@ import '../css/instructor_profile_about.css'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
 import axios from "axios";
 
-export class Instructor_courses extends Component {
+export class Instructor_about extends Component {
     constructor(props) {
         super(props)
 
@@ -32,11 +32,11 @@ export class Instructor_courses extends Component {
     render() {
         console.log('render')
         return (
-            <div className="Instructor_courses">
+            <div className="about">
                 <div className="top_bars" >
                     <TitleBar title="Instructor Profile" />
                 </div>
-                <div className='Instructor_profile'>
+                <div className='profile'>
                     <Ins_profile img={instructor_icon} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='' />
                 </div>
                 <TabBar rounded tabs={{ "About": true, "Courses": false, "Feed": false }} click={[this.clickAbout, this.clickCourses, this.clickFeed]} />
