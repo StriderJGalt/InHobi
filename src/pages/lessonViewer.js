@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
 import '../css/lessonViewer.css';
-import { Table, TableRow, TableCell } from '@material-ui/core';
+// import { Table, TableRow, TableCell } from '@material-ui/core';
 import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
+import a_icon from '../images/assignment.svg'
+import l_icon from '../images/course_icon.svg'
 
 export default class MasterlessonViewer extends Component {
 
@@ -11,7 +13,8 @@ export default class MasterlessonViewer extends Component {
 
     this.state = {
       lessonPlan: true,
-      group: false
+      group: false,
+      currentlesson : 1
     }
 
     this.clickLessonPlan = this.clickLessonPlan.bind(this)
@@ -41,23 +44,22 @@ export default class MasterlessonViewer extends Component {
   render () {
 
     return (
-    <div class="body">
-      <TitleBar title="Lesson" class="titlebar" />
-
-      <div class="inner">
+    <div class="LessonViewer">
+      <div className="top_bars" >
+        <TitleBar title="Lesson"/>
+      </div>
       <ReactPlayerComp />
 
-      <div class="playerTitle">
-          {/* <b>Now Playing:</b> Lesson # - Lesson Description */}
+      <div class="lesson_title">
+          Now Playing: Lesson #{this.state.currentlesson}
       </div>
 
-      <TabBar tabs={{"Lesson Plan": this.state.lessonPlan, "Group": this.state.group}} click={[this.clickLessonPlan, this.clickGroup]} class="tabbar" />
+      <TabBar rounded tabs={{"Lesson Plan": this.state.lessonPlan, "Group": this.state.group}} click={[this.clickLessonPlan, this.clickGroup]} class="tabbar" />
 
-      <Table class="lessonTable">
-        <LessonRow lessonNumber="Lesson 1" lessonName="Introduction to Machine Learning" time="" click={this.click}/>
-        <LessonRow lessonNumber="Assignment 1" lessonName="Assignment" time="" click={this.click}/>
-        <LessonRow lessonNumber="Lesson 2" lessonName="Linear Regression with One Variable" time="" click={this.click}/>
-      </Table>
+      <div class="syllabus">
+        <Lesson type="lesson" lessonNumber="L1" lessonName="Introduction to Machine Learning" time="21m" click={this.click}/>
+        <Lesson lessonNumber="A1" lessonName="Assignment" status="Open" click={this.click}/>
+        <Lesson type="lesson" lessonNumber="L2" lessonName="Linear Regression with One Variable" time="15m" click={this.click}/>
       </div>
 
       <BottomNavBar />      
@@ -76,8 +78,9 @@ class ReactPlayerComp extends Component {
     return (
       
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=AuW-7YGkb0g"
+          url="https://www.youtube.com/watch?v=bQI5uDxrFfA&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2"
           width="100%"
+          height={null}
           class="player"
         />
       
@@ -85,19 +88,19 @@ class ReactPlayerComp extends Component {
   }
 }
 
-class LessonRow extends Component {
+class Lesson extends Component {
   constructor(props) {
     super(props)
   }
 
   render() {
     return (
-      <TableRow class="lessonRow">
-        <TableCell class="lessonCell"> <div onClick={this.props.click}> </div> </TableCell>
-        <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.lessonNumber} </div> </TableCell>
-        <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.lessonName} </div> </TableCell>
-        <TableCell class="lessonCell"> <div onClick={this.props.click}> {this.props.time} </div> </TableCell>
-      </TableRow>
+      <div class="Lesson" onClick={this.props.click}>
+        <img src={ this.props.type == "lesson" ? l_icon : a_icon } />
+        <div class="num"> {this.props.lessonNumber} </div>
+        <div class="name"> {this.props.lessonName} </div>
+        <div class="time"> { this.props.type == "lesson" ? this.props.time : this.props.status} </div> 
+      </div>
     )
   }
 }
