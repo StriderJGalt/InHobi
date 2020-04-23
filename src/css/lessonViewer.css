@@ -43,3 +43,59 @@
     width: 35px;
     margin-right: 0px;
 }
+
+.group {
+    width: 100%;
+}
+
+.Group .message {
+    background-color: #6129cb;
+    text-align: left;
+    width: fit-content;
+    float: left;
+    margin: 8px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 8px;
+    color: white;
+    clear: both;
+}
+
+.Group .message.me {
+    clear: both;
+    float: right;
+    text-align: right;
+}
+
+.Group .message p {
+    margin: 0px;
+    font-size: 14px;
+}
+
+.Group .writer {
+    display: flex;
+    background-color: #6129cb;
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    height: 50px;
+}
+
+.Group .writer input {
+    background-color: rgba(255,255,255,0.2);
+    margin: 8px;
+    border-radius: 15px;
+    flex-grow: 1;
+    padding: 0px 12px;
+    color: white;
+    width: 50%;
+}
+
+.Group .writer button {
+    width: 80px;
+    margin: 8px 8px 8px 0;
+    height: 34px;
+    border-radius: 17px;
+    border: none;
+    flex-grow: 0;
+}
