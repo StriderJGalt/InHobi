@@ -188,8 +188,7 @@ router.post('/delete_post', function(req, res, next){
         res.send(response.data)
     }).catch((err) => console.log(err));
 });
-
-mod_forum_update_discussion_post 
+ 
 
 router.post('/update_discussion_post', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;

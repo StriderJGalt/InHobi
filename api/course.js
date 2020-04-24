@@ -3,7 +3,7 @@ const cors = require('cors');
 var router = express.Router();
 const axios = require('axios');
 
-router.get('/course_details', function(req, res, next){
+router.post('/course_details', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
     api_base=api_base.concat(`courseid=${req.body.course_id}`);
     api_base=api_base.concat(`&options[0][name]=excludemodules`);
@@ -16,6 +16,19 @@ router.get('/course_details', function(req, res, next){
     api_base=api_base.concat(`&moodlewssettingfileurl=true`);
     api_base=api_base.concat(`&moodlewsrestformat=json`);
     api_base=api_base.concat(`&wsfunction=core_course_get_contents`);
+    api_base=api_base.concat(`&wstoken=${req.body.wstoken}`);
+    const args = {}
+    axios.post(api_base, args).then(function(response){
+        res.send(response.data)
+    }).catch((err) => console.log(err));
+});
+
+router.post('/enrolled_courses', function(req, res, next){
+    api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
+    api_base=api_base.concat(`userid=${req.body.userid}`);
+    api_base=api_base.concat(`&returnusercount=0`);
+    api_base=api_base.concat(`&moodlewsrestformat=json`);
+    api_base=api_base.concat(`&wsfunction=core_enrol_get_users_courses`);
     api_base=api_base.concat(`&wstoken=${req.body.wstoken}`);
     const args = {}
     axios.post(api_base, args).then(function(response){
