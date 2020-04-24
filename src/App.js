@@ -22,6 +22,8 @@ import { MasterCMDashboard } from "./pages/CmDashboardPage";
 import CmDashboardPage from "./pages/CmDashboardPage";
 import TaskFeedbackPage from './pages/TaskFeedbackPage';
 
+import Admin_Dashboard from './pages/AdminDashboard';
+
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { ProtectedRouteAdmin } from "./route/protectedRouteAdmin";
@@ -51,6 +53,7 @@ function App() {
         <Route exact path="/CourseSyllabus" component={Course_syllabus} />
         <Route exact path="/cmDash" component={CmDashboardPage} />
         <Route exact path="/taskFeedback" component={TaskFeedbackPage} />
+        <Route exact path="/AdminDash" component={Admin_Dashboard} />
       </BrowserRouter>
     </div>
   );
