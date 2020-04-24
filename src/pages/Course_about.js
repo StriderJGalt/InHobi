@@ -97,7 +97,7 @@ class Details extends Component {
                 </div>
                 <div className='ins_profile'>
                     <h2>Instructor Profile</h2>
-                    <InstructorCard img={instructor_pic} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography", "Flash Photography", "Portrait photography"]} />
+                    <InstructorCard img={instructor_pic} name='Fathima Nizam' description="Designer | Photographer" courses={["Intro to Photography", "Flash Photography", "Portrait photography"]} />
                 </div>
             </div>
         )

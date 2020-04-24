@@ -9,9 +9,10 @@ const assgn = require('./api/assignment');
 const course = require('./api/course');
 const forum = require('./api/forum');
 
+
 const PORT = 8080
 app.use(cors())
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded())
 
 app.use('/', auth);
 app.use('/site', site);

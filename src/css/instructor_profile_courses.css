@@ -1,0 +1,6 @@
+.Instructor_courses .courses_container{
+    margin-bottom: 58px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

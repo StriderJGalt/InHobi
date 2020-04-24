@@ -10,6 +10,7 @@
     width: 180px;
     /* height: 200px; */
     margin: 16px 0;
+    text-align: center;
 }
 
 .CourseCard img {
@@ -21,9 +22,11 @@
 .CourseCard h3 {
     font-size: 18px;
     margin: 0;
+    color: #6129CB;
 }
 
 .CourseCard p {
     font-size: 14px;
-    margin: 8px;
+    margin-top: 2px;
+    color: #6129CB;
 }
