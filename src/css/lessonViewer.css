@@ -14,32 +14,32 @@
     box-sizing: border-box;
 }
 
-.LessonViewer .Lesson {
+.Lesson {
     display: flex;
     font-size: 16px;
     height: 30px;
     margin: 8px;
 }
 
-.LessonViewer .Lesson img {
+.Lesson img {
     display: block;
     width: 30px;
     height: 30px;
 }
 
-.LessonViewer .Lesson div {
+.Lesson div {
     margin: 6px 8px;
     text-align: left;
 }
 
-.LessonViewer .Lesson .name {
+.Lesson .name {
     flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.LessonViewer .Lesson .time {
+.Lesson .time {
     width: 35px;
     margin-right: 0px;
 }
