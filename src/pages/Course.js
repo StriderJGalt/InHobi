@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../css/Course_about.css'
+import '../css/Course.css'
 import { InstructorCard } from './HomePage'
 import instructor_pic from '../images/ins_pic.jpg'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
@@ -8,6 +8,7 @@ import { Lesson } from './lessonViewer'
 import course_pic from '../images/camera_web.jpg'
 import user_prof_icon from '../images/user_prof_icon.svg'
 import star from '../images/star.svg'
+import primarystar from '../images/star-24px.svg'
 export class Course_about extends Component {
     constructor(props) {
         super(props)
@@ -88,8 +89,8 @@ export class Course_about extends Component {
                             }
                             { (this.state.subpage["reviews"]) ? (
                                     <div className='reviews_container'>
-                                    <Review user_pic={user_prof_icon} username='Jeff John' star='4' date='12 Jan 2020' content='Got to learn new concepts on how to focus on the subject, what the aperture and shutter speed was and how to optimise them for taking the best picture.' />
-                                    <Review user_pic={user_prof_icon} username='Joseph John' star='4' date='13 Jan 2020' content='Got to learn new concepts on how to focus on the subject, what the aperture and shutter speed was and how to optimise them for taking the best picture.' />
+                                    <Review user_pic={user_prof_icon} username='Jeff John' star='3.6' date='12 Jan 2020' content='Got to learn new concepts on how to focus on the subject, what the aperture and shutter speed was and how to optimise them for taking the best picture.' />
+                                    <Review user_pic={user_prof_icon} username='Joseph John' star='4.8' date='13 Jan 2020' content='Got to learn new concepts on how to focus on the subject, what the aperture and shutter speed was and how to optimise them for taking the best picture.' />
                                     </div>
                                 ) : ""
                             }
@@ -192,17 +193,22 @@ class Review extends Component {
     render() {
         return (
             <div className='review'>
-                <img src={this.props.user_pic} />
-                <div className='username'>
-                    <h4>{this.props.username}</h4>
-                    <h5>{this.props.star}</h5>
-                </div>
-                <div className='date'>
-                    {this.props.date}
-                </div>
-                <div className='content'>
-                    {this.props.content}
-                </div>
+                {/* <div className="icon"> */}
+                    <img src={this.props.user_pic} />
+                {/* </div> */}
+                {/* <div className="right"> */}
+                    <div className='leftup'>
+                        <h4>{this.props.username}</h4>
+                        <p>{this.props.date}</p>
+                    </div>
+                    <div className='rightup'>
+                        <h5>{this.props.star}</h5>
+                        <img src={primarystar} />
+                    </div>
+                    <div className='content'>
+                        <p>{this.props.content}</p>
+                    </div>
+                {/* </div> */}
             </div>
         )
     }
