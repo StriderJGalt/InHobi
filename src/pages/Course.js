@@ -168,14 +168,12 @@ class Bill extends Component {
     render() {
         return (
             <div className='bill'>
-                <h2>Bill</h2>
-                <div className='course-name'>
-                    {this.props.name}
-                </div>
+                <div className="buy"><p>Buy Now</p></div>
                 <div className='price'>
-                    <h2>Price</h2>
+                <h2>Price</h2>
                     <p>MRP = {this.props.mrp}</p>
                     <p>Discount= {this.props.discount}</p>
+                    <hr />
                     <p>Total Price = {this.props.price}</p>
                 </div>
             </div>

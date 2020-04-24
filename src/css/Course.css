@@ -140,3 +140,37 @@
 .review:last-child {
     margin-bottom: 50px;
 }
+
+.bill {
+    margin: 16px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill .price h2 {
+    text-align: center;
+}
+
+.bill .price p {
+    font-size: 18px;
+    color: grey;
+}
+
+.bill .price p:last-child {
+    font-size: 21px;
+    color: black;
+}
+
+.bill .buy {
+    margin-top: calc(30% - 20px);
+    height: 80px;
+    width: 40%;
+    text-align: center;
+    background: linear-gradient(rgb(255, 235, 59),rgb(255, 198, 10));
+    border-radius: 20px;
+}
+
+.bill .buy p {
+    margin: 21px;
+}
