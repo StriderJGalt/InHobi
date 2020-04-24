@@ -13,7 +13,7 @@ export class TaskPage extends Component {
     }
 
     clickTask() {
-        alert("task")
+        
     }
 
     clickSubmissions() {

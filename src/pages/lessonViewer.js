@@ -5,6 +5,8 @@ import '../css/lessonViewer.css';
 import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
 import a_icon from '../images/assignment.svg'
 import l_icon from '../images/course_icon.svg'
+import axios from 'axios';
+import Auth from '../auth/auth'
 
 export default class MasterlessonViewer extends Component {
 
@@ -14,20 +16,32 @@ export default class MasterlessonViewer extends Component {
     this.state = {
       lessonPlan: true,
       group: false,
-      currentlesson : 1
+      currentlesson: 'Introduction to Machine Learning',
+      modules:[],
+      url:''
     }
 
     this.clickLessonPlan = this.clickLessonPlan.bind(this)
     this.clickGroup = this.clickGroup.bind(this)
     this.click = this.click.bind(this)
+    this.processmodules = this.processmodules.bind(this)
   }
+
+  processmodules(data){
+    let response_data=[]
+    for(let topic in data){
+        for(let module in topic){
+          
+        }
+    }
+}
 
   clickLessonPlan() {
     // alert("Lesson Plan")
     this.setState({
         lessonPlan: true,
         group: false,
-        currentlesson : 1
+        currentlesson : ''
       })
     // this.state.lessonPlan = false
     // this.state.group = true
@@ -39,7 +53,7 @@ export default class MasterlessonViewer extends Component {
     this.setState({
         lessonPlan: false,
         group: true,
-        currentlesson : 1
+        currentlesson : 1,
       })
     // this.state.group = true
     // this.state.lessonPlan = false
@@ -51,25 +65,47 @@ export default class MasterlessonViewer extends Component {
     
   }
 
-  render () {
+  componentDidMount(){
+    this.setState({
+      id:this.props.location.id
+    });
+    console.log(this.props.location.id)
+    axios.post('http://localhost:8080/course/course_contents',
+        {courseid:this.props.location.id, wstoken:Auth.getToken()})
+        .then(response => {
+            console.log(response)
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+  }
 
+  render () {
     return (
     <div class="LessonViewer">
       <div className="top_bars" >
         <TitleBar title="Lesson"/>
       </div>
-      <ReactPlayerComp />
+      <ReactPlayerComp url={this.state.url}/>
 
       <div class="lesson_title">
-          Now Playing: Lesson #{this.state.currentlesson}
+          Now Playing: {this.state.currentlesson}
       </div>
 
       <TabBar rounded tabs={{"Lesson Plan": this.state.lessonPlan, "Group": this.state.group}} click={[this.clickLessonPlan, this.clickGroup]} class="tabbar" />
 
       {this.state.lessonPlan ? <div class="syllabus">
-        <Lesson type="lesson" lessonNumber="L1" lessonName="Introduction to Machine Learning" time="21m" click={this.click}/>
-        <Lesson lessonNumber="A1" lessonName="Assignment" status="Open" click={this.click}/>
-        <Lesson type="lesson" lessonNumber="L2" lessonName="Linear Regression with One Variable" time="15m" click={this.click}/>
+        {
+        //   this.state.courses.map((course, index) => {
+        //     return (
+        //         <Course history={this.props.history} id={course.id} img={this.state.images} course_name={course.displayname} progress={course.progress}/>
+        //     )
+        // })
+        }
+
+        <Lesson type="url" url="https://www.youtube.com/watch?v=PPLop4L2eGk&feature=youtu.be" ssonNumber="L1" lessonName="Introduction to Machine Learning" time="21m" click={this.click}/>
+        <Lesson history={this.props.history} lessonNumber="A1" lessonName="Assignment" status="Open" click={this.click}/>
+        <Lesson type="url" lessonNumber="L2" lessonName="Linear Regression with One Variable" time="15m" click={this.click}/>
       </div> : <Group />}
 
       <BottomNavBar />      
@@ -84,11 +120,9 @@ class ReactPlayerComp extends Component {
   }
 
   render () {
-
     return (
-      
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=bQI5uDxrFfA&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2"
+          url="https://www.youtube.com/watch?v=PPLop4L2eGk&feature=youtu.be"
           width="100%"
           height={null}
           class="player"
@@ -101,15 +135,21 @@ class ReactPlayerComp extends Component {
 class Lesson extends Component {
   constructor(props) {
     super(props)
+    this.onclick = this.onclick.bind(this)
   }
 
+  onclick(){
+    this.props.history.push({
+      pathname: '/taskPage'
+    })
+  }
   render() {
     return (
-      <div class="Lesson" onClick={this.props.click}>
-        <img src={ this.props.type == "lesson" ? l_icon : a_icon } />
-        <div class="num"> {this.props.lessonNumber} </div>
+      <div class="Lesson" onClick={this.onclick}>
+        <img src={ this.props.type == "url" ? l_icon : a_icon } />
+        {/* <div class="num"> {this.props.lessonNumber} </div */}
         <div class="name"> {this.props.lessonName} </div>
-        <div class="time"> { this.props.type == "lesson" ? this.props.time : this.props.status} </div> 
+        {/* <div class="time"> { this.props.type == "lesson" ? this.props.time : this.props.status} </div>  */}
       </div>
     )
   }

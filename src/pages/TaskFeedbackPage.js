@@ -10,7 +10,7 @@ export default class TaskFeedbackPage extends Component {
                     <TitleBar title="Feedback" />
                 </div>
                 <div className="container">
-                    <FeedbackCard task_name='Task 3' />
+                    <FeedbackCard history={this.props.history} task_name='Supervised Learning Methods' />
                 </div>
                 <BottomNavBar />
             </div>
@@ -24,6 +24,14 @@ export class FeedbackCard extends Component {
         this.state = {
             task_name: this.props.task_name
         }
+        this.onsubmit = this.onsubmit.bind(this)
+    }
+
+    onsubmit(){
+        alert("Submitted")
+        this.props.history.push({
+            pathname:'/cmDash'
+        })
     }
     render() {
         return (
@@ -39,7 +47,7 @@ export class FeedbackCard extends Component {
                 <div className="comment_box">
                     <textarea name="comments" placeholder="Comments"></textarea>
                 </div>
-                <div className="submit_btn">
+                <div className="submit_btn" onClick={this.onsubmit}>
                     <h4>SUBMIT</h4>
                 </div>
                 <div style={{ "clear": "both" }}></div>

@@ -10,7 +10,7 @@ import CoursesPage from './pages/CoursesPage'
 import MenuPage from './pages/MenuPage';
 import { CoursePage } from './pages/CoursePage';
 import MasterlessonViewer from "./pages/lessonViewer";
-import CourseGroupPage from "./pages/CourseGroupPage";
+// import CourseGroupPage from "./pages/CourseGroupPage";
 import { TaskPage } from "./pages/taskpage";
 import { TaskSub } from "./pages/taskSubmission";
 
@@ -34,7 +34,7 @@ function App() {
         <Route exact path="/SignupPage" component={SignupPage} />
         <Route exact path="/courses" component={CoursePage} />
         <Route exact path="/lessonViewer" component={MasterlessonViewer} />
-        <Route exact path="/CourseGroupPage" component={CourseGroupPage} />
+        {/* <Route exact path="/CourseGroupPage" component={CourseGroupPage} /> */}
         <Route exact path="/MenuPage" component={MenuPage} />
         <Route exact path="/HomePage" component={HomePage} />
         <Route exact path="/InstructorsPage" component={InstructorsPage} />
