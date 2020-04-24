@@ -32,11 +32,12 @@ body {
 }
 
 .TaskFeedbackPage .task_card > .header > svg {
-    transform: translate(3px,-3px)scale(1.4);
+    transform: translate(3px,3px)scale(1.4);
 }
 
 .TaskFeedbackPage .task_card > .download_btn {
-    background-color: rgb(255, 230, 0);
+    /* background-color: rgb(255, 230, 0); */
+    background: linear-gradient(rgb(255, 235, 59),rgb(255, 198, 10));
     border-radius: 20px;
     height: 40px;
     margin: 8px;
@@ -49,11 +50,12 @@ body {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    margin-top: auto;
+    margin-top: 8px;
 }
 
 .TaskFeedbackPage .task_card > .download_btn > svg {
-    transform: translate(5px,-3px);
+    transform: translate(5px,3px);
+    /* margin-top: 8px; */
 }
 
 .TaskFeedbackPage .task_card > .comment_box {
