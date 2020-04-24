@@ -120,7 +120,7 @@ export class Group extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      messages: [{ "sender": "tim", "content": "hi", "time": "21:15:10" }, { "sender": "me", "content": "hello", "time": "18:11:50" }]
+      messages: [{ "sender": "tim", "content": "hi, how are u?", "time": "21:15:10" }, { "sender": "me", "content": "hello", "time": "18:11:50" }]
     }
   }
 
@@ -139,7 +139,7 @@ export class Group extends Component {
       <div className="Group">
         {messages}
         <div className="writer">
-          <input type="text" />
+          <textarea rows="1" maxlength="140" autocomplete required className="input" />
           <button type="button">Send</button>
         </div>
       </div>
