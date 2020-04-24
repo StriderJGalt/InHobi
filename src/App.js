@@ -15,6 +15,8 @@ import { TaskPage } from "./pages/taskpage";
 import { TaskSub } from "./pages/taskSubmission";
 import { Course_about } from './pages/Course_about';
 import { Course_syllabus } from './pages/Course_syllabus';
+import { Instructor_about } from './pages/instructor_profile_about';
+import { Instructor_courses } from './pages/instructor_profile_courses';
 
 import { MasterCMDashboard } from "./pages/CmDashboardPage";
 import CmDashboardPage from "./pages/CmDashboardPage";
@@ -40,6 +42,8 @@ function App() {
         <Route exact path="/MenuPage" component={MenuPage} />
         <Route exact path="/HomePage" component={HomePage} />
         <Route exact path="/InstructorsPage" component={InstructorsPage} />
+        <Route exact path="/InstructorAbout" component={Instructor_about} />
+        <Route exact path="/InstructorCourses" component={Instructor_courses} />
         <Route exact path="/CoursesPage" component={CoursesPage} />
         <Route exact path="/taskPage" component={TaskPage} />
         <Route exact path="/taskSubmission" component={TaskSub} />
