@@ -1,6 +1,7 @@
 .body{
     background-color: #E5E5E5;
     margin-top: 48px;
+    font-family: "Roboto";
 }
 .roles{
     margin-top: 75px;
@@ -17,5 +18,6 @@
 }
 .RoleCard h2{
     font-size: 18px;
+    margin: 8px;
     color: #451996;
 }

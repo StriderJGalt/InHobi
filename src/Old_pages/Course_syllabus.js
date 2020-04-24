@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import '../css/Courses_about.css'
-import { Course_profile } from './Course_about'
+import { Course_profile } from './Course'
 import { Lesson } from './lessonViewer'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
 import course_pic from '../images/camera_web.jpg'
@@ -39,9 +39,9 @@ export class Course_syllabus extends Component {
                     <TitleBar title="Course Syllabus" />
                 </div>
                 <div className='profile'>
-                    <Course_profile img={course_pic} course_name='Intro to Photography' no_of_lessons='21 Lessons' stars='4 Stars' />
+                    <Course_profile img={course_pic} course_name='Intro to Photography' no_of_lessons='21 Lessons' stars='4.2' clickBuy={this.clickBuy} />
                 </div>
-                <TabBar rounded tabs={{ "About": false, "Syllabus": true, "Reviews": false, "Buy": false }} click={[this.clickAbout, this.clickSyllabus, this.clickReviews, this.clickBuy]} />
+                <TabBar rounded tabs={{ "About": false, "Syllabus": true, "Reviews": false}} click={[this.clickAbout, this.clickSyllabus, this.clickReviews]} />
                 <div className='syllabus'>
                     <Lesson type="lesson" lessonNumber="L1" lessonName="Introduction to Machine Learning" time="21m" click={this.click} />
                     <Lesson lessonNumber="A1" lessonName="Assignment" status="Open" click={this.click} />

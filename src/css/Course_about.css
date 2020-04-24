@@ -1,6 +1,6 @@
 .profile {
-    background-color: #6129cb;
-    height: 297px;
+    background-color: #5120ae;
+    /* height: 297px; */
     margin-top: 48px;
     display: flexbox;
     align-items: center;
@@ -34,11 +34,29 @@
     color: #DADADA;
 }
 
-.profile >.stars {
-    margin-left: 32px;
-    font-size: 18px;
+.profile > .rating_and_buy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile > .rating_and_buy > .stars {
+    margin: 8px 32px;
+    font-size: 24px;
     text-align: left;
-    margin-top: 0px;
+    /* margin-top: 0px; */
+    color: #F8B03E;
+}
+
+.profile > .rating_and_buy > .stars img {
+    transform: translate(3px,3px);
+}
+
+.profile > .rating_and_buy > .buy {
+    margin: 8px 32px;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    /* margin-top: 0px; */
     color: #F8B03E;
 }
 

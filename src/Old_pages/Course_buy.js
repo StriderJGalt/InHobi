@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../css/Courses_buy.css'
-import { Course_profile } from './Course_about'
+// import { Course_profile } from './Course_about'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
 import course_pic from '../images/camera_web.jpg'
 

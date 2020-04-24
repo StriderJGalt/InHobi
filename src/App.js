@@ -8,13 +8,13 @@ import HomePage from './pages/HomePage'
 import InstructorsPage from './pages/InstructorsPage'
 import CoursesPage from './pages/CoursesPage'
 import MenuPage from './pages/MenuPage';
-import { CoursePage } from './pages/CoursePage';
+import { CoursePage } from './pages/DashboardCoursePage';
 import MasterlessonViewer from "./pages/lessonViewer";
 // import CourseGroupPage from "./pages/CourseGroupPage";
 import { TaskPage } from "./pages/taskpage";
 import { TaskSub } from "./pages/taskSubmission";
-import { Course_about } from './pages/Course_about';
-import { Course_syllabus } from './pages/Course_syllabus';
+import { Course_about } from './pages/Course';
+// import { Course_syllabus } from './pages/Course_syllabus';
 import { Instructor_about } from './pages/instructor_profile_about';
 import { Instructor_courses } from './pages/instructor_profile_courses';
 
@@ -49,8 +49,8 @@ function App() {
         <Route exact path="/CoursesPage" component={CoursesPage} />
         <Route exact path="/taskPage" component={TaskPage} />
         <Route exact path="/taskSubmission" component={TaskSub} />
-        <Route exact path="/CourseAbout" component={Course_about} />
-        <Route exact path="/CourseSyllabus" component={Course_syllabus} />
+        <Route exact path="/Course" component={Course_about} />
+        {/* <Route exact path="/CourseSyllabus" component={Course_syllabus} /> */}
         <Route exact path="/cmDash" component={CmDashboardPage} />
         <Route exact path="/taskFeedback" component={TaskFeedbackPage} />
         <Route exact path="/AdminDash" component={Admin_Dashboard} />
