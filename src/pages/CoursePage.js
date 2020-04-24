@@ -34,14 +34,14 @@ export class CoursePage extends Component {
     }
 
     componentDidMount(){
-        axios.post('http://localhost:8080/course/enrolled_courses',
+        axios.post('/course/enrolled_courses',
         {userid:Auth.getUserID(), wstoken:Auth.getToken()})
         .then(response => {
             this.setState({courses: response.data});
             
             const arr = response.data;
             
-                axios.post('http://localhost:8080/utils/course_image',
+                axios.post('/utils/course_image',
                 {
                     image_url:response.data[0].overviewfiles[0].fileurl,
                     wstoken:Auth.getToken(),
@@ -123,7 +123,6 @@ class Course extends Component {
         })
     }
     render() {
-        console.log(this.props.img)
         return (
             <div className='course' onClick={this.onclick} >
                 <div className='course-icon' >

@@ -22,7 +22,7 @@ class Auth {
             password: password
         };
         var bis = this;
-        axios.post('http://localhost:8080/login', args).then(function(response){
+        axios.post('/login', args).then(function(response){
             
             if(response.data.errorcode!='invalidlogin'){
                 
@@ -30,7 +30,7 @@ class Auth {
                 bis.token = response.data.token;
                 bis.user = true;
                 bis.admin = false;
-                axios.post('http://localhost:8080/site/site_info',{wstoken:bis.token}).then(function(site_info_response){
+                axios.post('/site/site_info',{wstoken:bis.token}).then(function(site_info_response){
                     bis.firstname = site_info_response.data.firstname;
                     bis.lastname = site_info_response.data.lastname;
                     bis.userid = site_info_response.data.userid;

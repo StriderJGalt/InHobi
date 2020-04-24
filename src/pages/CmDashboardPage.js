@@ -42,7 +42,7 @@ export default class CmDashboardPage extends Component {
     }
 
     componentDidMount(){
-        axios.post('http://localhost:8080/assgn/assignments',
+        axios.post('/assgn/assignments',
             {
                 courseid:3,
                 wstoken:Auth.getToken()
@@ -54,7 +54,7 @@ export default class CmDashboardPage extends Component {
                     var ids = []
                     for(let i in assignments){
                         ids.push(assignments[i].id)
-                        axios.post('http://localhost:8080/assgn/submissions',
+                        axios.post('/assgn/submissions',
                         {
                             assign_id:assignments[i].id,
                             wstoken:Auth.getToken()

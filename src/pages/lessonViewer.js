@@ -70,7 +70,7 @@ export default class MasterlessonViewer extends Component {
       id:this.props.location.id
     });
     console.log(this.props.location.id)
-    axios.post('http://localhost:8080/course/course_contents',
+    axios.post('/course/course_contents',
         {courseid:this.props.location.id, wstoken:Auth.getToken()})
         .then(response => {
             console.log(response)
