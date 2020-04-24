@@ -51,7 +51,7 @@ router.post('/get_discussion_post', function(req, res, next){
 router.post('/get_discussion_posts', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
     api_base = api_base.concat(`userid=${req.body.user_id}`);
-    api_base = api_base.concat(`cmid=${req.body.cm_id}`);
+    api_base = api_base.concat(`&cmid=${req.body.cm_id}`);
     api_base = api_base.concat(`&moodlewssettingfilter=true`);
     api_base = api_base.concat(`&moodlewssettingfileurl=true`);
     api_base = api_base.concat(`&moodlewsrestformat=json`);
@@ -127,13 +127,15 @@ router.post('/get_forums_by_courses', function(req, res, next){
 router.post('/add_discussion', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
     api_base = api_base.concat(`forumid=${req.body.forum_id}`);
-    api_base = api_base.concat(`subject=${req.body.subject}`);
-    api_base = api_base.concat(`message=${req.body.message}`);
+    api_base = api_base.concat(`&subject=${req.body.subject}`);
+    api_base = api_base.concat(`&message=${req.body.message}`);
     api_base = api_base.concat(`&moodlewssettingfilter=true`);
     api_base = api_base.concat(`&moodlewssettingfileurl=true`);
     api_base = api_base.concat(`&moodlewsrestformat=json`);
     api_base = api_base.concat(`&wsfunction=mod_forum_add_discussion`);
     api_base = api_base.concat(`&wstoken=${req.body.wstoken}`);
+
+    console.log(api_base);
 
     const args = {}
     axios.post(api_base, args).then((response) => {
@@ -144,8 +146,8 @@ router.post('/add_discussion', function(req, res, next){
 router.post('/add_discussion_post', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
     api_base = api_base.concat(`postid=${req.body.post_id}`);
-    api_base = api_base.concat(`subject=${req.body.subject}`);
-    api_base = api_base.concat(`message=${req.body.message}`);
+    api_base = api_base.concat(`&subject=${req.body.subject}`);
+    api_base = api_base.concat(`&message=${req.body.message}`);
     api_base = api_base.concat(`&moodlewssettingfilter=true`);
     api_base = api_base.concat(`&moodlewssettingfileurl=true`);
     api_base = api_base.concat(`&moodlewsrestformat=json`);
@@ -161,7 +163,7 @@ router.post('/add_discussion_post', function(req, res, next){
 router.post('/prepare_draft_area_for_post ', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
     api_base = api_base.concat(`postid=${req.body.post_id}`);
-    api_base = api_base.concat(`area=${req.body.area}`);
+    api_base = api_base.concat(`&area=${req.body.area}`);
     api_base = api_base.concat(`&moodlewssettingfilter=true`);
     api_base = api_base.concat(`&moodlewssettingfileurl=true`);
     api_base = api_base.concat(`&moodlewsrestformat=json`);
@@ -189,13 +191,11 @@ router.post('/delete_post', function(req, res, next){
     }).catch((err) => console.log(err));
 });
 
-mod_forum_update_discussion_post 
-
 router.post('/update_discussion_post', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
     api_base = api_base.concat(`postid=${req.body.post_id}`);
-    api_base = api_base.concat(`subject=${req.body.subject}`);
-    api_base = api_base.concat(`message=${req.body.message}`);
+    api_base = api_base.concat(`&subject=${req.body.subject}`);
+    api_base = api_base.concat(`&message=${req.body.message}`);
     api_base = api_base.concat(`&moodlewssettingfilter=true`);
     api_base = api_base.concat(`&moodlewssettingfileurl=true`);
     api_base = api_base.concat(`&moodlewsrestformat=json`);
