@@ -70,14 +70,16 @@ class Sub extends Component {
                             <textarea name="comments" placeholder="Comments"></textarea>
                         </form>
                     </div>
-                    <div class="upload">
+                
+                    <label class="upload">
+                        <input id="file_input" type="file"/>
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg"  height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="white" d="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z"/></svg>
                         </div>
                         <div>
                             Upload
-                        </div>    
-                    </div>
+                        </div> 
+                    </label>    
                 </div>
             </div>
         )
