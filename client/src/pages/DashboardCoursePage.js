@@ -31,7 +31,9 @@ export class CoursePage extends Component {
     }
 
     clickGroups() {
-        alert("Groups")
+        this.props.history.push({
+            pathname: '/DashboardGroups',
+        });
     }
 
     clickHome() {

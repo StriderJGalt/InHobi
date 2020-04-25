@@ -15,6 +15,7 @@ export default class SignupPage extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePass = this.onChangePass.bind(this);
+    this.clickSignin = this.clickSignin.bind(this);
   }
 
   onChangeUsername(event) {
@@ -29,6 +30,10 @@ export default class SignupPage extends Component {
     Auth.login(this.state.username, this.state.password, this.props);
   }
 
+  clickSignin() {
+    window.location = "/";
+  }
+
   render() {
     return (
       <div className="SignupPage">
@@ -39,7 +44,7 @@ export default class SignupPage extends Component {
       
           <div className="text_btns">
             {/* <div>Forgot Password</div> */}
-            <div>Already registered? Log in</div>
+            <div onClick={this.clickSignin}>Already registered? Log in</div>
           </div>
         <form className="signup_form" onSubmit={this.onSubmit}>
         <fieldset>

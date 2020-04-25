@@ -15,6 +15,8 @@ export class MasterLogIn extends PureComponent {
     this.onSubmit = this.onSubmit.bind(this)
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePass = this.onChangePass.bind(this);
+    this.clickSignup = this.clickSignup.bind(this);
+    this.clickContinue = this.clickContinue.bind(this);
   }
 
   onChangeUsername(event) {
@@ -27,6 +29,14 @@ export class MasterLogIn extends PureComponent {
   onSubmit(e) {
     e.preventDefault()
     Auth.login(this.state.username, this.state.password, this.props);
+  }
+
+  clickContinue() {
+    window.location = "/HomePage";
+  }
+
+  clickSignup() {
+    window.location = "/SignupPage";
   }
 
   render() {
@@ -47,9 +57,9 @@ export class MasterLogIn extends PureComponent {
           <button type="submit" className="btn" style={{color:'black'}}>SUBMIT</button>
           <div className="text_btns">
             <div>Forgot Password</div>
-            <div>Sign Up</div>
+            <div onClick={this.clickSignup}>Sign Up</div>
           </div>
-          <div className="continue">Continue without login ></div>
+          <div onClick={this.clickContinue} className="continue">Continue without login ></div>
         </form>
       </div>
     );

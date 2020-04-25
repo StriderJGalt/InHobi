@@ -28,7 +28,7 @@ export default class MenuPage extends Component {
         return (
             <div className="MenuPage">
                 <div className="top_bars" >
-                    <TitleBar title="InHobi" />
+                    <TitleBar title="InHobi" logout/>
                 </div>
                 <div className="container">
                     <MenuItem name="Profile" icon={profile_pic} />

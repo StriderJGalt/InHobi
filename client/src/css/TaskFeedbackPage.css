@@ -76,7 +76,7 @@ body {
 }
 
 .TaskFeedbackPage .task_card > .submit_btn {
-    width: 100px;
+    width: 200px;
     height: 40px;
     background-color: #6129CB;
     border-radius: 20px;

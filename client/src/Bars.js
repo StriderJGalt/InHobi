@@ -2,6 +2,16 @@ import React, { Component } from 'react'
 import './css/Bars.css'
 
 export class TitleBar extends Component {
+
+    constructor(props) {
+        super(props);
+        this.clickLogout = this.clickLogout.bind(this);
+    }
+
+    clickLogout() {
+        window.location = "/";
+    }
+    
     render() {
         return (
             <div className="title_bar">
@@ -11,6 +21,7 @@ export class TitleBar extends Component {
                 </svg>)}
                 <h1 className="title">{this.props.title}</h1>
                 {this.props.signin ? (<h1 className="signin"><span>Login</span> / <span>Signup</span></h1>) : ""}
+                {this.props.logout ? (<h1 onClick={this.clickLogout} className="signin"><span>Logout</span></h1>) : ""}
             </div>
         )
     }
