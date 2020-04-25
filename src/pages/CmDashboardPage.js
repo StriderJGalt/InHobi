@@ -46,7 +46,7 @@ export default class CmDashboardPage extends Component {
     componentDidMount(){
         axios.post('/assgn/assignments',
             {
-                courseid:4,
+                courseid:3,
                 wstoken:Auth.getToken()
 
             }).then(
@@ -90,9 +90,9 @@ export default class CmDashboardPage extends Component {
                 {
                     this.state.submissions.map((assignment, index)=>{
                         return assignment.submissions.map((submission)=>{
-                            if(submission.attemptnumber!="0"){
+                            if(submission.status=="submitted" && submission.gradingstatus=="notgraded"){
                                 return (
-                                    <TaskCard history={this.props.history} task_name={this.state.names[this.state.ids.indexOf(assignment.assignmentid)]} userid={submission.userid} assignid={assignment.assignmentid} />
+                                    <TaskCard submission={submission} time_modified={submission.timemodified} history={this.props.history} task_name={this.state.names[this.state.ids.indexOf(assignment.assignmentid)]} userid={submission.userid} assignid={assignment.assignmentid} />
                                 )  
                             }                             
                         })
@@ -111,14 +111,19 @@ export class TaskCard extends Component {
     constructor(props){
         super(props);
         this.state={
-            fullname:''
+            fullname:'',
+            timemodified:''
         }
         this.onclick = this.onclick.bind(this)
     }
 
     onclick(){
         this.props.history.push({
-            pathname:'/taskFeedback'
+            pathname:'/taskFeedback',
+            submission:this.props.submission,
+            assignid:this.props.assignid,
+            userid:this.props.userid,
+            assignmentname:this.props.task_name
         })
     }
     componentDidMount(){
@@ -134,7 +139,14 @@ export class TaskCard extends Component {
                 })
             }
         )
+        var theDate = new Date(this.props.time_modified * 1000);
+        var dateString = theDate.toLocaleString();
+        this.setState({
+            timemodified:dateString
+        })
     }
+    
+
     render() {
         return (
             <div className="task_card" onClick={this.onclick}>
@@ -143,7 +155,7 @@ export class TaskCard extends Component {
                     <p>{this.state.fullname}</p>
                 </div>
                 <div className="right">
-                    <h4>{this.props.time_submited}</h4>
+                    <h10>{this.state.timemodified}</h10>
                 </div>
             </div>
         )

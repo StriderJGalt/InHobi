@@ -24,7 +24,7 @@ export default class MasterlessonViewer extends Component {
     this.clickLessonPlan = this.clickLessonPlan.bind(this)
     this.clickGroup = this.clickGroup.bind(this)
     this.onclick = this.onclick.bind(this)
-    
+    this.goback = this.goback.bind(this)
   }
 
   clickLessonPlan() {
@@ -89,10 +89,14 @@ export default class MasterlessonViewer extends Component {
         })
   }
 
+  goback(){
+
+  }
+
   render () {
     return (
     <div class="LessonViewer">
-      <div className="top_bars" >
+      <div className="top_bars" onclick={this.goback} >
         <TitleBar title="Lesson"/>
       </div>
       <ReactPlayerComp url={this.state.url}/>

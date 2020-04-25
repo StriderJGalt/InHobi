@@ -91,4 +91,22 @@ router.post('/get_participant', (req, res, next) => {
 });
 
 
+router.post('/grade_assignment', (req, res, next) => {
+    api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
+    api_base=api_base.concat(`assignmentid=${req.body.assignid}`);
+    api_base=api_base.concat(`&userid=${req.body.userid}`);
+    api_base=api_base.concat(`&grade=100`);
+    api_base=api_base.concat(`&attemptnumber=${req.body.attemptnumber}`);
+    api_base=api_base.concat(`&addattempt=0`);
+    api_base=api_base.concat(`&workflowstate=`);
+    api_base=api_base.concat(`&applytoall=1`);
+    api_base=api_base.concat(`&wsfunction=mod_assign_save_grade`);
+    api_base=api_base.concat(`&wstoken=${req.body.wstoken}`);
+    const args = {}
+
+    axios.post(api_base, args).then(function(response){
+        res.send(response.data);
+    }).catch((err) => console.log(err));
+});
+
 module.exports = router;
