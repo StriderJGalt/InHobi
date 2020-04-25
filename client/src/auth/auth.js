@@ -54,10 +54,18 @@ class Auth {
         });
     }
 
-    logout(callback){
+    logout(props){
         this.authenticated = false;
+        this.user = false;
+        this.userid = '';
+        this.admin = false;
         this.token = '';
-        callback();
+        this.firstname = '';
+        this.lastname = '';
+        this.siteinfo = {};
+        props.history.push({
+            pathname:'/'
+        })
     }
 
     isAuthenticated(){

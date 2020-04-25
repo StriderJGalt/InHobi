@@ -17,7 +17,7 @@ export class CoursePage extends Component {
         this.clickFeed = this.clickFeed.bind(this)
         this.clickCourses = this.clickCourses.bind(this)
         this.clickGroups = this.clickGroups.bind(this)
-        this.clickHome = this.clickHome.bind(this)
+        
     }
 
     clickFeed() {
@@ -33,12 +33,6 @@ export class CoursePage extends Component {
     clickGroups() {
         this.props.history.push({
             pathname: '/DashboardGroups',
-        });
-    }
-
-    clickHome() {
-        this.props.history.push({
-            pathname: '/courses'
         });
     }
 
@@ -77,7 +71,7 @@ export class CoursePage extends Component {
                     {/* <Course img={course_icon} course_name='Machine Learning' instructor='' progress={70} notifications={0} /> */}
                     
                 </div>
-                <BottomNavBar homeClick={this.clickHome} />
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }

@@ -8,20 +8,28 @@ import intsructor_icon from '../images/instructor_icon.png'
 import groups_icon from '../images/group_icon.svg'
 import blog_icon from '../images/content.svg'
 import sponsor_icon from '../images/gift.svg'
+import Auth from '../auth/auth'
 
 export default class MenuPage extends Component {
     constructor(props) {
         super(props);
         this.clickCourses = this.clickCourses.bind(this);
         this.clickInstructors = this.clickInstructors.bind(this);
+        this.clickLogOut = this.clickLogOut.bind(this)
     }
-
+    clickLogOut(){
+        Auth.logout(this.props)
+    }
     clickCourses() {
-        window.location = "/CoursesPage";
+        this.props.history.push({
+            pathname:'/CoursesPage'
+        })
     } 
 
     clickInstructors() {
-        window.location = "/InstructorsPage";
+        this.props.history.push({
+            pathname:"/InstructorsPage"
+        })
     } 
 
     render() {
@@ -32,14 +40,14 @@ export default class MenuPage extends Component {
                 </div>
                 <div className="container">
                     <MenuItem name="Profile" icon={profile_pic} />
-                    <MenuItem name="Settings" icon={settings_icon} />
+                    <MenuItem click={this.clickLogOut} name="LogOut" icon={settings_icon} />
                     <MenuItem click={this.clickCourses} name="Courses" icon={course_icon} />
                     <MenuItem click={this.clickInstructors} name="Instructors" icon={intsructor_icon} />
                     <MenuItem name="Open Groups" icon={groups_icon} />
                     <MenuItem name="Blog" icon={blog_icon} />
                     <MenuItem name="Sponsor" icon={sponsor_icon} />
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history}/>
             </div>
         )
     }

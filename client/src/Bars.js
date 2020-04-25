@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './css/Bars.css'
+import Auth from './auth/auth'
 
 export class TitleBar extends Component {
 
@@ -13,6 +14,7 @@ export class TitleBar extends Component {
     }
     
     render() {
+        console.log(Auth.isAuthenticated())
         return (
             <div className="title_bar">
                 {this.props.no_back ? "" : (<svg className="back_btn" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
@@ -20,8 +22,7 @@ export class TitleBar extends Component {
                     <path fill="white" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" />
                 </svg>)}
                 <h1 className="title">{this.props.title}</h1>
-                {this.props.signin ? (<h1 className="signin"><span>Login</span> / <span>Signup</span></h1>) : ""}
-                {this.props.logout ? (<h1 onClick={this.clickLogout} className="signin"><span>Logout</span></h1>) : ""}
+                {Auth.isAuthenticated() ? <h1>{Auth.getName}</h1> : (<h1 className="signin"><span>Login</span> / <span>Signup</span></h1>) }
             </div>
         )
     }
@@ -67,21 +68,23 @@ export class BottomNavBar extends Component {
         };
         this.clickHome = this.clickHome.bind(this)
         this.clickMenu = this.clickMenu.bind(this)
-
+        this.clickcourses = this.clickcourses.bind(this)
     }
-
+    clickcourses(){
+        this.props.history.push({
+            pathname:'/courses'
+        })
+    }
     clickHome() {
-        // this.props.history.push({
-        //     pathname: '/HomePage',
-        // });
-        window.location = "/HomePage";
+        this.props.history.push({
+            pathname: '/HomePage',
+        });
     }
 
     clickMenu() {
-        // this.props.history.push({
-        //     pathname: '/MenuPage',
-        // });
-        window.location = "/MenuPage";
+        this.props.history.push({
+            pathname: '/MenuPage',
+        });
     }
 
     clickDashBtn() {
@@ -137,7 +140,7 @@ export class BottomNavBar extends Component {
                 {/* { this.state.dash_wheel ?  */}
                 <div className={"dial " + this.state.dash_wheel}>
                     <div className="circle" />
-                    <div className="dial_icon courses" onClick={this.props.homeClick}>
+                    <div className="dial_icon courses" onClick={this.clickcourses}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="white" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M12 11.55c-1.82-1.7-4.12-2.89-6.68-3.35C4.11 7.99 3 8.95 3 10.18v6.24c0 1.68.72 2.56 1.71 2.69 2.5.32 4.77 1.35 6.63 2.87.35.29.92.32 1.27.04 1.87-1.53 4.16-2.58 6.68-2.9.94-.13 1.71-1.06 1.71-2.02v-6.92c0-1.23-1.11-2.19-2.32-1.98-2.56.46-4.86 1.65-6.68 3.35zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z" /></svg>
                         <p>Courses</p>
                     </div>
