@@ -2,11 +2,33 @@
     background-color: white;
 }
 .HomePage .ad_carousel {
+    margin-top: 48px;
     height: calc(0.75 * 100vw);
     width: 100vw;
     background-color: purple;
-    background: url('../images/ad_placeholder.png') center no-repeat;
-    background-size: cover;
+    /* background: url('../images/ad_placeholder.png') center no-repeat; */
+    /* background-size: cover; */
+    display: flex;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.HomePage .ad_carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.HomePage .ad_carousel img {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    scroll-snap-align: start;
 }
 
 .HomePage .instructors {
