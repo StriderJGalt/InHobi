@@ -97,11 +97,11 @@
 
 .bottom_nav_bar > .nav_item.placeholder > .circle{
     background: none;
-    width: 76px;
-    height: 76px;
+    width: 68px;
+    height: 68px;
     position: absolute;
-    top: -38px;
-    left: calc(50% - 38px);
+    top: -34px;
+    left: calc(50% - 34px);
     border-radius: 50%;
     box-shadow: 0px 0px 0px 1000px #451996;
 }
@@ -157,27 +157,31 @@
     width: 200px;
     height: 100px;
     overflow: hidden;
+    transform: rotate(-180deg);
+    transform-origin: bottom center;
 }
 
 .dial.in {
-    animation-duration: 0.15s;
+    animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-name: rotate_in;
 }
 
 .dial.out {
-    animation-duration: 0.15s;
+    animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-name: rotate_out;
 }
 
 @keyframes rotate_in {
     from {
+        opacity: 0;
         transform: rotate(-180deg);
         transform-origin: bottom center;
     }
 
     to {
+        opacity: 1;
         transform: rotate(0deg);
         transform-origin: bottom center;
     }
@@ -185,11 +189,13 @@
 
 @keyframes rotate_out {
     from {
+        opacity: 1;
         transform: rotate(0deg);
         transform-origin: bottom center;
     }
 
     to {
+        opacity: 0;
         transform: rotate(180deg);
         transform-origin: bottom center;
     }
@@ -197,10 +203,10 @@
 
 .dial .circle {
     position: absolute;
-    top: calc(100% - 38px);
-    left: calc(50% - 38px);
-    width: 76px;
-    height: 76px;
+    top: calc(100% - 34px);
+    left: calc(50% - 34px);
+    width: 68px;
+    height: 68px;
     border-radius: 50%;
     /* background-color: #451996; */
     box-shadow: 0px 0px 0px 60px #561bac;
@@ -229,7 +235,7 @@
 
 .dial .courses {
     top: 45px;
-    left: 9px;
+    left: 14px;
 }
 
 .dial .courses svg{
@@ -247,7 +253,7 @@
 
 .dial .groups {
     top: 45px;
-    left: 140px;
+    left: 133px;
 }
 
 .dial .groups svg{

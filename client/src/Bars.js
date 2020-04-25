@@ -63,7 +63,7 @@ export class BottomNavBar extends Component {
         super(props);
         this.clickDashBtn = this.clickDashBtn.bind(this);
         this.state = {
-            dash_wheel: "out"
+            dash_wheel: "none"
         };
         this.clickHome = this.clickHome.bind(this)
         this.clickMenu = this.clickMenu.bind(this)
