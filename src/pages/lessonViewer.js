@@ -59,7 +59,7 @@ export default class MasterlessonViewer extends Component {
     else if(info.modname=='assign'){
       this.props.history.push({
         pathname: '/taskPage',
-        info:info,
+        cmid:info.id,
         courseid:this.state.id
       })
     }

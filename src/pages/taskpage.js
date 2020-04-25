@@ -8,7 +8,12 @@ export class TaskPage extends Component {
 
     constructor(props) {
         super(props)
-
+        this.state = {
+            coursename:'',
+            asggn_name:'',
+            intro:'',
+            assgn_id:''
+        }
         this.clickTask = this.clickTask.bind(this)
         this.clickSubmissions = this.clickSubmissions.bind(this)
     }
@@ -19,7 +24,10 @@ export class TaskPage extends Component {
 
     clickSubmissions() {
         this.props.history.push({
-            pathname: '/taskSubmission'
+            pathname: '/taskSubmission',
+            assgnid:this.state.assgn_id,
+            courseid:this.props.location.courseid,
+            cmid:this.props.location.cmid
         })
     }
 
@@ -32,7 +40,18 @@ export class TaskPage extends Component {
             response = response.data.courses[0]
             var coursename = response.fullname
             var assignments = response.assignments
-            for(let assignment in )
+            console.log(this.props.location.cmid)
+            console.log(assignments)
+            for(let index in assignments){
+                if(assignments[index].cmid==this.props.location.cmid){
+                    this.setState({
+                        coursename:coursename,
+                        assgn_name:assignments[index].name,
+                        intro:assignments[index].intro,
+                        assgn_id:assignments[index].id
+                    })
+                }
+            }
         })
         .catch(function(error) {
             console.log(error);
@@ -48,7 +67,7 @@ export class TaskPage extends Component {
                     <TabBar tabs={{"Task":true,"Submissions":false}} click={[this.clickTask, this.clickSubmissions]} />
                 </div>    
                 <div className='container courses'>
-                    <Task course_name='Machine Learning' task_name='Supervised Learning Methods' task_content="Compile a list of Supervised Learning Methods"/>
+                    <Task course_name={this.state.coursename} task_name={this.state.assgn_name} task_content={this.state.intro}/>
                 </div>
                 <BottomNavBar />
                 </div>
@@ -72,9 +91,9 @@ class Task extends Component {
                     <h2 className='task_name'>
                         {this.props.task_name}
                     </h2>
-                    <h5 className='task_content'>
+                    <div className='task_content'>
                         {this.props.task_content}
-                    </h5>
+                    </div>
             </div>
         )
     }
