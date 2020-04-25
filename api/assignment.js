@@ -63,11 +63,15 @@ router.post('/submission_status', function(req, res, next){
     }).catch((err) => console.log(err));
 });
 
-router.post('/submit_assignment', (req, res, next) => {
+router.post('/save_submission', (req, res, next) => {
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
-    api_base=api_base.concat(`assignmentid=${req.body.assign_id}`);
-    api_base=api_base.concat(`&plugindata=${req.body.text}`);
+    api_base=api_base.concat(`assignmentid=${req.body.assignid}`);
+    api_base=api_base.concat(`&plugindata[onlinetext_editor][text]=${req.body.text}`);
+    api_base=api_base.concat(`&plugindata[onlinetext_editor][format]=${req.body.format}`);
+    api_base=api_base.concat(`&plugindata[onlinetext_editor][itemid]=${req.body.itemid}`);
+    api_base=api_base.concat(`&plugindata[files_filemanager]=${req.body.files_filemanager}`);
     api_base=api_base.concat(`&wsfunction=mod_assign_save_submission`);
+    api_base=api_base.concat(`&moodlewsrestformat=json`);
     api_base=api_base.concat(`&wstoken=${req.body.wstoken}`);
     const args = {}
 
@@ -76,6 +80,20 @@ router.post('/submit_assignment', (req, res, next) => {
     }).catch((err) => console.log(err));
 });
 
+
+router.post('/submit_for_grading', (req, res, next) => {
+    api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
+    api_base=api_base.concat(`assignmentid=${req.body.assignid}`);
+    api_base=api_base.concat(`&acceptsubmissionstatement=1`);
+    api_base=api_base.concat(`&wsfunction=mod_assign_submit_for_grading`);
+    api_base=api_base.concat(`&moodlewsrestformat=json`);
+    api_base=api_base.concat(`&wstoken=${req.body.wstoken}`);
+    const args = {}
+
+    axios.post(api_base, args).then(function(response){
+        res.send(response.data);
+    }).catch((err) => console.log(err));
+});
 router.post('/get_participant', (req, res, next) => {
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
     api_base=api_base.concat(`assignid=${req.body.assignid}`);
