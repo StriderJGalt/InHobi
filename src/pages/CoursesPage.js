@@ -1,7 +1,7 @@
-import React, { Component } from 'react' 
+import React, { Component } from 'react'
 import "../css/CoursesPage.css"
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
-import course_pic from '../images/camera_web.jpg' 
+import course_pic from '../images/camera_web.jpg'
 
 export default class CoursesPage extends Component {
     render() {
@@ -11,16 +11,16 @@ export default class CoursesPage extends Component {
                     <TitleBar title="Courses" />
                 </div>
                 <div className="courses">
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27" rating="4.8" /> 
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
                 </div>
                 <BottomNavBar />
             </div>
@@ -28,13 +28,13 @@ export default class CoursesPage extends Component {
     }
 }
 
-class CourseCard extends Component {   
+export class CourseCard extends Component {
     render() {
         return (
             <div className='CourseCard'>
                 <img src={this.props.img} />
                 <h3>{this.props.name}</h3>
-                {/* <p>{this.props.num_lessons+' Lessons'}</p> */}
+                <p>{this.props.num_lessons}</p>
             </div>
         )
     }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import '../css/instructor_profile_about.css'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
-import axios from "axios";
+import instructor_pic from '../images/ppic.jpg'
+// import axios from "axios";
 
 export class Instructor_about extends Component {
     constructor(props) {
@@ -26,18 +27,16 @@ export class Instructor_about extends Component {
         });
     }
 
-    componentDidMount() {
-        axios.post('http://localhost:8080/course/courses')
-    }
+
     render() {
         console.log('render')
         return (
-            <div className="about">
+            <div className="Instructor-about">
                 <div className="top_bars" >
                     <TitleBar title="Instructor Profile" />
                 </div>
                 <div className='profile'>
-                    <Ins_profile img={instructor_icon} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='' />
+                    <Ins_profile img={instructor_pic} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='Red Dot Award Winner' />
                 </div>
                 <TabBar rounded tabs={{ "About": true, "Courses": false, "Feed": false }} click={[this.clickAbout, this.clickCourses, this.clickFeed]} />
                 <div className='about_container'>
@@ -48,7 +47,7 @@ export class Instructor_about extends Component {
         )
     }
 }
-class Ins_profile extends Component {
+export class Ins_profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -56,7 +55,7 @@ class Ins_profile extends Component {
     };
     render() {
         return (
-            <div className='profile'>
+            <div className='Ins-profile'>
                 <div className='instructor-icon' >
                     <img src={this.props.img} />
                 </div>
@@ -85,11 +84,15 @@ class About extends Component {
             <div className='about'>
                 <div className='intro'>
                     <h2>Introduction</h2>
-                    {this.props.intro}
+                    <div className='content'>
+                        {this.props.intro}
+                    </div>
                 </div>
                 <div className='awards'>
                     <h2>Accreditations</h2>
-                    {this.state.accreditations}
+                    <div className='accreditations'>
+                        {this.props.accreditations}
+                    </div>
                 </div>
             </div>
         )

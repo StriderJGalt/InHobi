@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-// import '../css/instructor_profile_courses.css'
-import course_icon from '../css/camera_web.jpg'
+import '../css/instructor_profile_courses.css'
+import course_pic from '../css/camera_web.jpg'
+import instructor_pic from '../images/ppic.jpg'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
-import axios from "axios";
+import { Ins_profile } from './instructor_profile_about'
+import { CourseCard } from './CoursesPage'
 
 export class Instructor_courses extends Component {
     constructor(props) {
@@ -27,9 +29,7 @@ export class Instructor_courses extends Component {
         });
     }
 
-    componentDidMount() {
-        axios.post('http://localhost:8080/course/courses')
-    }
+
     render() {
         console.log('render')
         return (
@@ -38,65 +38,23 @@ export class Instructor_courses extends Component {
                     <TitleBar title="Instructor Profile" />
                 </div>
                 <div className='Instructor_profile'>
-                    <Ins_profile img={"instructoricon"} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='' />
+                    <Ins_profile img={instructor_pic} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='Red Dot Award Winner' />
                 </div>
                 <TabBar rounded tabs={{ "About": false, "Courses": true, "Feed": false }} click={[this.clickAbout, this.clickCourses, this.clickFeed]} />
                 <div className='courses_container'>
-                    <Course_profile img={course_icon} course_name='Introduction to Photography' no_of_lessons='21 Lessons' />
-                    <Course_profile img={course_icon} course_name='Machine Learning' no_of_lessons='15 Lessons' />
-
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
                 </div>
                 <BottomNavBar />
             </div>
         )
     }
 }
-class Ins_profile extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    };
-    render() {
-        return (
-            <div className='profile'>
-                <div className='instructor-icon' >
-                    <img src={this.props.img} />
-                </div>
-                <div className='instructor-name'>
-                    {this.props.ins_name}
-                </div>
-                <div className='description'>
-                    {this.props.description}
-                </div>
-                <div className="award">
-                    {this.props.award}
-                </div>
-            </div>
-        )
-    }
-}
-
-class Course_profile extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    };
-    render() {
-        return (
-            <div className='course'>
-                <div className='course-icon' >
-                    <img src={this.props.img} />
-                </div>
-                <div className='course-name'>
-                    {this.props.course_name}
-                </div>
-                <div className='no_of_lessons'>
-                    {this.state.no_of_lessons}
-                </div>
-            </div>
-        )
-    }
-}
-

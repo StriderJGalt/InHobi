@@ -2,11 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
 import App from './App';
-import TaskFeedbackPage from './pages/TaskFeedbackPage';
-import { TaskPage } from './pages/taskpage';
-import {CoursePage} from './pages/CoursePage';
-import MenuPage from './pages/MenuPage';
-import { Instructor_courses } from './pages/instructor_profile_courses';
+
 import * as serviceWorker from './worker/serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

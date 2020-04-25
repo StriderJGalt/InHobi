@@ -2,11 +2,33 @@
     background-color: white;
 }
 .HomePage .ad_carousel {
+    margin-top: 48px;
     height: calc(0.75 * 100vw);
     width: 100vw;
     background-color: purple;
-    background: url('../images/ad_placeholder.png') center no-repeat;
-    background-size: cover;
+    /* background: url('../images/ad_placeholder.png') center no-repeat; */
+    /* background-size: cover; */
+    display: flex;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.HomePage .ad_carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.HomePage .ad_carousel img {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    scroll-snap-align: start;
 }
 
 .HomePage .instructors {
@@ -89,13 +111,24 @@
     box-sizing: border-box;
 }
 .InstructorCard .courses ul{
-    font-size: 14px;
+    /* font-size: 14px; */
     padding: 0px;
     margin: 8px 0;
     list-style-type:none;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 300px) {
+    .InstructorCard .courses ul{
+      font-size: calc(13px + 7 * ((100vw - 300px) / 500));
+    }
+}
+@media screen and (min-width: 800px) {
+    .InstructorCard .courses ul{
+      font-size: 20px;
+    }
 }
 
 .HomePage .groups {
@@ -135,4 +168,5 @@
     border-radius: 20px;
     border: none;
     background-color: rgb(255, 208, 0);
+    margin-right: 16px;
 }

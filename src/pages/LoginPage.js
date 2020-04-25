@@ -5,13 +5,13 @@ import '../css/LoginPage.css'
 
 export class MasterLogIn extends PureComponent {
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
-      username:'',
-      password:''
+      username: '',
+      password: ''
     }
-    
+
     this.onSubmit = this.onSubmit.bind(this)
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePass = this.onChangePass.bind(this);
@@ -33,16 +33,16 @@ export class MasterLogIn extends PureComponent {
     return (
       <div className="LoginPage">
         <div className="Title">
-            <h1> InHobi</h1>
-            <h2> A Social Good App </h2>
+          <h1> InHobi</h1>
+          <h2> A Social Good App </h2>
         </div>
-      
-        <form className="login_form" onSubmit={this.onSubmit}>
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="examplename" value={this.state.username} onChange={this.onChangeUsername}/>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="examplePassword" value={this.state.password} onChange={this.onChangePass} />
+        <form className="login_form" onSubmit={this.onSubmit}>
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="example Name" value={this.state.username} onChange={this.onChangeUsername} />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="example Password" value={this.state.password} onChange={this.onChangePass} />
 
           <button type="submit" className="btn" >SUBMIT</button>
           <div className="text_btns">
@@ -50,9 +50,9 @@ export class MasterLogIn extends PureComponent {
             <div>Sign Up</div>
           </div>
           <div className="continue">Continue without login ></div>
-      </form>
+        </form>
       </div>
-  );
+    );
   }
 }
 

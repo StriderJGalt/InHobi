@@ -4,6 +4,8 @@ import { TitleBar, TabBar, BottomNavBar } from '../Bars'
 import instructor_pic from '../images/ins_pic.jpg' 
 import instructor_pic2 from '../images/ppic.jpg' 
 import group_pic from '../images/guitar.jpg' 
+import ad from '../images/ad_placeholder.png'
+import ad2 from '../images/pottery.jpg'
 
 export default class HomePage extends Component {
     render() {
@@ -13,6 +15,9 @@ export default class HomePage extends Component {
                     <TitleBar no_back signin title="InHobi" />
                 </div>
                 <div className="ad_carousel">
+                    <img src={ad} />
+                    <img src={group_pic} />
+                    <img src={ad2} />
                 </div>
                 <div className="instructors">
                     <TabBar rounded tabs={{"Instructors":false}} click={["null"]} />
