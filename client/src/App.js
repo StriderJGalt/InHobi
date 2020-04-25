@@ -47,6 +47,7 @@ function App() {
         <Route exact path="/InstructorAbout" component={Instructor_about} />
         <Route exact path="/InstructorCourses" component={Instructor_courses} />
         <Route exact path="/CoursesPage" component={CoursesPage} />
+        <Route exact path="/CourseProfile" component={Course_about} />
         <ProtectedRouteUser exact path="/taskPage" component={TaskPage} />
         <ProtectedRouteUser exact path="/taskSubmission" component={TaskSub} />
 
