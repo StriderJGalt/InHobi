@@ -16,13 +16,9 @@ export default class MasterlessonViewer extends Component {
     this.state = {
       lessonPlan: true,
       group: false,
-<<<<<<< HEAD
       currentlesson: '',
       contents:[],
       url:''
-=======
-      currentlesson: 1
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
     }
 
     this.clickLessonPlan = this.clickLessonPlan.bind(this)
@@ -33,24 +29,13 @@ export default class MasterlessonViewer extends Component {
 
   clickLessonPlan() {
     this.setState({
-<<<<<<< HEAD
         lessonPlan: true,
         group: false,
       })
-=======
-      lessonPlan: true,
-      group: false,
-      currentlesson: 1
-    })
-    // this.state.lessonPlan = false
-    // this.state.group = true
-    // this.render()
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
   }
 
   clickGroup() {
     this.setState({
-<<<<<<< HEAD
         lessonPlan: false,
         group: true
       })
@@ -111,29 +96,11 @@ export default class MasterlessonViewer extends Component {
   }
 
   goback(){
-=======
-      lessonPlan: false,
-      group: true,
-      currentlesson: 1
-    })
-    // this.state.group = true
-    // this.state.lessonPlan = false
-    console.log(this.state.group)
-    // this.render()
-  }
-
-  click() {
-
-  }
-
-  render() {
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
 
   }
 
   render () {
     return (
-<<<<<<< HEAD
     <div class="LessonViewer">
       <div className="top_bars" onclick={this.goback} >
         <TitleBar title="Lesson"/>
@@ -143,21 +110,9 @@ export default class MasterlessonViewer extends Component {
       <div class="lesson_title">
           Now Playing: {this.state.currentlesson}
       </div>
-=======
-      <div class="LessonViewer">
-        <div className="top_bars" >
-          <TitleBar title="Lesson" />
-        </div>
-        <ReactPlayerComp />
-
-        <div class="lesson_title">
-          Now Playing: Lesson #{this.state.currentlesson}
-        </div>
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
 
         <TabBar rounded tabs={{ "Lesson Plan": this.state.lessonPlan, "Group": this.state.group }} click={[this.clickLessonPlan, this.clickGroup]} class="tabbar" />
 
-<<<<<<< HEAD
       {this.state.lessonPlan ? <div class="syllabus">
         {
           this.state.contents.map((topic)=>{
@@ -171,14 +126,6 @@ export default class MasterlessonViewer extends Component {
           })
         }
       </div> : <Group />}
-=======
-        {this.state.lessonPlan ? <div class="syllabus">
-          <Lesson type="lesson" lessonNumber="L1" lessonName="Introduction to Machine Learning" time="21m" click={this.click} />
-          <Lesson lessonNumber="A1" lessonName="Assignment" status="Open" click={this.click} />
-          <Lesson type="lesson" lessonNumber="L2" lessonName="Linear Regression with One Variable" time="15m" click={this.click} />
-          <Lesson lessonNumber="A2" lessonName="Assignment" status="Lock" click={this.click} />
-        </div> : <Group />}
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
 
         <BottomNavBar />
       </div>)
@@ -191,7 +138,6 @@ class ReactPlayerComp extends Component {
     super(props)
   }
 
-<<<<<<< HEAD
   render () {
     return (
         <ReactPlayer
@@ -201,19 +147,6 @@ class ReactPlayerComp extends Component {
           class="player"
         />
       
-=======
-  render() {
-
-    return (
-
-      <ReactPlayer
-        url="https://www.youtube.com/watch?v=bQI5uDxrFfA&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&index=2"
-        width="100%"
-        height={null}
-        class="player"
-      />
-
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
     )
   }
 }
@@ -228,19 +161,11 @@ export class Lesson extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
       <div class="Lesson" onClick={this.onclick}>
         <img src={ this.props.type == "url" ? l_icon : a_icon } />
         {/* <div class="num"> {this.props.lessonNumber} </div */}
         <div class="name"> {this.props.lessonName} </div>
         {/* <div class="time"> { this.props.type == "lesson" ? this.props.time : this.props.status} </div>  */}
-=======
-      <div class="Lesson" onClick={this.props.click}>
-        <img src={this.props.type == "lesson" ? l_icon : a_icon} />
-        <div class="num"> {this.props.lessonNumber} </div>
-        <div class="name"> {this.props.lessonName} </div>
-        <div class="time"> {this.props.type == "lesson" ? this.props.time : this.props.status} </div>
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
       </div>
     )
   }
