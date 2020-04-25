@@ -29,9 +29,20 @@ export default class CoursesPage extends Component {
 }
 
 export class CourseCard extends Component {
+
+    constructor(props) {
+        super(props);
+        this.clickcourses = this.clickcourses.bind(this);
+    }
+
+    clickcourses() {
+        // alert("clicked");
+        window.location = "/CourseProfile";
+    }
+
     render() {
         return (
-            <div className='CourseCard'>
+            <div onClick={this.clickcourses} className='CourseCard'>
                 <img src={this.props.img} />
                 <h3>{this.props.name}</h3>
                 <p>{this.props.num_lessons}</p>

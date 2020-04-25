@@ -8,6 +8,7 @@ import ad from '../images/ad_placeholder.png'
 import ad2 from '../images/pottery.jpg'
 
 export default class HomePage extends Component {
+
     render() {
         return (
             <div className="HomePage">
@@ -47,13 +48,24 @@ export default class HomePage extends Component {
 }
 
 export class InstructorCard extends Component {
+
+    constructor(props) {
+        super(props);
+        this.clickInstructor = this.clickInstructor.bind(this);
+    }
+
+    clickInstructor() {
+        // alert("clicked");
+        window.location = "/InstructorAbout";
+    }
+
     render() {
         var course_names = [];
         for (const c in this.props.courses){
             course_names.push(<li>{this.props.courses[c]}</li>);
         };
         return (
-            <div className="InstructorCard">
+            <div onClick={this.clickInstructor} className="InstructorCard">
                 <img src={this.props.img}/>
                 <p className="name">{this.props.name}</p>
                 <p className="desc">{this.props.description}</p>

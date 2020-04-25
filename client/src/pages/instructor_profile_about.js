@@ -35,7 +35,7 @@ export class Instructor_about extends Component {
         return (
             <div className="Instructor-about">
                 <div className="top_bars" >
-                    <TitleBar title="Instructor Profile" />
+                    <TitleBar title="Instructor" />
                 </div>
                 <div className='profile'>
                     <Ins_profile img={instructor_pic} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='Red Dot Award Winner' />

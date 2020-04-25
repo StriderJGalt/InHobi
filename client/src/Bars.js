@@ -3,6 +3,16 @@ import './css/Bars.css'
 import Auth from './auth/auth'
 
 export class TitleBar extends Component {
+
+    constructor(props) {
+        super(props);
+        this.clickLogout = this.clickLogout.bind(this);
+    }
+
+    clickLogout() {
+        window.location = "/";
+    }
+    
     render() {
         console.log(Auth.isAuthenticated())
         return (

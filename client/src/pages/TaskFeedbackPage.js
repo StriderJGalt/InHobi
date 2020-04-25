@@ -77,7 +77,7 @@ export class FeedbackCard extends Component {
                     <textarea name="comments" placeholder="Comments"></textarea>
                 </div>
                 <div className="submit_btn" onClick={this.onsubmit}>
-                    <h20>Accept Submission</h20>
+                    <h4>Accept Submission</h4>
                 </div>
                 <div style={{ "clear": "both" }}></div>
             </div>
