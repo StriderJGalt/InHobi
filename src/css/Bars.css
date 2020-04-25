@@ -74,34 +74,60 @@
     bottom: 0px;
     width: 100%;
     height: 50px;
-    background-color: #451996;
     /* display: flex; */
     /* justify-content: space-around; */
     display: table-row;
     table-layout: fixed;
+    background: none;
 }
 
 .bottom_nav_bar > .nav_item {
     display: table-cell;
     width: 25vw;
+    height: 50px;
     text-align: center;
+    position: relative;
+    background-color: #451996;
 }
 
-.home {
-    transform: translateY(1px);
+.bottom_nav_bar > .nav_item.placeholder{
+    background: none;
+    overflow: hidden;
+}
+
+.bottom_nav_bar > .nav_item.placeholder > .circle{
+    background: none;
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    top: -38px;
+    left: calc(50% - 38px);
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 1000px #451996;
+}
+
+.bottom_nav_bar > .home > svg{
+    transform: translateY(2px);
 }
 
 .bottom_nav_bar > .nav_item > svg {
-    margin-top: 4px;
+    position: absolute;
+    top: 6px;
+    left: calc(50% - 12px);
+    /* margin-top: 4px; */
 }
 
-.nav_item > h6 {
-    /* position: relative;
-    bottom: 18px; */
+.bottom_nav_bar > .nav_item > h6 {
+    /* width: 20%; */
+    margin: 0px;
+    position: absolute;
+    top: 30px;
+    width: 100%;
     font-size: 14px;
     color: white;
     font-weight: 200;
-    margin: -5px 0;
+    text-align: center;
+    /* margin: -5px 0; */
 }
 
 .dashboard_btn {
@@ -120,3 +146,137 @@
 .dashboard_btn > svg { 
     transform: translateY(18px)scale(1.8);
 } 
+
+.dial {
+    z-index: 1;
+    position: fixed;
+    bottom: 50px;
+    left:50%;
+    margin-left:-100px;
+    background: none;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.dial.in {
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-name: rotate_in;
+}
+
+.dial.out {
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-name: rotate_out;
+}
+
+@keyframes rotate_in {
+    from {
+        transform: rotate(-180deg);
+        transform-origin: bottom center;
+    }
+
+    to {
+        transform: rotate(0deg);
+        transform-origin: bottom center;
+    }
+}
+
+@keyframes rotate_out {
+    from {
+        transform: rotate(0deg);
+        transform-origin: bottom center;
+    }
+
+    to {
+        transform: rotate(180deg);
+        transform-origin: bottom center;
+    }
+}
+
+.dial .circle {
+    position: absolute;
+    top: calc(100% - 38px);
+    left: calc(50% - 38px);
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    /* background-color: #451996; */
+    box-shadow: 0px 0px 0px 60px #561bac;
+}
+
+.dial .dial_icon {
+    position: absolute;
+    margin: 0;
+    z-index: 2;
+    background: none;
+    height: 50px;
+    width: 50px; 
+}
+
+.dial .dial_icon svg{
+    height: 26px;
+    width: 26px;
+}
+
+.dial .dial_icon p{
+    color: white;
+    margin: 0;
+    font-size: 13px;
+    text-align: center;   
+}
+
+.dial .courses {
+    top: 45px;
+    left: 9px;
+}
+
+.dial .courses svg{
+    position: absolute;
+    left: 15px;
+    top: 3px;
+}
+
+.dial .courses p{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 100%;
+}
+
+.dial .groups {
+    top: 45px;
+    left: 140px;
+}
+
+.dial .groups svg{
+    position: absolute;
+    left: 12px;
+    top: 3px;
+}
+
+.dial .groups p{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 100%;
+}
+
+.dial .feed {
+    top: 10px;
+    left: 75px;
+}
+
+.dial .feed svg{
+    position: absolute;
+    left: 12px;
+    top: 3px;
+}
+
+.dial .feed p{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 100%;
+}
