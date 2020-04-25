@@ -10,6 +10,20 @@ import blog_icon from '../images/content.svg'
 import sponsor_icon from '../images/gift.svg'
 
 export default class MenuPage extends Component {
+    constructor(props) {
+        super(props);
+        this.clickCourses = this.clickCourses.bind(this);
+        this.clickInstructors = this.clickInstructors.bind(this);
+    }
+
+    clickCourses() {
+        window.location = "/CoursesPage";
+    } 
+
+    clickInstructors() {
+        window.location = "/InstructorsPage";
+    } 
+
     render() {
         return (
             <div className="MenuPage">
@@ -19,8 +33,8 @@ export default class MenuPage extends Component {
                 <div className="container">
                     <MenuItem name="Profile" icon={profile_pic} />
                     <MenuItem name="Settings" icon={settings_icon} />
-                    <MenuItem name="Courses" icon={course_icon} />
-                    <MenuItem name="Instructors" icon={intsructor_icon} />
+                    <MenuItem click={this.clickCourses} name="Courses" icon={course_icon} />
+                    <MenuItem click={this.clickInstructors} name="Instructors" icon={intsructor_icon} />
                     <MenuItem name="Open Groups" icon={groups_icon} />
                     <MenuItem name="Blog" icon={blog_icon} />
                     <MenuItem name="Sponsor" icon={sponsor_icon} />
@@ -34,7 +48,7 @@ export default class MenuPage extends Component {
 class MenuItem extends Component {
     render() {
         return (
-            <div className={"MenuItem "+this.props.name}>
+            <div onClick={this.props.click} className={"MenuItem "+this.props.name}>
                 <div className="icon">
                     <img src={this.props.icon} />
                 </div>
