@@ -15,6 +15,8 @@ export class TaskSub extends Component {
     clickTask() {
         this.props.history.push({
             pathname: '/taskPage',
+            cmid:this.props.location.cmid,
+            courseid:this.props.location.courseid
         });
     }
 

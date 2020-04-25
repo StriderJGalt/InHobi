@@ -57,11 +57,17 @@ export default class MasterlessonViewer extends Component {
       }
     }
     else if(info.modname=='assign'){
-      this.props.history.push({
-        pathname: '/taskPage',
-        cmid:info.id,
-        courseid:this.state.id
-      })
+      if(info.uservisible==true){
+        this.props.history.push({
+          pathname: '/taskPage',
+          cmid:info.id,
+          courseid:this.state.id
+        })
+      }
+      else{
+        alert('Available when the previous Lessons are completed!')
+      }
+      
     }
   }
 

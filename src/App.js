@@ -42,8 +42,8 @@ function App() {
         <ProtectedRouteUser exact path="/taskPage" component={TaskPage} />
         <ProtectedRouteUser exact path="/taskSubmission" component={TaskSub} />
 
-        <Route exact path="/cmDash" component={CmDashboardPage} />
-        <Route exact path="/taskFeedback" component={TaskFeedbackPage} />
+        <ProtectedRouteAdmin exact path="/cmDash" component={CmDashboardPage} />
+        <ProtectedRouteAdmin exact path="/taskFeedback" component={TaskFeedbackPage} />
       </BrowserRouter>
     </div>
   );

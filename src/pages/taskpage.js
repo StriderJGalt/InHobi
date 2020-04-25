@@ -40,8 +40,6 @@ export class TaskPage extends Component {
             response = response.data.courses[0]
             var coursename = response.fullname
             var assignments = response.assignments
-            console.log(this.props.location.cmid)
-            console.log(assignments)
             for(let index in assignments){
                 if(assignments[index].cmid==this.props.location.cmid){
                     this.setState({
