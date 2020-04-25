@@ -55,13 +55,21 @@ export class BottomNavBar extends Component {
             dash_wheel: "out"
         };
         this.clickHome = this.clickHome.bind(this)
+        this.clickMenu = this.clickMenu.bind(this)
 
     }
+
     clickHome() {
-        this.props.history.push({
-            pathname: '/HomePage',
-        });
+        // this.props.history.push({
+        //     pathname: '/HomePage',
+        // });
+        window.location = "/HomePage";
     }
+
+    clickMenu() {
+        window.location = "/MenuPage";
+    }
+
     clickDashBtn() {
         this.setState({ dash_wheel: this.state.dash_wheel == "in" ? "out" : "in" })
     }
@@ -97,7 +105,7 @@ export class BottomNavBar extends Component {
                         </svg>
                         <h6>Search</h6>
                     </div>
-                    <div class="nav_item">
+                    <div class="nav_item" onClick={this.clickMenu} >
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                             <path d="M0 0h24v24H0V0z" fill="none" />
                             <path fill="white"
