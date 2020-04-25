@@ -39,7 +39,7 @@ export class TaskSub extends Component {
                     <TabBar tabs={{"Task":false,"Submissions":true}} click={[this.clickTask, this.clickSubmissions]}/>
                 </div>    
                 <Sub history={this.props.history} />
-                <BottomNavBar homeClick={this.clickHome} />
+                <BottomNavBar history={this.props.history}/>
             </div>
             </div>
         )

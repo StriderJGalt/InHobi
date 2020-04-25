@@ -44,7 +44,7 @@ export class Instructor_about extends Component {
                 <div className='about_container'>
                     <About intro='Naveen Seth is of age 27. He has completed a degree in Story telling and animation.' accreditations='Winner of National Story Telling award' />
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history}/>
             </div>
         )
     }

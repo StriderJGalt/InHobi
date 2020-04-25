@@ -134,7 +134,7 @@ export default class MasterlessonViewer extends Component {
         }
       </div> : <Group />}
 
-        <BottomNavBar homeClick={this.clickHome} />
+      <BottomNavBar history={this.props.history}/>
       </div>)
   }
 }

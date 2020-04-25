@@ -15,7 +15,7 @@ export default class Admin_Dashboard extends Component {
                     <RoleCard name="InHobi TV Admin" />
                     <RoleCard name="Role Assignment Admin" />
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history}/>
             </div>
         )
     }

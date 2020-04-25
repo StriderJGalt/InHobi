@@ -17,7 +17,7 @@ export class CoursePage extends Component {
         this.clickFeed = this.clickFeed.bind(this)
         this.clickCourses = this.clickCourses.bind(this)
         this.clickGroups = this.clickGroups.bind(this)
-        this.clickHome = this.clickHome.bind(this)
+        
     }
 
     clickFeed() {
@@ -32,12 +32,6 @@ export class CoursePage extends Component {
 
     clickGroups() {
         alert("Groups")
-    }
-
-    clickHome() {
-        this.props.history.push({
-            pathname: '/courses'
-        });
     }
 
     componentDidMount(){
@@ -75,7 +69,7 @@ export class CoursePage extends Component {
                     {/* <Course img={course_icon} course_name='Machine Learning' instructor='' progress={70} notifications={0} /> */}
                     
                 </div>
-                <BottomNavBar homeClick={this.clickHome} />
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }

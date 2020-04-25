@@ -74,7 +74,7 @@ export class TaskPage extends Component {
                 <div className='container courses'>
                     <Task course_name={this.state.coursename} task_name={this.state.assgn_name} task_content={this.state.intro}/>
                 </div>
-                <BottomNavBar homeClick={this.clickHome} />
+                <BottomNavBar history={this.props.history}/>
                 </div>
             </div>
         )

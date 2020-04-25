@@ -24,7 +24,7 @@ export default class InstructorsPage extends Component {
                     <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
                     <InstructorCard img={instructor_pic2} name="John Galt" description="Designer | Photographer" courses={["Intro to Photography","Flash Photography","Portrait photography"]} /> 
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history}/>
             </div>
         )
     }

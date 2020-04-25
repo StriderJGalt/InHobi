@@ -100,7 +100,7 @@ export default class CmDashboardPage extends Component {
                 }
                     {/* <TaskCard history={this.props.history} task_name="Supervised Learning Methods" user_name="rahul" time_submited="23:02" /> */}
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history}/>
             </div>
 
         )

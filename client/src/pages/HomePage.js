@@ -40,7 +40,7 @@ export default class HomePage extends Component {
                     <Group name="Photography Hyd" icon={group_pic} />
                     <Group name="Photography Hyd" icon={group_pic} />
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history}/>
             </div>
         )
     }
