@@ -16,7 +16,9 @@ export class Instructor_courses extends Component {
     }
 
     clickAbout() {
-        alert("About")
+        this.props.history.push({
+            pathname: '/InstructorAbout',
+        });
     }
 
     clickFeed() {
@@ -25,7 +27,7 @@ export class Instructor_courses extends Component {
 
     clickCourses() {
         this.props.history.push({
-            pathname: '/ins_courses',
+            pathname: '/InstructorCourses',
         });
     }
 
@@ -53,7 +55,7 @@ export class Instructor_courses extends Component {
                     <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
                     <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }

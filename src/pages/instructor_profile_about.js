@@ -14,7 +14,9 @@ export class Instructor_about extends Component {
     }
 
     clickAbout() {
-        alert("About")
+        this.props.history.push({
+            pathname: '/InstructorAbout',
+        });
     }
 
     clickFeed() {
@@ -23,7 +25,7 @@ export class Instructor_about extends Component {
 
     clickCourses() {
         this.props.history.push({
-            pathname: '/ins_courses',
+            pathname: '/InstructorCourses',
         });
     }
 
