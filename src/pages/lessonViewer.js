@@ -51,7 +51,12 @@ export default class MasterlessonViewer extends Component {
           currentlesson: info.name,
           url: info.contents[0].fileurl
         })
-        console.log(info.contents[0].fileurl)
+        axios.post('/course/mark_complete',{
+          cmid:info.id,
+          wstoken:Auth.getToken()
+        }).then(response=>{
+            console.log(response);
+        })
         this.forceUpdate()
         this.componentDidMount()
       }
@@ -72,6 +77,7 @@ export default class MasterlessonViewer extends Component {
   }
 
   componentDidMount(){
+    console.log('hello')
     this.setState({
       id:this.props.location.id
     });
