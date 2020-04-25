@@ -11,7 +11,7 @@ router.post('/course_image', function(req, res, next){
     }
     axios.get(api_base, args).then(function(response){
         response = Buffer.from(response.data, 'binary').toString('base64');
-        base=`${req.body.mimetype};base64,`
+        base=`data:${req.body.mimetype};base64,`
         base=base.concat(`${response}`)
         res.send(base)
     }).catch((err) => console.log(err));

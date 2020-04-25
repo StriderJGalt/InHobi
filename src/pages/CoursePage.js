@@ -12,8 +12,6 @@ export class CoursePage extends Component {
         super(props)
         this.state = {
             courses:[],
-            images:'',
-            x:[1,2,3,4]
         }
         this.clickFeed = this.clickFeed.bind(this)
         this.clickCourses = this.clickCourses.bind(this)
@@ -38,19 +36,6 @@ export class CoursePage extends Component {
         {userid:Auth.getUserID(), wstoken:Auth.getToken()})
         .then(response => {
             this.setState({courses: response.data});
-            
-            const arr = response.data;
-            
-                axios.post('/utils/course_image',
-                {
-                    image_url:response.data[0].overviewfiles[0].fileurl,
-                    wstoken:Auth.getToken(),
-                    mimetype:response.data[0].overviewfiles[0].mimetype
-                }).then(
-                    response2 => {
-                        this.setState({images: response2.data});
-                    }
-                )
         })
         .catch(function(error) {
             console.log(error);
@@ -73,7 +58,7 @@ export class CoursePage extends Component {
                     {
                         this.state.courses.map((course, index) => {
                             return (
-                                <Course img={this.state.images} history={this.props.history} id={course.id} img={this.state.images} course_name={course.displayname} progress={course.progress}/>
+                                <Course response={course} history={this.props.history} id={course.id} img={this.state.images} course_name={course.displayname} progress={course.progress}/>
                             )
                         })
                     }
@@ -93,7 +78,8 @@ class Course extends Component {
         this.state = {
             progress: '',
             notifications: '',
-            id:''
+            id:'',
+            image:''
         }
         this.onclick = this.onclick.bind(this);
     }
@@ -113,10 +99,21 @@ class Course extends Component {
             id:this.props.id,
             history:this.props.history
         })
+        axios.post('/utils/course_image',
+            {
+                image_url:this.props.response.overviewfiles[0].fileurl,
+                wstoken:Auth.getToken(),
+                mimetype:this.props.response.overviewfiles[0].mimetype
+            }).then(
+                response => {
+                    
+                    this.setState({image: response.data});
+                }
+            )
     }
 
     onclick(){
-        console.log(this.state.id)
+        
         this.state.history.push({
             pathname:'/lessonViewer',
             id:this.state.id
@@ -126,7 +123,7 @@ class Course extends Component {
         return (
             <div className='course' onClick={this.onclick} >
                 <div className='course-icon' >
-                    <img src={this.props.img} />
+                    <img src={this.state.image} />
                 </div>
                 <div className='course-details'>
                     <p className='course-name'>{this.props.course_name}</p>

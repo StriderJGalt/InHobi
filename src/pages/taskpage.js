@@ -1,7 +1,8 @@
 import React,{ Component } from 'react'
 import '../css/taskpage.css'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars.js'
-
+import Auth from '../auth/auth';
+import axios from 'axios';
 
 export class TaskPage extends Component {
 
@@ -19,6 +20,22 @@ export class TaskPage extends Component {
     clickSubmissions() {
         this.props.history.push({
             pathname: '/taskSubmission'
+        })
+    }
+
+    componentDidMount(){
+        axios.post('/assgn/assignments',
+        {
+            courseid:this.props.location.courseid, 
+            wstoken:Auth.getToken()})
+        .then(response => {
+            response = response.data.courses[0]
+            var coursename = response.fullname
+            var assignments = response.assignments
+            for(let assignment in )
+        })
+        .catch(function(error) {
+            console.log(error);
         })
     }
     

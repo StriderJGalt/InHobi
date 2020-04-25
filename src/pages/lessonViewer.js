@@ -16,53 +16,53 @@ export default class MasterlessonViewer extends Component {
     this.state = {
       lessonPlan: true,
       group: false,
-      currentlesson: 'Introduction to Machine Learning',
-      modules:[],
+      currentlesson: '',
+      contents:[],
       url:''
     }
 
     this.clickLessonPlan = this.clickLessonPlan.bind(this)
     this.clickGroup = this.clickGroup.bind(this)
-    this.click = this.click.bind(this)
-    this.processmodules = this.processmodules.bind(this)
+    this.onclick = this.onclick.bind(this)
+    
   }
 
-  processmodules(data){
-    let response_data=[]
-    for(let topic in data){
-        for(let module in topic){
-          
-        }
-    }
-}
-
   clickLessonPlan() {
-    // alert("Lesson Plan")
     this.setState({
         lessonPlan: true,
         group: false,
-        currentlesson : ''
       })
-    // this.state.lessonPlan = false
-    // this.state.group = true
-    // this.render()
   }
 
   clickGroup() {
-    // alert("Group")
     this.setState({
         lessonPlan: false,
-        group: true,
-        currentlesson : 1,
+        group: true
       })
-    // this.state.group = true
-    // this.state.lessonPlan = false
-    console.log(this.state.group)
-    // this.render()
   }
 
-  click() {
-    
+  onclick(info) {
+    if(info.modname=='url'){
+      if(info.contents==undefined){
+        alert('Available when the previous Lessons are completed!')
+      }
+      else{
+        this.setState({
+          currentlesson: info.name,
+          url: info.contents[0].fileurl
+        })
+        console.log(info.contents[0].fileurl)
+        this.forceUpdate()
+        this.componentDidMount()
+      }
+    }
+    else if(info.modname=='assign'){
+      this.props.history.push({
+        pathname: '/taskPage',
+        info:info,
+        courseid:this.state.id
+      })
+    }
   }
 
   componentDidMount(){
@@ -73,7 +73,10 @@ export default class MasterlessonViewer extends Component {
     axios.post('/course/course_contents',
         {courseid:this.props.location.id, wstoken:Auth.getToken()})
         .then(response => {
-            console.log(response)
+            console.log(response.data)
+            this.setState({
+              contents:response.data
+            })
         })
         .catch(function(error) {
             console.log(error);
@@ -96,16 +99,16 @@ export default class MasterlessonViewer extends Component {
 
       {this.state.lessonPlan ? <div class="syllabus">
         {
-        //   this.state.courses.map((course, index) => {
-        //     return (
-        //         <Course history={this.props.history} id={course.id} img={this.state.images} course_name={course.displayname} progress={course.progress}/>
-        //     )
-        // })
+          this.state.contents.map((topic)=>{
+            return topic.modules.map((item)=>{
+              if (item.modname=='url' || item.modname=='assign'){
+                return (
+                  <Lesson onclick={this.onclick} lessonName={item.name} type={item.modname} info={item} />
+                )
+              }
+            })
+          })
         }
-
-        <Lesson type="url" url="https://www.youtube.com/watch?v=PPLop4L2eGk&feature=youtu.be" ssonNumber="L1" lessonName="Introduction to Machine Learning" time="21m" click={this.click}/>
-        <Lesson history={this.props.history} lessonNumber="A1" lessonName="Assignment" status="Open" click={this.click}/>
-        <Lesson type="url" lessonNumber="L2" lessonName="Linear Regression with One Variable" time="15m" click={this.click}/>
       </div> : <Group />}
 
       <BottomNavBar />      
@@ -122,7 +125,7 @@ class ReactPlayerComp extends Component {
   render () {
     return (
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=PPLop4L2eGk&feature=youtu.be"
+          url={this.props.url}
           width="100%"
           height={null}
           class="player"
@@ -137,11 +140,8 @@ class Lesson extends Component {
     super(props)
     this.onclick = this.onclick.bind(this)
   }
-
   onclick(){
-    this.props.history.push({
-      pathname: '/taskPage'
-    })
+    this.props.onclick(this.props.info)
   }
   render() {
     return (
