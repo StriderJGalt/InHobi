@@ -25,6 +25,7 @@ export default class MasterlessonViewer extends Component {
     this.clickGroup = this.clickGroup.bind(this)
     this.onclick = this.onclick.bind(this)
     this.goback = this.goback.bind(this)
+    this.clickHome = this.clickHome.bind(this)
   }
 
   clickLessonPlan() {
@@ -40,6 +41,12 @@ export default class MasterlessonViewer extends Component {
         group: true
       })
   }
+
+  clickHome() {
+    this.props.history.push({
+        pathname: '/courses'
+    });
+}
 
   onclick(info) {
     if(info.modname=='url'){
@@ -127,7 +134,7 @@ export default class MasterlessonViewer extends Component {
         }
       </div> : <Group />}
 
-        <BottomNavBar />
+        <BottomNavBar homeClick={this.clickHome} />
       </div>)
   }
 }

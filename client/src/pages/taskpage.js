@@ -16,10 +16,17 @@ export class TaskPage extends Component {
         }
         this.clickTask = this.clickTask.bind(this)
         this.clickSubmissions = this.clickSubmissions.bind(this)
+        this.clickHome = this.clickHome.bind(this)
     }
 
     clickTask() {
         
+    }
+
+    clickHome() {
+        this.props.history.push({
+            pathname: '/courses'
+        });
     }
 
     clickSubmissions() {
@@ -67,7 +74,7 @@ export class TaskPage extends Component {
                 <div className='container courses'>
                     <Task course_name={this.state.coursename} task_name={this.state.assgn_name} task_content={this.state.intro}/>
                 </div>
-                <BottomNavBar />
+                <BottomNavBar homeClick={this.clickHome} />
                 </div>
             </div>
         )
@@ -89,8 +96,7 @@ class Task extends Component {
                     <h2 className='task_name'>
                         {this.props.task_name}
                     </h2>
-                    <div className='task_content'>
-                        {this.props.task_content}
+                    <div className='task_content' dangerouslySetInnerHTML={{__html: this.props.task_content}}>
                     </div>
             </div>
         )

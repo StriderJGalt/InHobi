@@ -10,6 +10,7 @@ export class TaskSub extends Component {
 
         this.clickTask = this.clickTask.bind(this)
         this.clickSubmissions = this.clickSubmissions.bind(this)
+        this.clickHome = this.clickHome.bind(this)
     }
 
     clickTask() {
@@ -17,6 +18,12 @@ export class TaskSub extends Component {
             pathname: '/taskPage',
             cmid:this.props.location.cmid,
             courseid:this.props.location.courseid
+        });
+    }
+
+    clickHome() {
+        this.props.history.push({
+            pathname: '/courses'
         });
     }
 
@@ -32,7 +39,7 @@ export class TaskSub extends Component {
                     <TabBar tabs={{"Task":false,"Submissions":true}} click={[this.clickTask, this.clickSubmissions]}/>
                 </div>    
                 <Sub history={this.props.history} />
-                <BottomNavBar />
+                <BottomNavBar homeClick={this.clickHome} />
             </div>
             </div>
         )

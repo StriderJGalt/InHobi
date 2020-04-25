@@ -51,9 +51,14 @@ export class BottomNavBar extends Component {
     constructor(props) {
         super(props);
         this.clickDashBtn = this.clickDashBtn.bind(this);
+        this.clickHomeBtn = this.clickHomeBtn.bind(this);
         this.state = {
             dash_wheel: "out"
         };
+
+    }
+
+    clickHomeBtn() {
 
     }
 
@@ -65,7 +70,7 @@ export class BottomNavBar extends Component {
         return (
             <div>
                 <div class="bottom_nav_bar">
-                    <div class="nav_item home">
+                    <div class="nav_item home" onClick={this.props.homeClick}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                             <path d="M0 0h24v24H0V0z" fill="none" />
                             <path fill="white"
