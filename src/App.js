@@ -38,13 +38,8 @@ function App() {
       <BrowserRouter>
         <Route exact path="/" component={MasterLogIn} />
         <Route exact path="/SignupPage" component={SignupPage} />
-<<<<<<< HEAD
         <ProtectedRouteUser exact path="/courses" component={CoursePage} />
         <ProtectedRouteUser exact path="/lessonViewer" component={MasterlessonViewer} />
-=======
-        <Route exact path="/courses" component={CoursePage} />
-        <Route exact path="/lessonViewer" component={MasterlessonViewer} />
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
         {/* <Route exact path="/CourseGroupPage" component={CourseGroupPage} /> */}
         <Route exact path="/MenuPage" component={MenuPage} />
         <Route exact path="/HomePage" component={HomePage} />
@@ -52,21 +47,11 @@ function App() {
         <Route exact path="/InstructorAbout" component={Instructor_about} />
         <Route exact path="/InstructorCourses" component={Instructor_courses} />
         <Route exact path="/CoursesPage" component={CoursesPage} />
-<<<<<<< HEAD
         <ProtectedRouteUser exact path="/taskPage" component={TaskPage} />
         <ProtectedRouteUser exact path="/taskSubmission" component={TaskSub} />
 
         <ProtectedRouteAdmin exact path="/cmDash" component={CmDashboardPage} />
         <ProtectedRouteAdmin exact path="/taskFeedback" component={TaskFeedbackPage} />
-=======
-        <Route exact path="/taskPage" component={TaskPage} />
-        <Route exact path="/taskSubmission" component={TaskSub} />
-        <Route exact path="/Course" component={Course_about} />
-        {/* <Route exact path="/CourseSyllabus" component={Course_syllabus} /> */}
-        <Route exact path="/cmDash" component={CmDashboardPage} />
-        <Route exact path="/taskFeedback" component={TaskFeedbackPage} />
-        <Route exact path="/AdminDash" component={Admin_Dashboard} />
->>>>>>> b0717630af627abd8f9b044e30151fb6de0f41f1
       </BrowserRouter>
     </div>
   );
