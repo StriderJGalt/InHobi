@@ -97,6 +97,9 @@ router.post('/get_forum_discussion_posts', function(req, res, next){
 router.post('/get_forum_discussions', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
     api_base = api_base.concat(`forumid=${req.body.forum_id}`);
+    api_base = api_base.concat(`&page=0`);
+    api_base = api_base.concat(`&perpage=10`);
+    api_base = api_base.concat(`&sortorder=1`);
     api_base = api_base.concat(`&moodlewssettingfilter=true`);
     api_base = api_base.concat(`&moodlewssettingfileurl=true`);
     api_base = api_base.concat(`&moodlewsrestformat=json`);

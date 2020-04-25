@@ -16,7 +16,7 @@ class Auth {
     }
 
     login(username, password, props){
-        console.log('hello from auth', username, password)
+        
         const args = {
             username: username,
             password: password
@@ -25,7 +25,7 @@ class Auth {
         axios.post('http://localhost:8080/login', args).then(function(response){
             
             if(response.data.errorcode!='invalidlogin'){
-                console.log('invalid login')
+                
                 bis.authenticated = true;
                 bis.token = response.data.token;
                 bis.user = true;
@@ -81,6 +81,10 @@ class Auth {
             "fname": this.firstname,
             "lname": this.lname
         }
+    }
+
+    getUserID(){
+        return this.userid;
     }
 }
 

@@ -15,11 +15,13 @@ export class TaskSub extends Component {
     clickTask() {
         this.props.history.push({
             pathname: '/taskPage',
+            cmid:this.props.location.cmid,
+            courseid:this.props.location.courseid
         });
     }
 
     clickSubmissions() {
-        alert("submission")
+        
     }
     render() {
         return (
@@ -29,7 +31,7 @@ export class TaskSub extends Component {
                     <TitleBar title="Practice" />
                     <TabBar tabs={{"Task":false,"Submissions":true}} click={[this.clickTask, this.clickSubmissions]}/>
                 </div>    
-                <Sub ins="" />
+                <Sub history={this.props.history} />
                 <BottomNavBar />
             </div>
             </div>
@@ -41,24 +43,47 @@ class Sub extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            content:''
+            content:'',
+            selectedFile:null,
         }
 
-        this.onSubmit = this.onSubmit.bind(this);
         this.onChangeContent = this.onChangeContent.bind(this);
+        this.onFileChange = this.onFileChange.bind(this);
+        this.onFileUpload = this.onFileUpload.bind(this);
     }
+
+    onFileChange(event){ 
+        this.setState({ selectedFile: event.target.files[0] }); 
+    }; 
+
     onChangeContent(event){
         this.setState({content: event.target.value});
     }
-    onSubmit(e){
-        e.preventDefault()
-        // arg = {
-        //     wstoken: 'c6a986aca5b8f97110dcb3c77ccb8195',
-        //     text: this.state.content,
-        //     assign_id: 
-        // }
-        // axios.post('https://localhost:8080/assgn/submit_assignment', , })
-    }
+
+    onFileUpload(){ 
+        alert('Submission Made!')
+        this.props.history.push({
+            pathname:'/lessonViewer'
+        })
+        // Create an object of formData 
+        const formData = new FormData(); 
+       
+        // Update the formData object 
+        formData.append( 
+          "myFile", 
+          this.state.selectedFile, 
+          this.state.selectedFile.name 
+        ); 
+       
+        // Details of the uploaded file 
+        console.log(this.state.selectedFile); 
+       
+        // // Request made to the backend api 
+        // // Send formData object 
+        // axios.post("api/uploadfile", formData); 
+      };
+
+
     render() {
         return (
             <div class='container' >
@@ -76,7 +101,7 @@ class Sub extends Component {
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg"  height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path fill="white" d="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z"/></svg>
                         </div>
-                        <div>
+                        <div onClick={this.onFileUpload}>
                             Upload
                         </div> 
                     </label>    
