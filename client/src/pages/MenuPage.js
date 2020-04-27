@@ -7,6 +7,7 @@ import course_icon from '../images/course_icon.svg'
 import intsructor_icon from '../images/instructor_icon.png'
 import groups_icon from '../images/group_icon.svg'
 import blog_icon from '../images/content.svg'
+import user_prof from '../images/user_prof_icon.svg'
 import sponsor_icon from '../images/gift.svg'
 import Auth from '../auth/auth'
 
@@ -17,37 +18,38 @@ export default class MenuPage extends Component {
         this.clickInstructors = this.clickInstructors.bind(this);
         this.clickLogOut = this.clickLogOut.bind(this)
     }
-    clickLogOut(){
+    clickLogOut() {
         Auth.logout(this.props)
     }
     clickCourses() {
         this.props.history.push({
-            pathname:'/CoursesPage'
+            pathname: '/CoursesPage'
         })
-    } 
+    }
 
     clickInstructors() {
         this.props.history.push({
-            pathname:"/InstructorsPage"
+            pathname: "/InstructorsPage"
         })
-    } 
+    }
 
     render() {
         return (
             <div className="MenuPage">
                 <div className="top_bars" >
-                    <TitleBar title="InHobi" logout/>
+                    <TitleBar title="InHobi" logout />
                 </div>
                 <div className="container">
                     <MenuItem name="Profile" icon={profile_pic} />
-                    <MenuItem click={this.clickLogOut} name="LogOut" icon={settings_icon} />
+                    <MenuItem name="Settings" icon={settings_icon} />
                     <MenuItem click={this.clickCourses} name="Courses" icon={course_icon} />
                     <MenuItem click={this.clickInstructors} name="Instructors" icon={intsructor_icon} />
                     <MenuItem name="Open Groups" icon={groups_icon} />
                     <MenuItem name="Blog" icon={blog_icon} />
                     <MenuItem name="Sponsor" icon={sponsor_icon} />
+                    {/* <MenuItem click={this.clickLogOut} name="Log Out" icon={user_prof} /> */}
                 </div>
-                <BottomNavBar history={this.props.history}/>
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }
@@ -56,7 +58,7 @@ export default class MenuPage extends Component {
 class MenuItem extends Component {
     render() {
         return (
-            <div onClick={this.props.click} className={"MenuItem "+this.props.name}>
+            <div onClick={this.props.click} className={"MenuItem " + this.props.name}>
                 <div className="icon">
                     <img src={this.props.icon} />
                 </div>

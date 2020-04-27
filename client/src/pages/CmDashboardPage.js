@@ -26,9 +26,9 @@ export default class CmDashboardPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            submissions:[],
-            names:[],
-            ids:[]
+            submissions: [],
+            names: [],
+            ids: []
         }
 
         this.clickTasks = this.clickTasks.bind(this)
@@ -43,11 +43,11 @@ export default class CmDashboardPage extends Component {
         alert("Group")
     }
 
-    componentDidMount(){
+    componentDidMount() {
         axios.post('/assgn/assignments',
             {
-                courseid:3,
-                wstoken:Auth.getToken()
+                courseid: 3,
+                wstoken: Auth.getToken()
 
             }).then(
                 response => {
@@ -55,27 +55,27 @@ export default class CmDashboardPage extends Component {
                     var ids = []
                     var names = []
                     console.log(assignments)
-                    for(let i in assignments){
+                    for (let i in assignments) {
                         ids.push(assignments[i].id)
                         names.push(assignments[i].name)
                     }
                     console.log(names)
                     axios.post('/assgn/submissions',
                         {
-                            assign_id:ids,
-                            wstoken:Auth.getToken()
+                            assign_id: ids,
+                            wstoken: Auth.getToken()
                         }).then(
                             response2 => {
                                 console.log(response2.data.assignments)
                                 this.setState({
-                                    ids:ids,
-                                    names:names,
-                                    submissions:response2.data.assignments
+                                    ids: ids,
+                                    names: names,
+                                    submissions: response2.data.assignments
                                 })
                             }
                         )
                 }
-            ).catch(function(error){
+            ).catch(function (error) {
                 console.log(error)
             })
     }
@@ -83,24 +83,24 @@ export default class CmDashboardPage extends Component {
         return (
             <div className="CmDashboardPage">
                 <div className="top_bars" >
-                    <TitleBar title="Dashboard" />
+                    <TitleBar title="CM_Dash" />
                     <TabBar tabs={{ "Tasks": true, "Group": false }} click={[this.clickTasks, this.clickGroup]} />
                 </div>
                 <div className="container">
-                {
-                    this.state.submissions.map((assignment, index)=>{
-                        return assignment.submissions.map((submission)=>{
-                            if(submission.status=="submitted" && submission.gradingstatus=="notgraded"){
-                                return (
-                                    <TaskCard submission={submission} time_modified={submission.timemodified} history={this.props.history} task_name={this.state.names[this.state.ids.indexOf(assignment.assignmentid)]} userid={submission.userid} assignid={assignment.assignmentid} />
-                                )  
-                            }                             
+                    {
+                        this.state.submissions.map((assignment, index) => {
+                            return assignment.submissions.map((submission) => {
+                                if (submission.status == "submitted" && submission.gradingstatus == "notgraded") {
+                                    return (
+                                        <TaskCard submission={submission} time_modified={submission.timemodified} history={this.props.history} task_name={this.state.names[this.state.ids.indexOf(assignment.assignmentid)]} userid={submission.userid} assignid={assignment.assignmentid} />
+                                    )
+                                }
+                            })
                         })
-                    })
-                }
+                    }
                     {/* <TaskCard history={this.props.history} task_name="Supervised Learning Methods" user_name="rahul" time_submited="23:02" /> */}
                 </div>
-                <BottomNavBar history={this.props.history}/>
+                <BottomNavBar history={this.props.history} />
             </div>
 
         )
@@ -108,44 +108,44 @@ export default class CmDashboardPage extends Component {
 }
 
 export class TaskCard extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            fullname:'',
-            timemodified:''
+        this.state = {
+            fullname: '',
+            timemodified: ''
         }
         this.onclick = this.onclick.bind(this)
     }
 
-    onclick(){
+    onclick() {
         this.props.history.push({
-            pathname:'/taskFeedback',
-            submission:this.props.submission,
-            assignid:this.props.assignid,
-            userid:this.props.userid,
-            assignmentname:this.props.task_name
+            pathname: '/taskFeedback',
+            submission: this.props.submission,
+            assignid: this.props.assignid,
+            userid: this.props.userid,
+            assignmentname: this.props.task_name
         })
     }
-    componentDidMount(){
+    componentDidMount() {
         axios.post('/assgn/get_participant',
-        {
-            userid:this.props.userid,
-            wstoken:Auth.getToken(),
-            assignid:this.props.assignid
-        }).then(
-            response => {
-                this.setState({
-                    fullname:response.data.fullname
-                })
-            }
-        )
+            {
+                userid: this.props.userid,
+                wstoken: Auth.getToken(),
+                assignid: this.props.assignid
+            }).then(
+                response => {
+                    this.setState({
+                        fullname: response.data.fullname
+                    })
+                }
+            )
         var theDate = new Date(this.props.time_modified * 1000);
         var dateString = theDate.toLocaleString();
         this.setState({
-            timemodified:dateString
+            timemodified: dateString
         })
     }
-    
+
 
     render() {
         return (

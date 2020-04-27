@@ -12,12 +12,12 @@ export class CoursePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            courses:[],
+            courses: [],
         }
         this.clickFeed = this.clickFeed.bind(this)
         this.clickCourses = this.clickCourses.bind(this)
         this.clickGroups = this.clickGroups.bind(this)
-        
+
     }
 
     clickFeed() {
@@ -36,18 +36,18 @@ export class CoursePage extends Component {
         });
     }
 
-    componentDidMount(){
+    componentDidMount() {
         axios.post('/course/enrolled_courses',
-        {userid:Auth.getUserID(), wstoken:Auth.getToken()})
-        .then(response => {
-            this.setState({courses: response.data});
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
+            { userid: Auth.getUserID(), wstoken: Auth.getToken() })
+            .then(response => {
+                this.setState({ courses: response.data });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     }
     render() {
-        
+
         return (
             <div className="CoursePage">
                 {/* <nav className="container navbar">
@@ -56,20 +56,20 @@ export class CoursePage extends Component {
                     <a className='nav-item' href="#">Groups</a>
                 </nav> */}
                 <div className="top_bars" >
-                    <TitleBar title="User Dashboard" />
+                    <TitleBar title="Dashboard" />
                     <TabBar tabs={{ "Feed": false, "Courses": true, "Groups": false }} click={[this.clickFeed, this.clickCourses, this.clickGroups]} />
                 </div>
                 <div className='container courses'>
                     {
                         this.state.courses.map((course, index) => {
                             return (
-                                <Course response={course} history={this.props.history} id={course.id} img={this.state.images} course_name={course.displayname} progress={course.progress}/>
+                                <Course response={course} history={this.props.history} id={course.id} img={this.state.images} course_name={course.displayname} progress={course.progress} />
                             )
                         })
                     }
                     {/* <Course img={course_icon} course_name='Introduction to Photography' instructor='John Galt' progress={56} notifications={23} /> */}
                     {/* <Course img={course_icon} course_name='Machine Learning' instructor='' progress={70} notifications={0} /> */}
-                    
+
                 </div>
                 <BottomNavBar history={this.props.history} />
             </div>
@@ -83,45 +83,45 @@ class Course extends Component {
         this.state = {
             progress: '',
             notifications: '',
-            id:'',
-            image:''
+            id: '',
+            image: ''
         }
         this.onclick = this.onclick.bind(this);
     }
 
-    componentDidMount(){
-        if (this.props.progress==null){
+    componentDidMount() {
+        if (this.props.progress == null) {
             this.setState({
-                progress:0,
+                progress: 0,
             })
         }
-        else{
+        else {
             this.setState({
-                progress:this.props.progress,
+                progress: this.props.progress,
             })
         }
         this.setState({
-            id:this.props.id,
-            history:this.props.history
+            id: this.props.id,
+            history: this.props.history
         })
         axios.post('/utils/course_image',
             {
-                image_url:this.props.response.overviewfiles[0].fileurl,
-                wstoken:Auth.getToken(),
-                mimetype:this.props.response.overviewfiles[0].mimetype
+                image_url: this.props.response.overviewfiles[0].fileurl,
+                wstoken: Auth.getToken(),
+                mimetype: this.props.response.overviewfiles[0].mimetype
             }).then(
                 response => {
-                    
-                    this.setState({image: response.data});
+
+                    this.setState({ image: response.data });
                 }
             )
     }
 
-    onclick(){
-        
+    onclick() {
+
         this.state.history.push({
-            pathname:'/lessonViewer',
-            id:this.state.id
+            pathname: '/lessonViewer',
+            id: this.state.id
         })
     }
     render() {

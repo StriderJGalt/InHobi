@@ -72,7 +72,7 @@ export default class DashboardGroups extends Component {
                     {/* <Course img={course_icon} course_name='Machine Learning' instructor='' progress={70} notifications={0} /> */}
 
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }

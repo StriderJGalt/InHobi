@@ -15,7 +15,7 @@ export default class TaskFeedbackPage extends Component {
                 <div className="container">
                     <FeedbackCard assignid={this.props.location.assignid} userid={this.props.location.userid} submission={this.props.location.submission} history={this.props.history} task_name={this.props.location.assignmentname} />
                 </div>
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }
@@ -31,35 +31,35 @@ export class FeedbackCard extends Component {
         this.downlodFile = this.downlodFile.bind(this)
     }
 
-    onsubmit(){
+    onsubmit() {
         axios.post('/assgn/grade_assignment',
-        {
-            assignid:this.props.assignid,
-            userid:this.props.userid,
-            attemptnumber:this.props.submission.attemptnumber,
-            wstoken:Auth.getToken()
-        }).then(response=>{
-            alert("Submitted")
-            this.props.history.push({
-                pathname:'/cmDash'
+            {
+                assignid: this.props.assignid,
+                userid: this.props.userid,
+                attemptnumber: this.props.submission.attemptnumber,
+                wstoken: Auth.getToken()
+            }).then(response => {
+                alert("Submitted")
+                this.props.history.push({
+                    pathname: '/cmDash'
+                })
             })
-        })
 
     }
 
-    downlodFile(){
+    downlodFile() {
         axios.post('/utils/course_image',
-        {
-            image_url:this.props.submission.plugins[0].fileareas[0].files[0].fileurl,
-            wstoken:Auth.getToken(),
-            mimetype:this.props.submission.plugins[0].fileareas[0].files[0].mimetype
-        }).then(response=>{
-            response = response.data;
-			let a = document.createElement('a');
-			a.href = response;
-			a.download = this.props.submission.plugins[0].fileareas[0].files[0].filename;
-			a.click();
-        })
+            {
+                image_url: this.props.submission.plugins[0].fileareas[0].files[0].fileurl,
+                wstoken: Auth.getToken(),
+                mimetype: this.props.submission.plugins[0].fileareas[0].files[0].mimetype
+            }).then(response => {
+                response = response.data;
+                let a = document.createElement('a');
+                a.href = response;
+                a.download = this.props.submission.plugins[0].fileareas[0].files[0].filename;
+                a.click();
+            })
     }
 
     render() {

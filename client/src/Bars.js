@@ -6,13 +6,15 @@ export class TitleBar extends Component {
 
     constructor(props) {
         super(props);
-        this.clickLogout = this.clickLogout.bind(this);
+        this.clickLogin = this.clickLogin.bind(this);
     }
 
-    clickLogout() {
+
+    clickLogin() {
         window.location = "/";
     }
-    
+
+
     render() {
         console.log(Auth.isAuthenticated())
         return (
@@ -22,7 +24,7 @@ export class TitleBar extends Component {
                     <path fill="white" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" />
                 </svg>)}
                 <h1 className="title">{this.props.title}</h1>
-                {Auth.isAuthenticated() ? <h1>{Auth.getName}</h1> : (<h1 className="signin"><span>Login</span> / <span>Signup</span></h1>) }
+                {Auth.isAuthenticated() ? <h1 className="signin" onClick={this.clickLogin}>Log Out</h1> : (<h1 className="signin"><span onClick={this.clickLogin}>Login</span> / <span onClick={this.clickLogin}>Signup</span></h1>)}
             </div>
         )
     }
@@ -69,10 +71,16 @@ export class BottomNavBar extends Component {
         this.clickHome = this.clickHome.bind(this)
         this.clickMenu = this.clickMenu.bind(this)
         this.clickcourses = this.clickcourses.bind(this)
+        this.clickgroups = this.clickgroups.bind(this)
     }
-    clickcourses(){
+    clickcourses() {
         this.props.history.push({
-            pathname:'/courses'
+            pathname: '/courses'
+        })
+    }
+    clickgroups() {
+        this.props.history.push({
+            pathname: '/DashboardGroups'
         })
     }
     clickHome() {
@@ -148,7 +156,7 @@ export class BottomNavBar extends Component {
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="#ffffff" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M19 3H4.99c-1.11 0-1.98.89-1.98 2L3 19c0 1.1.88 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 12h-3.13c-.47 0-.85.34-.98.8-.35 1.27-1.52 2.2-2.89 2.2s-2.54-.93-2.89-2.2c-.13-.46-.51-.8-.98-.8H5V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v9z" /></svg>
                         <p>Feed</p>
                     </div>
-                    <div className="dial_icon groups">
+                    <div className="dial_icon groups" onClick={this.clickgroups}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none" /><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="white" /></svg>
                         <p>Groups</p>
                     </div>

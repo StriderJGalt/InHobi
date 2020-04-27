@@ -12,7 +12,7 @@ import Sukanya from '../images/Sukanya_Shetty.jpeg'
 export default class InstructorsPage extends Component {
     render() {
         return (
-            <div className="InstructorsPage">
+            <div className="Instructors">
                 <div className="top_bars" >
                     <TitleBar title="Instructors" />
                 </div>

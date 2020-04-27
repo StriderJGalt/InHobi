@@ -59,7 +59,7 @@ export class Course_about extends Component {
         return (
             <div className="Course_about">
                 <div className="top_bars" >
-                    <TitleBar title="Course About" />
+                    <TitleBar title="Course" />
                 </div>
                 <div className='profile'>
                     <Course_profile img={course_pic} course_name='Intro to Photography' no_of_lessons='21 Lessons' stars='4.2' clickBuy={this.clickBuy} />
@@ -98,7 +98,7 @@ export class Course_about extends Component {
                         )
                 }
 
-                <BottomNavBar />
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }

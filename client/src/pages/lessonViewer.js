@@ -17,8 +17,8 @@ export default class MasterlessonViewer extends Component {
       lessonPlan: true,
       group: false,
       currentlesson: '',
-      contents:[],
-      url:''
+      contents: [],
+      url: ''
     }
 
     this.clickLessonPlan = this.clickLessonPlan.bind(this)
@@ -30,111 +30,111 @@ export default class MasterlessonViewer extends Component {
 
   clickLessonPlan() {
     this.setState({
-        lessonPlan: true,
-        group: false,
-      })
+      lessonPlan: true,
+      group: false,
+    })
   }
 
   clickGroup() {
     this.setState({
-        lessonPlan: false,
-        group: true
-      })
+      lessonPlan: false,
+      group: true
+    })
   }
 
   clickHome() {
     this.props.history.push({
-        pathname: '/courses'
+      pathname: '/courses'
     });
-}
+  }
 
   onclick(info) {
-    if(info.modname=='url'){
-      if(info.contents==undefined){
+    if (info.modname == 'url') {
+      if (info.contents == undefined) {
         alert('Available when the previous Lessons are completed!')
       }
-      else{
+      else {
         this.setState({
           currentlesson: info.name,
           url: info.contents[0].fileurl
         })
-        axios.post('/course/mark_complete',{
-          cmid:info.id,
-          wstoken:Auth.getToken()
-        }).then(response=>{
-            console.log(response);
+        axios.post('/course/mark_complete', {
+          cmid: info.id,
+          wstoken: Auth.getToken()
+        }).then(response => {
+          console.log(response);
         })
         this.forceUpdate()
         this.componentDidMount()
       }
     }
-    else if(info.modname=='assign'){
-      if(info.uservisible==true){
+    else if (info.modname == 'assign') {
+      if (info.uservisible == true) {
         this.props.history.push({
           pathname: '/taskPage',
-          cmid:info.id,
-          courseid:this.state.id
+          cmid: info.id,
+          courseid: this.state.id
         })
       }
-      else{
+      else {
         alert('Available when the previous Lessons are completed!')
       }
-      
+
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     console.log('hello')
     this.setState({
-      id:this.props.location.id
+      id: this.props.location.id
     });
     console.log(this.props.location.id)
     axios.post('/course/course_contents',
-        {courseid:this.props.location.id, wstoken:Auth.getToken()})
-        .then(response => {
-            console.log(response.data)
-            this.setState({
-              contents:response.data
-            })
+      { courseid: this.props.location.id, wstoken: Auth.getToken() })
+      .then(response => {
+        console.log(response.data)
+        this.setState({
+          contents: response.data
         })
-        .catch(function(error) {
-            console.log(error);
-        })
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
   }
 
-  goback(){
+  goback() {
 
   }
 
-  render () {
+  render() {
     return (
-    <div class="LessonViewer">
-      <div className="top_bars" onclick={this.goback} >
-        <TitleBar title="Lesson"/>
-      </div>
-      <ReactPlayerComp url={this.state.url}/>
+      <div class="LessonViewer">
+        <div className="top_bars" onclick={this.goback} >
+          <TitleBar title="Lessons" />
+        </div>
+        <ReactPlayerComp url={this.state.url} />
 
-      <div class="lesson_title">
+        <div class="lesson_title">
           Now Playing: {this.state.currentlesson}
-      </div>
+        </div>
 
         <TabBar rounded tabs={{ "Lesson Plan": this.state.lessonPlan, "Group": this.state.group }} click={[this.clickLessonPlan, this.clickGroup]} class="tabbar" />
 
-      {this.state.lessonPlan ? <div class="syllabus">
-        {
-          this.state.contents.map((topic)=>{
-            return topic.modules.map((item)=>{
-              if (item.modname=='url' || item.modname=='assign'){
-                return (
-                  <Lesson onclick={this.onclick} lessonName={item.name} type={item.modname} info={item} />
-                )
-              }
+        {this.state.lessonPlan ? <div class="syllabus">
+          {
+            this.state.contents.map((topic) => {
+              return topic.modules.map((item) => {
+                if (item.modname == 'url' || item.modname == 'assign') {
+                  return (
+                    <Lesson onclick={this.onclick} lessonName={item.name} type={item.modname} info={item} />
+                  )
+                }
+              })
             })
-          })
-        }
-      </div> : <Group />}
+          }
+        </div> : <Group />}
 
-      <BottomNavBar history={this.props.history}/>
+        <BottomNavBar history={this.props.history} />
       </div>)
   }
 }
@@ -145,15 +145,15 @@ class ReactPlayerComp extends Component {
     super(props)
   }
 
-  render () {
+  render() {
     return (
-        <ReactPlayer
-          url={this.props.url}
-          width="100%"
-          height={null}
-          class="player"
-        />
-      
+      <ReactPlayer
+        url={this.props.url}
+        width="100%"
+        height={null}
+        class="player"
+      />
+
     )
   }
 }
@@ -163,13 +163,13 @@ export class Lesson extends Component {
     super(props)
     this.onclick = this.onclick.bind(this)
   }
-  onclick(){
+  onclick() {
     this.props.onclick(this.props.info)
   }
   render() {
     return (
       <div class="Lesson" onClick={this.onclick}>
-        <img src={ this.props.type == "url" ? l_icon : a_icon } />
+        <img src={this.props.type == "url" ? l_icon : a_icon} />
         {/* <div class="num"> {this.props.lessonNumber} </div */}
         <div class="name"> {this.props.lessonName} </div>
         {/* <div class="time"> { this.props.type == "lesson" ? this.props.time : this.props.status} </div>  */}

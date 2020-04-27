@@ -7,7 +7,7 @@ export default class Admin_Dashboard extends Component {
         return (
             <div className="Admin_dashboard">
                 <div className="top_bars" >
-                    <TitleBar title="Admin Dashboard" />
+                    <TitleBar title="Admin_Dash" />
                 </div>
                 <div className="roles">
                     <RoleCard name="Users Admin" />
@@ -15,7 +15,7 @@ export default class Admin_Dashboard extends Component {
                     <RoleCard name="InHobi TV Admin" />
                     <RoleCard name="Role Assignment Admin" />
                 </div>
-                <BottomNavBar history={this.props.history}/>
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }
