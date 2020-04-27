@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../css/instructor_profile_about.css'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
-import instructor_pic from '../images/ppic.jpg'
+import Naveen from '../images/Naveen_Seth.jpeg'
 // import axios from "axios";
 
 export class Instructor_about extends Component {
@@ -38,13 +38,13 @@ export class Instructor_about extends Component {
                     <TitleBar title="Instructor" />
                 </div>
                 <div className='profile'>
-                    <Ins_profile img={instructor_pic} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='Red Dot Award Winner' />
+                    <Ins_profile img={Naveen} ins_name='Naveen Seth' description='Story Teller || Visual Alchemist' award='Red Dot Award Winner' />
                 </div>
                 <TabBar rounded tabs={{ "About": true, "Courses": false, "Feed": false }} click={[this.clickAbout, this.clickCourses, this.clickFeed]} />
                 <div className='about_container'>
                     <About intro='Naveen Seth is of age 27. He has completed a degree in Story telling and animation.' accreditations='Winner of National Story Telling award' />
                 </div>
-                <BottomNavBar history={this.props.history}/>
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }

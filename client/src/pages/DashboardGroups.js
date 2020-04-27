@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 // import '../css/CoursePage.css'
 // import course_icon from '../css/camera_web.jpg'
 import group_pic from '../images/guitar.jpg'
+import Photography from '../images/Photography.jpg'
+import Film from '../images/Film_Making.jpg'
+import Food from '../images/Foodies_Hyd.jpg'
+import Travel from '../images/Bloggers_Travel.jpg'
+import Yoga from '../images/Yoga.jpg'
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
 import axios from "axios";
 import Auth from '../auth/auth'
@@ -57,9 +62,12 @@ export default class DashboardGroups extends Component {
                     <TabBar tabs={{ "Feed": false, "Courses": false, "Groups": true }} click={[this.clickFeed, this.clickCourses, this.clickGroups]} />
                 </div>
                 <div className='container groups' style={{ marginTop: '100px' }} >
-                    <Groups name="Photography Hyd" icon={group_pic} />
-                    <Groups name="Photography Hyd" icon={group_pic} />
-                    <Groups name="Photography Hyd" icon={group_pic} />
+                    <Group name="Photography" icon={Photography} />
+                    <Group name="Music_Hyd" icon={group_pic} />
+                    <Group name="Film_Making" icon={Film} />
+                    <Group name="Bloggers_Travel" icon={Travel} />
+                    <Group name="Yoga Class" icon={Yoga} />
+                    <Group name="Foodies_Hyd" icon={Food} />
                     {/* <Course img={course_icon} course_name='Introduction to Photography' instructor='John Galt' progress={56} notifications={23} /> */}
                     {/* <Course img={course_icon} course_name='Machine Learning' instructor='' progress={70} notifications={0} /> */}
 

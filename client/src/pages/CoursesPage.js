@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import "../css/CoursesPage.css"
 import { TitleBar, TabBar, BottomNavBar } from '../Bars'
 import course_pic from '../images/camera_web.jpg'
+import Photography from '../images/Photography.jpg'
+import Film from '../images/Film_Making.jpg'
+import Yoga from '../images/Yoga.jpg'
 
 export default class CoursesPage extends Component {
     render() {
@@ -12,9 +15,9 @@ export default class CoursesPage extends Component {
                 </div>
                 <div className="courses">
                     <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
-                    <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
+                    <CourseCard img={Photography} name="Camera Tricks" num_lessons="18 Lessons" rating="4.8" />
+                    <CourseCard img={Yoga} name="Yoga Class" num_lessons="15 Lessons" rating="4.8" />
+                    <CourseCard img={Film} name="Film Making" num_lessons="30 Lessons" rating="4.8" />
                     <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
                     <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
                     <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
@@ -22,7 +25,7 @@ export default class CoursesPage extends Component {
                     <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
                     <CourseCard img={course_pic} name="Intro to Photography" num_lessons="27 Lessons" rating="4.8" />
                 </div>
-                <BottomNavBar history={this.props.history}/>
+                <BottomNavBar history={this.props.history} />
             </div>
         )
     }
