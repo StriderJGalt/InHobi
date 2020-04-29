@@ -226,7 +226,7 @@ export class Group extends Component {
       for (let m = this.state.messages.length - 1; m >= 0; m--) {
       
         messages.push(
-          <div className={(this.state.messages[m]['sender'] == 'me') ? "message me" : "message"}>
+          <div className={(this.state.messages[m]['sender'] == Auth.getName()) ? "message me" : "message"}>
             <div className="content" dangerouslySetInnerHTML={{__html: this.state.messages[m]["content"]}}></div>
             <p>- {this.state.messages[m]["sender"]}</p>
           </div>)
