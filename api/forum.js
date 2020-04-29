@@ -50,8 +50,7 @@ router.post('/get_discussion_post', function(req, res, next){
 
 router.post('/get_discussion_posts', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
-    api_base = api_base.concat(`userid=${req.body.user_id}`);
-    api_base = api_base.concat(`&cmid=${req.body.cm_id}`);
+    api_base = api_base.concat(`discussionid=${req.body.discussion_id}`);
     api_base = api_base.concat(`&moodlewssettingfilter=true`);
     api_base = api_base.concat(`&moodlewssettingfileurl=true`);
     api_base = api_base.concat(`&moodlewsrestformat=json`);
@@ -114,7 +113,7 @@ router.post('/get_forum_discussions', function(req, res, next){
 
 router.post('/get_forums_by_courses', function(req, res, next){
     api_base = `http://68.183.95.58/moodle/webservice/rest/server.php?`;
-    api_base = api_base.concat(`courseids=${req.body.courseids}`);
+    api_base = api_base.concat(`courseids[0]=${req.body.courseid}`);
     api_base = api_base.concat(`&moodlewssettingfilter=true`);
     api_base = api_base.concat(`&moodlewssettingfileurl=true`);
     api_base = api_base.concat(`&moodlewsrestformat=json`);

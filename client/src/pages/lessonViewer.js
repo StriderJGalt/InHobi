@@ -139,6 +139,52 @@ export default class MasterlessonViewer extends Component {
   }
 }
 
+export class Group extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      messages: [{ "sender": "tim", "content": "hi, how are u?", "time": "21:15:10" }, { "sender": "me", "content": "hello", "time": "18:11:50" }]
+    }
+  }
+
+  componentDidMount() {
+    
+    axios.post('/forum/get_forums_by_courses',
+      { courseid: this.props.location.id, wstoken: Auth.getToken() })
+      .then(response => {
+        console.log(response.data)
+        this.setState({
+          contents: response.data
+        })
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+
+  render() {
+    var messages = [];
+    if (this.state.messages) {
+      for (const m in this.state.messages) {
+        messages.push(
+          <div className={(this.state.messages[m]["sender"] == "me") ? "message me" : "message"}>
+            <div className="content">{this.state.messages[m]["content"]}</div>
+            <p>{this.state.messages[m]["sender"] + '-' + this.state.messages[m]["time"]}</p>
+          </div>)
+      }
+    }
+    return (
+      <div className="Group">
+        {messages}
+        <div className="writer">
+          <textarea rows="1" maxlength="140" autocomplete required className="input" />
+          <button type="button">Send</button>
+        </div>
+      </div>
+    )
+  }
+}
+
 class ReactPlayerComp extends Component {
 
   constructor(props) {
@@ -178,33 +224,3 @@ export class Lesson extends Component {
   }
 }
 
-export class Group extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      messages: [{ "sender": "tim", "content": "hi, how are u?", "time": "21:15:10" }, { "sender": "me", "content": "hello", "time": "18:11:50" }]
-    }
-  }
-
-  render() {
-    var messages = [];
-    if (this.state.messages) {
-      for (const m in this.state.messages) {
-        messages.push(
-          <div className={(this.state.messages[m]["sender"] == "me") ? "message me" : "message"}>
-            <div className="content">{this.state.messages[m]["content"]}</div>
-            <p>{this.state.messages[m]["sender"] + '-' + this.state.messages[m]["time"]}</p>
-          </div>)
-      }
-    }
-    return (
-      <div className="Group">
-        {messages}
-        <div className="writer">
-          <textarea rows="1" maxlength="140" autocomplete required className="input" />
-          <button type="button">Send</button>
-        </div>
-      </div>
-    )
-  }
-}
