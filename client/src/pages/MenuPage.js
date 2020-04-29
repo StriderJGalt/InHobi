@@ -40,7 +40,7 @@ export default class MenuPage extends Component {
                     <TitleBar title="InHobi" logout />
                 </div>
                 <div className="container">
-                    <MenuItem name="Profile" icon={profile_pic} />
+                    { Auth.isAuthenticated() ? <MenuItem name="Profile" icon={profile_pic} /> : "" }
                     <MenuItem name="Settings" icon={settings_icon} />
                     <MenuItem click={this.clickCourses} name="Courses" icon={course_icon} />
                     <MenuItem click={this.clickInstructors} name="Instructors" icon={intsructor_icon} />
