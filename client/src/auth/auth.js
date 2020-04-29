@@ -85,10 +85,7 @@ class Auth {
     }
 
     getName(){
-        return {
-            "fname": this.firstname,
-            "lname": this.lname
-        }
+        return this.firstname+" "+this.lastname
     }
 
     getUserID(){

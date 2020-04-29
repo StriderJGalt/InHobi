@@ -84,7 +84,7 @@ export default class MasterlessonViewer extends Component {
   }
 
   componentDidMount() {
-    console.log('hello')
+    console.log(Auth.getName())
     this.setState({
       id: this.props.location.id
     });
@@ -132,7 +132,7 @@ export default class MasterlessonViewer extends Component {
               })
             })
           }
-        </div> : <Group courseid={this.props.location.id} />}
+        </div> : <Group forceupdate={this.forceUpdate} courseid={this.props.location.id} />}
 
         <BottomNavBar history={this.props.history} />
       </div>)

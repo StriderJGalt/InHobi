@@ -13,7 +13,6 @@ router.post('/course_image', function(req, res, next){
         response = Buffer.from(response.data, 'binary').toString('base64');
         base=`data:${req.body.mimetype};base64,`
         base=base.concat(`${response}`)
-        console.log(base)
         res.send(base)
     }).catch((err) => console.log(err));
 });
