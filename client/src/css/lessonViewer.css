@@ -47,7 +47,7 @@
 .Group {
     width: 100%;
     min-height: 50vh;
-    /* padding-bottom: 100px; */
+    padding-bottom: 128px;
 }
 
 .Group .message {
@@ -61,6 +61,7 @@
     padding: 8px;
     color: white;
     clear: both;
+    font-size: 18px;
 }
 
 /* .Group .message.me:last-child {
