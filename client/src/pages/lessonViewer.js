@@ -132,7 +132,7 @@ export default class MasterlessonViewer extends Component {
               })
             })
           }
-        </div> : <Group />}
+        </div> : <Group courseid={this.props.location.id} />}
 
         <BottomNavBar history={this.props.history} />
       </div>)
@@ -143,36 +143,76 @@ export class Group extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      messages: [{ "sender": "tim", "content": "hi, how are u?", "time": "21:15:10" }, { "sender": "me", "content": "hello", "time": "18:11:50" }]
+      messages: [],
+      forumid: 0
     }
   }
 
   componentDidMount() {
     
     axios.post('/forum/get_forums_by_courses',
-      { courseid: this.props.location.id, wstoken: Auth.getToken() })
+      { courseid: this.props.courseid, wstoken: Auth.getToken() })
       .then(response => {
         console.log(response.data)
-        this.setState({
-          contents: response.data
-        })
+        // Get Group's Forum ID
+        response.data.map((forum) => {
+          if (forum.name == 'Group') {
+            this.state.forumid = forum.id
+          }
+        }) 
+        
+        // Find Forum's Discussions
+        axios.post('/forum/get_forum_discussions',
+          { forum_id: this.state.forumid, wstoken: Auth.getToken() })
+          .then((res) => {
+
+            console.log(res)
+            var messages = []
+
+            res.data.discussions.map((discussion) => {
+
+              var message = {
+                'sender': discussion.userfullname,
+                'content': discussion.message
+              }
+              
+              messages.push(message)
+            })
+
+            this.setState({
+              messages: messages
+            })
+            for (const m in this.state.messages) {
+              console.log(this.state.messages[m]['sender'])
+            }
+            console.log(this.state.messages)
+          })
+
       })
       .catch(function (error) {
         console.log(error);
       })
-  }
 
+      console.log(this.state.messages)
+  }
+//Rahul@Pass1
   render() {
     var messages = [];
+    console.log(this.state.messages)
     if (this.state.messages) {
       for (const m in this.state.messages) {
+        console.log("iniiniiniiniiniini")
+        console.log(m)
         messages.push(
-          <div className={(this.state.messages[m]["sender"] == "me") ? "message me" : "message"}>
-            <div className="content">{this.state.messages[m]["content"]}</div>
-            <p>{this.state.messages[m]["sender"] + '-' + this.state.messages[m]["time"]}</p>
+          <div className={(this.state.messages[m]['sender'] == 'me') ? "message me" : "message"}>
+            <div className="content" dangerouslySetInnerHTML={{__html: this.state.messages[m]["content"]}}></div>
+            <p>- {this.state.messages[m]["sender"]}</p>
           </div>)
       }
-    }
+      console.log(messages)
+    } 
+    //messages.push(<div> didnt work m8 </div>)
+    
     return (
       <div className="Group">
         {messages}
