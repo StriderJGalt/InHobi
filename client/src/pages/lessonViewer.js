@@ -144,8 +144,12 @@ export class Group extends Component {
     super(props)
     this.state = {
       messages: [],
-      forumid: 0
+      forumid: 0,
+      msg: ''
     }
+
+    this.onSend = this.onSend.bind(this)
+    this.onChangeMsg = this.onChangeMsg.bind(this)
   }
 
   componentDidMount() {
@@ -153,11 +157,13 @@ export class Group extends Component {
     axios.post('/forum/get_forums_by_courses',
       { courseid: this.props.courseid, wstoken: Auth.getToken() })
       .then(response => {
-        console.log(response.data)
+        
         // Get Group's Forum ID
         response.data.map((forum) => {
           if (forum.name == 'Group') {
-            this.state.forumid = forum.id
+            this.setState({
+              forumid: forum.id
+            })
           }
         }) 
         
@@ -182,27 +188,43 @@ export class Group extends Component {
             this.setState({
               messages: messages
             })
-            for (const m in this.state.messages) {
-              console.log(this.state.messages[m]['sender'])
-            }
-            console.log(this.state.messages)
+            
           })
 
       })
       .catch(function (error) {
         console.log(error);
       })
-
-      console.log(this.state.messages)
   }
-//Rahul@Pass1
+
+  onChangeMsg(event) {
+    this.setState({ msg: event.target.value });
+  }
+
+  onSend() {
+    var params = {
+      forum_id: this.state.forumid,
+      subject: 'Group',
+      message: this.state.msg,
+      wstoken: Auth.getToken()
+    }
+
+    axios.post('/forum/add_discussion', params)
+      .then((response) => {
+
+        console.log(response)
+        this.setState({
+          msg: ''
+        })
+      })
+  }
+
   render() {
     var messages = [];
-    console.log(this.state.messages)
+    
     if (this.state.messages) {
-      for (const m in this.state.messages) {
-        console.log("iniiniiniiniiniini")
-        console.log(m)
+      for (let m = this.state.messages.length - 1; m >= 0; m--) {
+      
         messages.push(
           <div className={(this.state.messages[m]['sender'] == 'me') ? "message me" : "message"}>
             <div className="content" dangerouslySetInnerHTML={{__html: this.state.messages[m]["content"]}}></div>
@@ -211,14 +233,13 @@ export class Group extends Component {
       }
       console.log(messages)
     } 
-    //messages.push(<div> didnt work m8 </div>)
     
     return (
       <div className="Group">
         {messages}
         <div className="writer">
-          <textarea rows="1" maxlength="140" autocomplete required className="input" />
-          <button type="button">Send</button>
+          <textarea rows="1" maxlength="140" autocomplete required className="input" value={this.state.msg} onChange={this.onChangeMsg} />
+          <button type="button" onClick={this.onSend}>Send</button>
         </div>
       </div>
     )
